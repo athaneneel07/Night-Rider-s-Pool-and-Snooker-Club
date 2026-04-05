@@ -26,292 +26,269 @@
             color: #ffffff; 
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
 
-        /* ONE UI LUXURY GLASS */
         .one-ui-glass {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 40px;
+            border-radius: 30px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .one-ui-glass:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--cyan);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+        @media (min-width: 768px) {
+            .one-ui-glass:hover {
+                background: rgba(255, 255, 255, 0.07);
+                border-color: var(--cyan);
+                transform: translateY(-10px) scale(1.02);
+            }
         }
 
-        /* CRAZY GRADIENT TEXT */
         .text-crazy {
-            background: linear-gradient(to right, #fff, var(--violet), var(--cyan));
+            background: linear-gradient(to right, #fff, var(--violet), var(--cyan), #fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: shine 3s linear infinite;
+            background-size: 300% auto;
+            animation: shine 5s linear infinite;
         }
 
         @keyframes shine {
-            to { background-position: 200% center; }
+            to { background-position: 300% center; }
         }
 
-        /* NEON GLOW BUTTON */
         .btn-neon {
             background: linear-gradient(45deg, var(--violet), var(--cyan));
             border-radius: 50px;
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
             transition: 0.3s;
+            color: black;
+            font-weight: 900;
         }
 
-        .btn-neon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 50px rgba(6, 182, 212, 0.6);
-        }
-
-        /* AUTH OVERLAY */
         #auth-gate {
             position: fixed; inset: 0; z-index: 9999;
             background: #000;
             display: flex; align-items: center; justify-content: center;
+            padding: 20px;
         }
 
-        /* INPUT STYLING */
         input, select {
             background: rgba(255,255,255,0.05) !important;
             border: 1px solid rgba(255,255,255,0.1) !important;
-            padding: 1.2rem !important;
-            border-radius: 20px !important;
+            padding: 1rem !important;
+            border-radius: 15px !important;
             color: white !important;
-            outline: none !important;
+            width: 100%;
+            outline: none;
         }
-        input:focus { border-color: var(--cyan) !important; box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); }
+        input:focus { border-color: var(--cyan) !important; }
 
-        /* SPOTLIGHT EFFECT */
         .spotlight {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at var(--x) var(--y), rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+            background: radial-gradient(circle at var(--x) var(--y), rgba(139, 92, 246, 0.12) 0%, transparent 50%);
             z-index: 1; pointer-events: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- 💡 MOUSE SPOTLIGHT -->
     <div class="spotlight" id="spotlight"></div>
 
-    <!-- 🔐 PRE-LOADER / AUTH GATE -->
+    <!-- 🔐 AUTH GATE -->
     <div id="auth-gate">
-        <div class="text-center" data-aos="zoom-in">
-            <div class="mb-10 inline-block p-8 one-ui-glass border-violet-500/30 shadow-[0_0_50px_rgba(139,92,246,0.2)]">
-                <i class="fas fa-eye text-6xl text-crazy"></i>
+        <div class="text-center w-full max-w-sm">
+            <div class="mb-8 inline-block p-6 one-ui-glass border-violet-500/30">
+                <i class="fas fa-eye text-5xl text-crazy"></i>
             </div>
-            <h1 class="text-5xl font-black mb-4 tracking-tighter">Night Rider's</h1>
-            <p class="text-gray-500 uppercase tracking-[0.5em] text-xs mb-10">Members Only Access</p>
+            <h1 class="text-4xl font-black mb-2 tracking-tighter">Night Rider's</h1>
+            <p class="text-gray-500 uppercase tracking-[0.3em] text-[10px] mb-10">Elite Cue Club Access</p>
             
+            <!-- Google Sign-In Button -->
             <div id="g_id_onload"
                 data-client_id="510142501463-5huhj4a4taha2koajagarg1fmikcakgg.apps.googleusercontent.com"
-                data-callback="onSignIn"
+                data-callback="handleSignIn"
                 data-auto_prompt="false">
             </div>
             <div class="g_id_signin flex justify-center" data-type="standard" data-shape="pill" data-theme="filled_black" data-text="signin_with" data-size="large"></div>
             
-            <button onclick="unlock()" class="mt-8 text-[10px] text-gray-700 hover:text-cyan-400 underline uppercase tracking-widest transition">Skip as Guest</button>
+            <button onclick="unlock()" class="mt-8 text-[10px] text-gray-500 hover:text-cyan-400 underline uppercase tracking-widest transition">Enter as Guest</button>
         </div>
     </div>
 
     <!-- 📱 FLOATING CONTACTS -->
-    <div class="fixed bottom-10 right-10 z-50 flex flex-col gap-4">
-        <a href="https://wa.me/09503061818" class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:scale-110 transition"><i class="fab fa-whatsapp text-white"></i></a>
-        <a href="tel:09503061818" class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition"><i class="fas fa-phone text-black"></i></a>
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 md:bottom-10 md:right-10">
+        <a href="https://wa.me/919503061818" class="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-lg hover:scale-110 transition"><i class="fab fa-whatsapp text-white"></i></a>
+        <a href="tel:+919503061818" class="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center text-xl md:text-2xl shadow-lg hover:scale-110 transition"><i class="fas fa-phone text-black"></i></a>
     </div>
 
     <!-- 🧭 NAV -->
-    <nav class="fixed top-0 w-full z-40 px-10 py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5">
-        <div class="text-2xl font-black tracking-tighter italic">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
-        <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[4px] text-gray-400">
-            <a href="#about" class="hover:text-cyan-400 transition">Club</a>
-            <a href="#services" class="hover:text-cyan-400 transition">Rates</a>
-            <a href="#booking" class="hover:text-cyan-400 transition">Reserve</a>
-        </div>
-        <div id="user-info"></div>
+    <nav class="fixed top-0 w-full z-40 px-6 py-4 md:px-10 md:py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5">
+        <div class="text-xl md:text-2xl font-black tracking-tighter italic">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
+        <div id="user-info" class="flex items-center gap-3"></div>
     </nav>
 
-    <!-- 🚀 HERO SECTION (CRAZY TYPOGRAPHY) -->
-    <section class="h-screen flex items-center justify-center relative">
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <img src="https://i.postimg.cc/c1Yg7xWy/image.png">
+    <!-- 🚀 HERO -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover">
         </div>
-        
-        <div class="text-center relative z-10 px-6">
-            <h1 class="text-7xl md:text-[12rem] font-black leading-none tracking-tighter uppercase mb-6">
+        <div class="text-center relative z-10 px-4">
+            <h1 class="text-6xl md:text-[8rem] lg:text-[11rem] font-black leading-[0.9] tracking-tighter uppercase mb-6">
                 Rack <br> <span class="text-crazy">'Em Up.</span>
             </h1>
-            <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-12 uppercase tracking-[0.4em] font-light">The Ultimate Midnight Billiards Sanctuary</p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#booking" class="btn-neon px-16 py-5 text-black font-black uppercase tracking-widest text-sm">Secure a Table</a>
-                <a href="#services" class="text-white font-bold uppercase tracking-widest text-xs border-b-2 border-violet-500 pb-2 hover:text-cyan-400 transition">View Elite Rates</a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#booking" class="btn-neon w-full sm:w-auto px-10 py-4 text-xs uppercase tracking-widest">Reserve Table</a>
+                <a href="#services" class="text-white font-bold uppercase tracking-widest text-[10px] border-b-2 border-violet-500 pb-1">Elite Rates</a>
             </div>
         </div>
     </section>
 
-    <!-- 💎 ABOUT SECTION -->
-    <section id="about" class="py-32 px-10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-6xl font-black mb-10 tracking-tighter">Engineered for <br> <span class="text-cyan-500">Precision.</span></h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-10">
-                    Step into an obsidian landscape. Night Rider's features championship-grade **Wiraka** tables, high-speed **Iwan Simonis** cloth, and professional lighting that eliminates every shadow. 
-                </p>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="one-ui-glass p-8 border-cyan-500/20">
-                        <i class="fas fa-snowflake text-cyan-400 text-3xl mb-4"></i>
-                        <h4 class="font-bold text-sm">Sub-Zero AC</h4>
-                    </div>
-                    <div class="one-ui-glass p-8 border-violet-500/20">
-                        <i class="fas fa-wifi text-violet-400 text-3xl mb-4"></i>
-                        <h4 class="font-bold text-sm">Gigabit Fiber</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="relative group">
-                <div class="absolute -inset-4 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-[50px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <img src="https://i.postimg.cc/056bCpg5/image.png" class="relative rounded-[50px] border border-white/10 grayscale hover:grayscale-0 transition duration-700">
-            </div>
-        </div>
-    </section>
-
-    <!-- 🎱 RATES (CRAZY CARDS) -->
-    <section id="services" class="py-32 px-10 bg-white/[0.02]">
+    <!-- 🎱 RATES -->
+    <section id="services" class="py-20 px-6 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-20">
-                <h2 class="text-6xl font-black tracking-tighter">Table <br> <span class="text-violet-500">Access.</span></h2>
-                <p class="text-gray-500 text-right uppercase tracking-widest text-xs">Premium Hourly Billing</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="one-ui-glass p-12 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition">
-                        <i class="fas fa-circle-nodes text-[12rem]"></i>
+            <h2 class="text-4xl md:text-6xl font-black mb-12 tracking-tighter">Access <span class="text-violet-500">Rates.</span></h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="one-ui-glass p-8 md:p-12">
+                    <h3 class="text-2xl font-black mb-2">8-Ball Pool</h3>
+                    <div class="flex items-baseline gap-2 mb-8">
+                        <span class="text-5xl md:text-6xl font-black text-cyan-500">₹250</span>
+                        <span class="text-gray-500 text-xs">/hr</span>
                     </div>
-                    <h3 class="text-3xl font-black mb-2">8-Ball Pool</h3>
-                    <p class="text-gray-500 mb-10 text-sm uppercase tracking-widest">Tournament Grade Slates</p>
-                    <div class="flex items-baseline gap-4 mb-10">
-                        <span class="text-7xl font-black text-cyan-500">₹120</span>
-                        <span class="text-gray-600">/hr</span>
-                    </div>
-                    <button onclick="location.href='#booking'" class="w-full py-5 border border-white/10 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition">Select Table</button>
+                    <a href="#booking" class="block text-center py-4 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest">Book Pool</a>
                 </div>
-
-                <div class="one-ui-glass p-12 border-violet-500/50 relative shadow-[0_0_50px_rgba(139,92,246,0.1)]">
-                    <div class="absolute top-6 right-10 bg-violet-600 text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-[0.3em]">Top Tier</div>
-                    <h3 class="text-3xl font-black mb-2 text-violet-400">Snooker</h3>
-                    <p class="text-gray-500 mb-10 text-sm uppercase tracking-widest">Full 12ft Match Tables</p>
-                    <div class="flex items-baseline gap-4 mb-10">
-                        <span class="text-7xl font-black text-white">₹200</span>
-                        <span class="text-gray-600">/hr</span>
+                <div class="one-ui-glass p-8 md:p-12 border-violet-500/40">
+                    <h3 class="text-2xl font-black mb-2 text-violet-400">Snooker</h3>
+                    <div class="flex items-baseline gap-2 mb-8">
+                        <span class="text-5xl md:text-6xl font-black text-white">₹400</span>
+                        <span class="text-gray-500 text-xs">/hr</span>
                     </div>
-                    <button onclick="location.href='#booking'" class="w-full py-5 btn-neon text-black font-black uppercase tracking-widest text-xs">Select Table</button>
+                    <a href="#booking" class="block text-center py-4 btn-neon text-[10px] font-black uppercase tracking-widest">Book Snooker</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 📅 BOOKING (CRAZY APP UI) -->
-    <section id="booking" class="py-32 px-6">
-        <div class="max-w-3xl mx-auto one-ui-glass p-12 md:p-20 border-white/5 relative shadow-2xl">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-black mb-4">Secure <span class="text-crazy">The Slot</span></h2>
-                <p class="text-gray-600 text-[10px] uppercase tracking-[0.5em]">Members get 15% discount automatically</p>
+    <!-- 📅 BOOKING -->
+    <section id="booking" class="py-20 px-4 md:px-6">
+        <div class="max-w-3xl mx-auto one-ui-glass p-8 md:p-16 border-white/5">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-black mb-2">Secure <span class="text-crazy">A Table</span></h2>
+                <p class="text-gray-500 text-[9px] uppercase tracking-widest">Data logged to member database</p>
             </div>
-            
-            <form id="bookingForm" class="grid gap-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <input type="text" id="name" placeholder="YOUR NAME" required>
-                    <input type="tel" id="phone" placeholder="PHONE NUMBER" required>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
+            <form id="bookingForm" class="space-y-4">
+                <input type="text" id="name" placeholder="YOUR NAME" required>
+                <input type="tel" id="phone" placeholder="WHATSAPP NUMBER" required>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <select id="game">
-                        <option class="bg-black">Pool Table (₹120)</option>
-                        <option class="bg-black">Snooker Table (₹200)</option>
+                        <option value="Pool (₹250)">Pool (₹250)</option>
+                        <option value="Snooker (₹400)">Snooker (₹400)</option>
                     </select>
                     <input type="datetime-local" id="datetime" required>
                 </div>
-                <button type="submit" class="btn-neon w-full py-6 text-black font-black uppercase tracking-[0.3em] text-sm mt-6">Confirm Reservation</button>
+                <button type="submit" id="submitBtn" class="btn-neon w-full py-5 text-xs uppercase tracking-[0.2em] mt-4">Confirm Reservation</button>
             </form>
         </div>
     </section>
 
     <!-- 📍 CONTACT -->
-    <section class="py-32 px-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
-        <div class="h-[500px] rounded-[60px] overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition duration-1000 shadow-2xl">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5119766946654!2d73.81232827519131!3d18.50574048258679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf9ef8191017%3A0x977a79ca7bd000b7!2sGreenbox%20Turf%20MIT!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="flex flex-col justify-center">
-            <h2 class="text-6xl font-black mb-10 tracking-tighter">Locate <br> <span class="text-crazy">Us.</span></h2>
-            <div class="space-y-10">
+    <section class="py-20 px-6 md:px-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-black mb-10 tracking-tighter">Find <br> <span class="text-crazy">Us.</span></h2>
+            <div class="space-y-8">
                 <div>
-                    <h4 class="text-cyan-500 font-black text-xs uppercase tracking-widest mb-2">Base of Operations</h4>
-                    <p class="text-xl text-gray-400">Plot No. 114, Rambaug Colony, MIT Collage Road Near Tulja Bhavani Mata Mandir, SHARAO Lawns & SHIVSAMRAT Hall, Paud Rd, Kishkinda Nagar, Kothrud, Pune, Maharashtra 411038</p>
+                    <h4 class="text-cyan-500 font-black text-xs mb-2">ADDRESS</h4>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        Plot No. 114, Rambaug Colony, MIT Collage Road, <br>
+                        Near Tulja Bhavani Mata Mandir, SHARAO Lawns & SHIVSAMRAT Hall, <br>
+                        Paud Rd, Kishkinda Nagar, Kothrud, Pune, MH 411038
+                    </p>
                 </div>
                 <div>
-                    <h4 class="text-violet-500 font-black text-xs uppercase tracking-widest mb-2">Direct Comms</h4>
-                    <p class="text-3xl font-black">09503061818</p>
+                    <h4 class="text-violet-500 font-black text-xs mb-2">CONTACT</h4>
+                    <p class="text-3xl font-black">+91 95030 61818</p>
                 </div>
             </div>
         </div>
+        <div class="h-[350px] rounded-[30px] overflow-hidden border border-white/10 grayscale">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5049298457633!2d73.8153096!3d18.5061186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf9669527f3d%3A0x633908869c946e3a!2sMIT%20College%20Rd%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </section>
 
-    <!-- 🧾 FOOTER -->
-    <footer class="py-20 border-t border-white/5 text-center">
-        <div class="text-4xl font-black italic mb-6">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.8em]">&copy; 2026 Premium Cue Sport Sanctuary</p>
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[9px] text-gray-600 uppercase tracking-widest">&copy; 2025 Night Rider's Pune</p>
     </footer>
 
     <script>
-        // Init ScrollReveal
-        ScrollReveal().reveal('.one-ui-glass', { delay: 200, distance: '50px', origin: 'bottom', duration: 1000, interval: 200 });
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
 
-        // Spotlight Effect
-        const spotlight = document.getElementById('spotlight');
-        document.addEventListener('mousemove', e => {
-            spotlight.style.setProperty('--x', `${e.clientX}px`);
-            spotlight.style.setProperty('--y', `${e.clientY}px`);
-        });
+        // --- AUTH & PERSISTENCE ---
+        window.onload = function() {
+            const savedUser = localStorage.getItem('nr_user_data');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                applyUserUI(user);
+                document.getElementById('auth-gate').style.display = 'none';
+            }
+        };
 
-        // --- AUTH & LOGIN ---
-        function onSignIn(response) {
+        function handleSignIn(response) {
             const payload = JSON.parse(atob(response.credential.split('.')[1]));
+            const userData = {
+                type: 'LOGIN',
+                name: payload.name,
+                email: payload.email,
+                picture: payload.picture
+            };
+
+            localStorage.setItem('nr_user_data', JSON.stringify(userData));
+            applyUserUI(userData);
+            syncToSheet(userData); // Log login to sheet
             document.getElementById('auth-gate').style.display = 'none';
+        }
+
+        function applyUserUI(user) {
             document.getElementById('user-info').innerHTML = `
-                <div class="flex items-center gap-4">
-                    <div class="text-right hidden md:block">
-                        <p class="text-[10px] font-black text-white uppercase">${payload.name}</p>
-                        <p class="text-[8px] text-violet-500 uppercase tracking-widest">Premium Member</p>
+                <div class="flex items-center gap-3">
+                    <div class="hidden md:block text-right">
+                        <p class="text-[10px] font-black uppercase">${user.name}</p>
+                        <button onclick="logout()" class="text-[8px] text-red-500 uppercase font-bold">Logout</button>
                     </div>
-                    <img src="${payload.picture}" class="w-10 h-10 rounded-2xl border-2 border-violet-500/50 shadow-lg">
+                    <img src="${user.picture}" class="w-8 h-8 rounded-full border border-cyan-500">
                 </div>
             `;
-            document.getElementById('name').value = payload.name;
-            syncToSheets({ type: 'LOGIN', name: payload.name, email: payload.email });
+            document.getElementById('name').value = user.name;
+        }
+
+        function logout() {
+            localStorage.removeItem('nr_user_data');
+            location.reload();
         }
 
         function unlock() { document.getElementById('auth-gate').style.display = 'none'; }
 
-        // --- GOOGLE SHEETS BACKEND ---
-        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
-
-        function syncToSheets(data) {
-            fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({...data, time: new Date().toISOString()}) });
+        // --- GOOGLE SHEET SYNC ---
+        async function syncToSheet(data) {
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Essential for Apps Script
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ...data, timestamp: new Date().toLocaleString() })
+                });
+            } catch (err) {
+                console.error("Sheet Sync Failed", err);
+            }
         }
 
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        // --- BOOKING FORM ---
+        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('button');
+            const btn = document.getElementById('submitBtn');
             const data = {
                 type: 'BOOKING',
                 name: document.getElementById('name').value,
@@ -320,16 +297,28 @@
                 datetime: document.getElementById('datetime').value
             };
 
-            btn.innerHTML = '<i class="fas fa-sync fa-spin"></i> SYNCING...';
-            syncToSheets(data);
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SAVING...';
 
+            // 1. Sync to Google Sheets
+            await syncToSheet(data);
+
+            // 2. Short delay for UX then WhatsApp
             setTimeout(() => {
-                const text = `HELLLO NIGHT RIDER'S! I AM ${data.name}. BOOKING ${data.game} FOR ${data.datetime}. PLEASE CONFIRM SLOT!`;
-                window.open(`https://wa.me/09503061818?text=${encodeURIComponent(text)}`, '_blank');
-                btn.innerHTML = 'Reservation Sent';
-                alert('SUCCESS: DATA LOGGED. REDIRECTING TO WHATSAPP...');
-            }, 1000);
+                const msg = `Booking Request:\nName: ${data.name}\nTable: ${data.game}\nTime: ${data.datetime}`;
+                window.open(`https://wa.me/919503061818?text=${encodeURIComponent(msg)}`, '_blank');
+                btn.innerHTML = 'SUCCESSFUL';
+                btn.classList.add('bg-green-500');
+            }, 800);
         });
+
+        // UI Effects
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', e => {
+            spotlight.style.setProperty('--x', `${e.clientX}px`);
+            spotlight.style.setProperty('--y', `${e.clientY}px`);
+        });
+        ScrollReveal().reveal('.one-ui-glass', { delay: 100, distance: '20px', origin: 'bottom', interval: 100 });
     </script>
 </body>
 </html>
