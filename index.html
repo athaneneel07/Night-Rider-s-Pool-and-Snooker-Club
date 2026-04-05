@@ -3,331 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night Rider's | The Elite Cue Club</title>
+    <title>Night Rider's | Premium Cue Lounge</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- Animation Library -->
-    <script src="https://unpkg.com/scrollreveal"></script>
 
     <style>
-        :root {
-            --violet: #8B5CF6;
-            --cyan: #06B6D4;
-            --black: #020202;
-        }
+        :root { --one-ui-blue: #3e5cf4; --bg: #0b1120; }
+        body { background-color: var(--bg); color: #f8fafc; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        .one-ui-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-radius: 28px; }
+        .btn-main { background: var(--one-ui-blue); border-radius: 20px; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-main:hover { transform: scale(1.03); filter: brightness(1.1); }
+        
+        /* Floating Menu */
+        #userMenu { display: none; position: fixed; top: 80px; right: 24px; width: 260px; z-index: 100; animation: slideIn 0.2s ease-out; }
+        @keyframes slideIn { from { opacity:0; transform: translateY(-10px); } to { opacity:1; transform: translateY(0); } }
 
-        body { 
-            background-color: var(--black); 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
-
-        /* ONE UI LUXURY GLASS */
-        .one-ui-glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 40px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .one-ui-glass:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--cyan);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
-        }
-
-        /* CRAZY GRADIENT TEXT */
-        .text-crazy {
-            background: linear-gradient(to right, #fff, var(--violet), var(--cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: shine 3s linear infinite;
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        /* NEON GLOW BUTTON */
-        .btn-neon {
-            background: linear-gradient(45deg, var(--violet), var(--cyan));
-            border-radius: 50px;
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
-            transition: 0.3s;
-        }
-
-        .btn-neon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 50px rgba(6, 182, 212, 0.6);
-        }
-
-        /* AUTH OVERLAY */
-        #auth-gate {
-            position: fixed; inset: 0; z-index: 9999;
-            background: #000;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        /* INPUT STYLING */
-        input, select {
-            background: rgba(255,255,255,0.05) !important;
-            border: 1px solid rgba(255,255,255,0.1) !important;
-            padding: 1.2rem !important;
-            border-radius: 20px !important;
-            color: white !important;
-            outline: none !important;
-        }
-        input:focus { border-color: var(--cyan) !important; box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); }
-
-        /* SPOTLIGHT EFFECT */
-        .spotlight {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at var(--x) var(--y), rgba(139, 92, 246, 0.15) 0%, transparent 40%);
-            z-index: 1; pointer-events: none;
-        }
+        section { display: none; padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+        section.active { display: block; }
+        
+        /* Auth Overlay */
+        #auth-gate { position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; align-items: center; justify-content: center; }
+        
+        input, select { background: rgba(255,255,255,0.05)!important; border: 1px solid rgba(255,255,255,0.1)!important; padding: 14px!important; border-radius: 18px!important; color: white!important; width: 100%; outline: none; }
+        .status-badge { font-size: 10px; padding: 2px 10px; border-radius: 10px; font-weight: 800; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-    <!-- 💡 MOUSE SPOTLIGHT -->
-    <div class="spotlight" id="spotlight"></div>
-
-    <!-- 🔐 PRE-LOADER / AUTH GATE -->
+    <!-- 🔐 PERSISTENT AUTH GATE -->
     <div id="auth-gate">
-        <div class="text-center" data-aos="zoom-in">
-            <div class="mb-10 inline-block p-8 one-ui-glass border-violet-500/30 shadow-[0_0_50px_rgba(139,92,246,0.2)]">
-                <i class="fas fa-eye text-6xl text-crazy"></i>
+        <div class="text-center p-8 w-full max-w-sm">
+            <div class="w-20 h-20 bg-slate-800 rounded-[28px] flex items-center justify-center mx-auto mb-6 border border-blue-500/20 shadow-2xl">
+                <i class="fas fa-eye text-3xl text-blue-500"></i>
             </div>
-            <h1 class="text-5xl font-black mb-4 tracking-tighter">Night Rider's</h1>
-            <p class="text-gray-500 uppercase tracking-[0.5em] text-xs mb-10">Members Only Access</p>
-            
-            <div id="g_id_onload"
-                data-client_id="510142501463-5huhj4a4taha2koajagarg1fmikcakgg.apps.googleusercontent.com"
-                data-callback="onSignIn"
-                data-auto_prompt="false">
-            </div>
-            <div class="g_id_signin flex justify-center" data-type="standard" data-shape="pill" data-theme="filled_black" data-text="signin_with" data-size="large"></div>
-            
-            <button onclick="unlock()" class="mt-8 text-[10px] text-gray-700 hover:text-cyan-400 underline uppercase tracking-widest transition">Skip as Guest</button>
+            <h1 class="text-3xl font-bold mb-2">Night Rider's</h1>
+            <p class="text-slate-500 text-sm mb-10">Premium Billiards & Snooker</p>
+            <div id="g_id_onload" data-client_id="YOUR_GOOGLE_ID" data-callback="onSignIn"></div>
+            <div class="g_id_signin flex justify-center" data-type="standard" data-shape="pill" data-theme="filled_black"></div>
+            <button onclick="closeAuth()" class="mt-8 text-[10px] text-slate-600 uppercase tracking-widest font-bold">Enter as Guest</button>
         </div>
     </div>
 
-    <!-- 📱 FLOATING CONTACTS -->
-    <div class="fixed bottom-10 right-10 z-50 flex flex-col gap-4">
-        <a href="https://wa.me/919850600200" class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:scale-110 transition"><i class="fab fa-whatsapp text-white"></i></a>
-        <a href="tel:+919850600200" class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition"><i class="fas fa-phone text-black"></i></a>
-    </div>
-
-    <!-- 🧭 NAV -->
-    <nav class="fixed top-0 w-full z-40 px-10 py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5">
-        <div class="text-2xl font-black tracking-tighter italic">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
-        <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[4px] text-gray-400">
-            <a href="#about" class="hover:text-cyan-400 transition">Club</a>
-            <a href="#services" class="hover:text-cyan-400 transition">Rates</a>
-            <a href="#booking" class="hover:text-cyan-400 transition">Reserve</a>
+    <!-- 🧭 NAV BAR -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-slate-900/80 backdrop-blur-xl border-b border-white/5">
+        <div class="text-xl font-bold tracking-tight cursor-pointer" onclick="navigate('home')">NIGHT <span class="text-blue-500">RIDER'S</span></div>
+        
+        <div class="flex items-center gap-4">
+            <div id="menuTrigger" onclick="toggleMenu()" class="cursor-pointer flex items-center gap-3 bg-white/5 p-1 pr-4 rounded-full border border-white/10 hover:bg-white/10 transition">
+                <img id="u_img" src="https://via.placeholder.com/40" class="w-8 h-8 rounded-full border border-blue-500/30">
+                <i class="fas fa-bars text-sm text-slate-400"></i>
+            </div>
         </div>
-        <div id="user-info"></div>
+
+        <!-- One UI Dropdown Menu -->
+        <div id="userMenu" class="one-ui-card p-6 shadow-2xl">
+            <div class="mb-4 pb-4 border-b border-white/5">
+                <p id="u_name" class="font-bold text-sm">Guest Player</p>
+                <p id="u_email" class="text-[10px] text-slate-500">Not Synced</p>
+            </div>
+            <div class="flex flex-col gap-2 text-sm font-medium">
+                <button onclick="navigate('home')" class="flex items-center gap-3 p-2 hover:bg-white/5 rounded-xl transition"><i class="fas fa-home w-5 text-blue-500"></i> Home</button>
+                <button onclick="navigate('history')" class="flex items-center gap-3 p-2 hover:bg-white/5 rounded-xl transition"><i class="fas fa-history w-5 text-blue-500"></i> My Bookings</button>
+                <button onclick="navigate('about')" class="flex items-center gap-3 p-2 hover:bg-white/5 rounded-xl transition"><i class="fas fa-info-circle w-5 text-blue-500"></i> Sanctuary</button>
+                <button onclick="logout()" class="flex items-center gap-3 p-2 text-red-400 hover:bg-red-500/10 rounded-xl transition mt-2"><i class="fas fa-sign-out-alt w-5"></i> Logout</button>
+            </div>
+        </div>
     </nav>
 
-    <!-- 🚀 HERO SECTION (CRAZY TYPOGRAPHY) -->
-    <section class="h-screen flex items-center justify-center relative">
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover">
-        </div>
-        
-        <div class="text-center relative z-10 px-6">
-            <h1 class="text-7xl md:text-[12rem] font-black leading-none tracking-tighter uppercase mb-6">
-                Rack <br> <span class="text-crazy">'Em Up.</span>
-            </h1>
-            <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-12 uppercase tracking-[0.4em] font-light">The Ultimate Midnight Billiards Sanctuary</p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#booking" class="btn-neon px-16 py-5 text-black font-black uppercase tracking-widest text-sm">Secure a Table</a>
-                <a href="#services" class="text-white font-bold uppercase tracking-widest text-xs border-b-2 border-violet-500 pb-2 hover:text-cyan-400 transition">View Elite Rates</a>
-            </div>
+    <!-- 🏠 HOME SECTION -->
+    <section id="home" class="active flex flex-col items-center justify-center text-center min-h-screen">
+        <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mb-6">Play Like <br><span class="text-slate-500">A Pro.</span></h2>
+        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+            <button onclick="navigate('booking')" class="btn-main px-12 py-4 font-bold">Reserve a Table</button>
+            <button onclick="navigate('history')" class="px-12 py-4 font-bold text-slate-400 hover:text-white transition">My History</button>
         </div>
     </section>
 
     <!-- 💎 ABOUT SECTION -->
-    <section id="about" class="py-32 px-10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-6xl font-black mb-10 tracking-tighter">Engineered for <br> <span class="text-cyan-500">Precision.</span></h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-10">
-                    Step into an obsidian landscape. Night Rider's features championship-grade **Wiraka** tables, high-speed **Iwan Simonis** cloth, and professional lighting that eliminates every shadow. 
-                </p>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="one-ui-glass p-8 border-cyan-500/20">
-                        <i class="fas fa-snowflake text-cyan-400 text-3xl mb-4"></i>
-                        <h4 class="font-bold text-sm">Sub-Zero AC</h4>
+    <section id="about">
+        <h3 class="text-4xl font-bold mb-12">The Sanctuary</h3>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="one-ui-card p-8">
+                <p class="text-slate-400 leading-relaxed text-lg mb-6">Kothrud's most exclusive cue-sport destination. We feature tournament-grade tables, professional lighting, and a sub-zero climate-controlled environment.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5 text-center">
+                        <i class="fas fa-table text-blue-500 text-xl mb-2"></i>
+                        <p class="text-[10px] font-bold uppercase">Wiraka Tables</p>
                     </div>
-                    <div class="one-ui-glass p-8 border-violet-500/20">
-                        <i class="fas fa-wifi text-violet-400 text-3xl mb-4"></i>
-                        <h4 class="font-bold text-sm">Gigabit Fiber</h4>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5 text-center">
+                        <i class="fas fa-snowflake text-blue-500 text-xl mb-2"></i>
+                        <p class="text-[10px] font-bold uppercase">Full AC</p>
                     </div>
                 </div>
             </div>
-            <div class="relative group">
-                <div class="absolute -inset-4 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-[50px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <img src="https://i.postimg.cc/c1Yg7xWy/image.png" class="relative rounded-[50px] border border-white/10 grayscale hover:grayscale-0 transition duration-700">
+            <img src="https://i.postimg.cc/c1Yg7xWy/image.png">
         </div>
     </section>
 
-    <!-- 🎱 RATES (CRAZY CARDS) -->
-    <section id="services" class="py-32 px-10 bg-white/[0.02]">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-20">
-                <h2 class="text-6xl font-black tracking-tighter">Table <br> <span class="text-violet-500">Access.</span></h2>
-                <p class="text-gray-500 text-right uppercase tracking-widest text-xs">Premium Hourly Billing</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="one-ui-glass p-12 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition">
-                        <i class="fas fa-circle-nodes text-[12rem]"></i>
+    <!-- 📅 BOOKING SECTION -->
+    <section id="booking">
+        <div class="max-w-2xl mx-auto one-ui-card p-8 md:p-12">
+            <h3 class="text-2xl font-bold mb-8 text-center">New Reservation</h3>
+            <form id="bookingForm" class="space-y-6">
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 uppercase ml-2 mb-2 block">1. Choose Table Type</label>
+                    <div class="flex gap-4">
+                        <button type="button" onclick="filterTables('Pool')" class="flex-1 p-4 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 transition focus:border-blue-500">Pool</button>
+                        <button type="button" onclick="filterTables('Snooker')" class="flex-1 p-4 rounded-2xl border border-white/10 bg-white/5 hover:border-blue-500 transition focus:border-blue-500">Snooker</button>
                     </div>
-                    <h3 class="text-3xl font-black mb-2">8-Ball Pool</h3>
-                    <p class="text-gray-500 mb-10 text-sm uppercase tracking-widest">Tournament Grade Slates</p>
-                    <div class="flex items-baseline gap-4 mb-10">
-                        <span class="text-7xl font-black text-cyan-500">₹250</span>
-                        <span class="text-gray-600">/hr</span>
-                    </div>
-                    <button onclick="location.href='#booking'" class="w-full py-5 border border-white/10 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition">Select Table</button>
                 </div>
-
-                <div class="one-ui-glass p-12 border-violet-500/50 relative shadow-[0_0_50px_rgba(139,92,246,0.1)]">
-                    <div class="absolute top-6 right-10 bg-violet-600 text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-[0.3em]">Top Tier</div>
-                    <h3 class="text-3xl font-black mb-2 text-violet-400">Snooker</h3>
-                    <p class="text-gray-500 mb-10 text-sm uppercase tracking-widest">Full 12ft Match Tables</p>
-                    <div class="flex items-baseline gap-4 mb-10">
-                        <span class="text-7xl font-black text-white">₹400</span>
-                        <span class="text-gray-600">/hr</span>
-                    </div>
-                    <button onclick="location.href='#booking'" class="w-full py-5 btn-neon text-black font-black uppercase tracking-widest text-xs">Select Table</button>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 uppercase ml-2 mb-2 block">2. Select Specific Table (Real-time)</label>
+                    <select id="tableSelect" required></select>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 📅 BOOKING (CRAZY APP UI) -->
-    <section id="booking" class="py-32 px-6">
-        <div class="max-w-3xl mx-auto one-ui-glass p-12 md:p-20 border-white/5 relative shadow-2xl">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-black mb-4">Secure <span class="text-crazy">The Slot</span></h2>
-                <p class="text-gray-600 text-[10px] uppercase tracking-[0.5em]">Members get 15% discount automatically</p>
-            </div>
-            
-            <form id="bookingForm" class="grid gap-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <input type="text" id="name" placeholder="YOUR NAME" required>
-                    <input type="tel" id="phone" placeholder="PHONE NUMBER" required>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <select id="game">
-                        <option class="bg-black">Pool Table (₹250)</option>
-                        <option class="bg-black">Snooker Table (₹400)</option>
-                    </select>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 uppercase ml-2 mb-2 block">3. Arrival Time</label>
                     <input type="datetime-local" id="datetime" required>
                 </div>
-                <button type="submit" class="btn-neon w-full py-6 text-black font-black uppercase tracking-[0.3em] text-sm mt-6">Confirm Reservation</button>
+                <button type="submit" class="w-full btn-main py-5 font-black uppercase tracking-widest text-sm shadow-xl">Confirm & WhatsApp</button>
             </form>
         </div>
     </section>
 
-    <!-- 📍 CONTACT -->
-    <section class="py-32 px-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
-        <div class="h-[500px] rounded-[60px] overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition duration-1000 shadow-2xl">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5119766946654!2d73.81232827519131!3d18.50574048258679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf9ef8191017%3A0x977a79ca7bd000b7!2sGreenbox%20Turf%20MIT!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- 📜 HISTORY SECTION -->
+    <section id="history">
+        <div class="flex justify-between items-center mb-10">
+            <h3 class="text-3xl font-bold">My Bookings</h3>
+            <button onclick="navigate('booking')" class="btn-main px-6 py-2 text-xs font-bold">Book Now</button>
         </div>
-        <div class="flex flex-col justify-center">
-            <h2 class="text-6xl font-black mb-10 tracking-tighter">Locate <br> <span class="text-crazy">Us.</span></h2>
-            <div class="space-y-10">
-                <div>
-                    <h4 class="text-cyan-500 font-black text-xs uppercase tracking-widest mb-2">Base of Operations</h4>
-                    <p class="text-xl text-gray-400">Plot No. 114, Rambaug Colony, MIT Collage Road Near Tulja Bhavani Mata Mandir, SHARAO Lawns & SHIVSAMRAT Hall, Paud Rd, Kishkinda Nagar, Kothrud, Pune, Maharashtra 411038</p>
-                </div>
-                <div>
-                    <h4 class="text-violet-500 font-black text-xs uppercase tracking-widest mb-2">Direct Comms</h4>
-                    <p class="text-3xl font-black">+91 98506 00200</p>
-                </div>
-            </div>
+        <div id="historyList" class="grid gap-4">
+            <!-- Items injected here -->
         </div>
     </section>
 
-    <!-- 🧾 FOOTER -->
-    <footer class="py-20 border-t border-white/5 text-center">
-        <div class="text-4xl font-black italic mb-6">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.8em]">&copy; 2026 Premium Cue Sport Sanctuary</p>
-    </footer>
+    <!-- 📱 CONTACTS -->
+    <div class="fixed bottom-8 right-8 z-40 flex flex-col gap-4">
+        <a href="https://wa.me/919850600200" class="w-14 h-14 bg-[#25D366] rounded-2xl flex items-center justify-center text-2xl shadow-2xl"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+919850600200" class="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center text-xl shadow-2xl"><i class="fas fa-phone"></i></a>
+    </div>
 
     <script>
-        // Init ScrollReveal
-        ScrollReveal().reveal('.one-ui-glass', { delay: 200, distance: '50px', origin: 'bottom', duration: 1000, interval: 200 });
+        const APPS_URL = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
+        let user = null;
+        let allTables = [];
 
-        // Spotlight Effect
-        const spotlight = document.getElementById('spotlight');
-        document.addEventListener('mousemove', e => {
-            spotlight.style.setProperty('--x', `${e.clientX}px`);
-            spotlight.style.setProperty('--y', `${e.clientY}px`);
-        });
+        // 1. PERSISTENT LOGIN ENGINE
+        window.onload = function() {
+            const saved = localStorage.getItem('nr_user_session');
+            if (saved) {
+                user = JSON.parse(saved);
+                initUser();
+            }
+        };
 
-        // --- AUTH & LOGIN ---
         function onSignIn(response) {
             const payload = JSON.parse(atob(response.credential.split('.')[1]));
+            user = { name: payload.name, email: payload.email, img: payload.picture };
+            localStorage.setItem('nr_user_session', JSON.stringify(user));
+            initUser();
+            fetch(APPS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({type: 'LOGIN', ...user}) });
+        }
+
+        function initUser() {
             document.getElementById('auth-gate').style.display = 'none';
-            document.getElementById('user-info').innerHTML = `
-                <div class="flex items-center gap-4">
-                    <div class="text-right hidden md:block">
-                        <p class="text-[10px] font-black text-white uppercase">${payload.name}</p>
-                        <p class="text-[8px] text-violet-500 uppercase tracking-widest">Premium Member</p>
+            document.getElementById('u_img').src = user.img;
+            document.getElementById('u_name').innerText = user.name;
+            document.getElementById('u_email').innerText = user.email;
+            refreshData();
+        }
+
+        function logout() {
+            localStorage.removeItem('nr_user_session');
+            location.reload();
+        }
+
+        // 2. DYNAMIC TABLE ENGINE
+        async function refreshData() {
+            const res = await fetch(`${APPS_URL}?type=init&email=${user?.email || ''}`);
+            const data = await res.json();
+            allTables = data.tables;
+            
+            // Render History
+            const historyList = document.getElementById('historyList');
+            historyList.innerHTML = data.bookings.length ? data.bookings.map(b => `
+                <div class="one-ui-card p-6 flex justify-between items-center">
+                    <div>
+                        <p class="font-bold">${b.table}</p>
+                        <p class="text-xs text-slate-500">${new Date(b.time).toLocaleString()}</p>
                     </div>
-                    <img src="${payload.picture}" class="w-10 h-10 rounded-2xl border-2 border-violet-500/50 shadow-lg">
+                    <span class="status-badge bg-blue-500/20 text-blue-400">${b.status}</span>
                 </div>
-            `;
-            document.getElementById('name').value = payload.name;
-            syncToSheets({ type: 'LOGIN', name: payload.name, email: payload.email });
+            `).join('') : '<p class="text-center text-slate-500 py-20">No booking history.</p>';
+            
+            filterTables('Pool'); // Default filter
         }
 
-        function unlock() { document.getElementById('auth-gate').style.display = 'none'; }
-
-        // --- GOOGLE SHEETS BACKEND ---
-        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
-
-        function syncToSheets(data) {
-            fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({...data, time: new Date().toISOString()}) });
+        function filterTables(category) {
+            const select = document.getElementById('tableSelect');
+            const filtered = allTables.filter(t => t.name.includes(category));
+            select.innerHTML = filtered.map(t => {
+                const isFree = t.status.toLowerCase() === 'free';
+                return `<option value="${t.name}" ${!isFree ? 'disabled' : ''}>${t.name} — ${t.status}</option>`;
+            }).join('');
         }
 
+        // 3. UI CONTROLS
+        function navigate(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.getElementById('userMenu').style.display = 'none';
+            window.scrollTo(0,0);
+        }
+
+        function toggleMenu() {
+            const m = document.getElementById('userMenu');
+            m.style.display = m.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function closeAuth() { document.getElementById('auth-gate').style.display = 'none'; }
+
+        // 4. BOOKING ACTION
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('button');
             const data = {
                 type: 'BOOKING',
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                game: document.getElementById('game').value,
+                email: user.email,
+                name: user.name,
+                table: document.getElementById('tableSelect').value,
                 datetime: document.getElementById('datetime').value
             };
 
-            btn.innerHTML = '<i class="fas fa-sync fa-spin"></i> SYNCING...';
-            syncToSheets(data);
-
-            setTimeout(() => {
-                const text = `HELLLO NIGHT RIDER'S! I AM ${data.name}. BOOKING ${data.game} FOR ${data.datetime}. PLEASE CONFIRM SLOT!`;
-                window.open(`https://wa.me/919850600200?text=${encodeURIComponent(text)}`, '_blank');
-                btn.innerHTML = 'Reservation Sent';
-                alert('SUCCESS: DATA LOGGED. REDIRECTING TO WHATSAPP...');
-            }, 1000);
+            fetch(APPS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+            
+            const msg = `Hi Night Rider's! I'm ${data.name}. Booking ${data.table} for ${data.datetime}. Confirming my slot.`;
+            window.open(`https://wa.me/919850600200?text=${encodeURIComponent(msg)}`, '_blank');
+            alert('Booking logged. Opening WhatsApp...');
+            navigate('history');
         });
     </script>
 </body>
