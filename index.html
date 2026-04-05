@@ -114,7 +114,7 @@
             <p class="text-gray-500 uppercase tracking-[0.5em] text-xs mb-10">Members Only Access</p>
             
             <div id="g_id_onload"
-                data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                data-client_id="510142501463-5huhj4a4taha2koajagarg1fmikcakgg.apps.googleusercontent.com"
                 data-callback="onSignIn"
                 data-auto_prompt="false">
             </div>
@@ -180,8 +180,7 @@
             </div>
             <div class="relative group">
                 <div class="absolute -inset-4 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-[50px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <img src="https://images.unsplash.com/photo-1609132718484-cc90df3417f8?auto=format&fit=crop&q=80&w=1000" class="relative rounded-[50px] border border-white/10 grayscale hover:grayscale-0 transition duration-700">
-            </div>
+                <img src="https://i.postimg.cc/c1Yg7xWy/image.png" class="relative rounded-[50px] border border-white/10 grayscale hover:grayscale-0 transition duration-700">
         </div>
     </section>
 
@@ -256,7 +255,7 @@
             <div class="space-y-10">
                 <div>
                     <h4 class="text-cyan-500 font-black text-xs uppercase tracking-widest mb-2">Base of Operations</h4>
-                    <p class="text-xl text-gray-400">Shilpa Society, Rambaug Colony, Kothrud, Pune, MH 411038</p>
+                    <p class="text-xl text-gray-400">Plot No. 114, Rambaug Colony, MIT Collage Road Near Tulja Bhavani Mata Mandir, SHARAO Lawns & SHIVSAMRAT Hall, Paud Rd, Kishkinda Nagar, Kothrud, Pune, Maharashtra 411038</p>
                 </div>
                 <div>
                     <h4 class="text-violet-500 font-black text-xs uppercase tracking-widest mb-2">Direct Comms</h4>
@@ -303,7 +302,7 @@
         function unlock() { document.getElementById('auth-gate').style.display = 'none'; }
 
         // --- GOOGLE SHEETS BACKEND ---
-        const WEB_APP_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
 
         function syncToSheets(data) {
             fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({...data, time: new Date().toISOString()}) });
