@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night Rider's | Elite Club</title>
+    <title>Night Rider's | The Elite Cue Club</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,12 +15,12 @@
         :root { --violet: #8B5CF6; --cyan: #06B6D4; --black: #020202; }
         body { background-color: var(--black); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
-        
+
         .one-ui-glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
+            border-radius: 40px;
         }
 
         .text-crazy {
@@ -33,250 +34,308 @@
 
         .btn-neon {
             background: linear-gradient(45deg, var(--violet), var(--cyan));
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
             transition: 0.3s;
+            color: black; font-weight: 900;
         }
-        
-        .status-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; font-weight: 800; }
-        .status-free { background: #10b981; color: white; }
-        .status-booked { background: #f59e0b; color: white; }
-        .status-in-use { background: #ef4444; color: white; }
 
-        /* Dropdown Menu */
-        .profile-menu {
-            display: none;
-            position: absolute; right: 0; top: 70px;
-            width: 250px; background: #0a0a0a; border: 1px solid #333;
-            border-radius: 20px; padding: 15px; z-index: 100;
+        /* Nav Dropdown */
+        #profile-menu {
+            display: none; position: absolute; top: 80px; right: 20px;
+            width: 280px; z-index: 100;
         }
-        .profile-menu.active { display: block; }
-        
+        #profile-menu.active { display: block; animation: slideIn 0.3s ease-out; }
+        @keyframes slideIn { from { opacity:0; transform: translateY(-10px); } to { opacity:1; transform: translateY(0); } }
+
+        /* Table Card Styles */
+        .table-card {
+            padding: 15px; border-radius: 20px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; cursor: pointer;
+        }
+        .table-card.free { background: rgba(16, 185, 129, 0.1); border-color: #10b981; }
+        .table-card.booked { background: rgba(239, 68, 68, 0.1); border-color: #ef4444; cursor: not-allowed; opacity: 0.5; }
+        .table-card.in-use { background: rgba(139, 92, 246, 0.1); border-color: var(--violet); cursor: not-allowed; opacity: 0.5; }
+        .table-card.selected { background: var(--cyan) !important; color: black !important; transform: scale(1.05); border-color: white; }
+
+        .spotlight {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+            z-index: 1; pointer-events: none;
+        }
+
         input, select {
             background: rgba(255,255,255,0.05) !important;
             border: 1px solid rgba(255,255,255,0.1) !important;
-            padding: 1rem !important;
-            border-radius: 15px !important;
-            color: white !important;
-            width: 100%;
+            padding: 1.2rem !important; border-radius: 20px !important;
+            color: white !important; width: 100%; outline: none;
         }
+        input:focus { border-color: var(--cyan) !important; }
 
-        #bookings-view { display: none; position: fixed; inset: 0; background: black; z-index: 1000; overflow-y: auto; padding: 50px 20px; }
+        #bookings-view { display: none; min-height: 100vh; padding-top: 120px; }
     </style>
 </head>
 <body>
 
-    <!-- 🔐 AUTH GATE -->
-    <div id="auth-gate" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center">
+    <div class="spotlight" id="spotlight"></div>
+
+    <!-- 🔐 AUTH GATE (Persistent) -->
+    <div id="auth-gate" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
         <div class="text-center">
-            <h1 class="text-5xl font-black mb-10 tracking-tighter">Night Rider's</h1>
-            <div id="g_id_onload" data-client_id="510142501463-5huhj4a4taha2koajagarg1fmikcakgg.apps.googleusercontent.com" data-callback="onSignIn"></div>
-            <div class="g_id_signin" data-type="standard"></div>
-            <button onclick="unlockGuest()" class="mt-8 text-xs text-gray-500 underline">Continue as Guest</button>
+            <div class="mb-10 inline-block p-8 one-ui-glass border-violet-500/30">
+                <i class="fas fa-eye text-6xl text-crazy"></i>
+            </div>
+            <h1 class="text-5xl font-black mb-4">Night Rider's</h1>
+            <p class="text-gray-500 uppercase tracking-[0.5em] text-xs mb-10">Members Only Access</p>
+            
+            <div id="g_id_onload" 
+                 data-client_id="510142501463-5huhj4a4taha2koajagarg1fmikcakgg.apps.googleusercontent.com" 
+                 data-callback="onSignIn"></div>
+            <div class="g_id_signin flex justify-center" data-type="standard"></div>
+            
+            <button onclick="unlockGuest()" class="mt-8 text-[10px] text-gray-700 underline uppercase tracking-widest">Skip as Guest</button>
         </div>
     </div>
 
     <!-- 🧭 NAV -->
-    <nav class="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center backdrop-blur-xl border-b border-white/5">
-        <div class="text-xl font-black italic cursor-pointer" onclick="showHome()">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
+    <nav class="fixed top-0 w-full z-40 px-6 py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5">
+        <div class="text-2xl font-black italic tracking-tighter cursor-pointer" onclick="showHome()">NIGHT <span class="text-cyan-500">RIDER'S</span></div>
         
-        <div class="flex items-center gap-4 relative">
-            <div id="user-display" class="flex items-center gap-3">
-                <!-- User UI injected here -->
+        <div class="flex items-center gap-6">
+            <div id="nav-user-ui" class="hidden md:flex items-center gap-4"></div>
+            <button onclick="toggleMenu()" class="w-12 h-12 one-ui-glass flex items-center justify-center hover:text-cyan-400 transition">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- ☰ DROPDOWN MENU -->
+        <div id="profile-menu" class="one-ui-glass p-6 border-white/10 shadow-2xl">
+            <div id="menu-header" class="mb-6 pb-6 border-b border-white/5">
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Current User</p>
+                <h4 id="menu-user-name" class="font-bold text-lg">Guest Rider</h4>
             </div>
-            
-            <!-- Three Lines Menu -->
-            <button onclick="toggleMenu()" class="text-2xl text-white ml-2"><i class="fas fa-bars"></i></button>
-            
-            <div id="profile-menu" class="profile-menu one-ui-glass shadow-2xl">
-                <p id="menu-user-name" class="font-bold text-sm mb-1"></p>
-                <p id="menu-user-email" class="text-[10px] text-gray-500 mb-4"></p>
-                <hr class="border-white/10 mb-4">
-                <div class="flex flex-col gap-3 text-xs font-bold uppercase tracking-widest">
-                    <button onclick="showHome()" class="text-left hover:text-cyan-400">Home</button>
-                    <button onclick="showBookings()" class="text-left hover:text-cyan-400">My Bookings</button>
-                    <button onclick="logout()" class="text-left text-red-500">Logout</button>
-                </div>
+            <div class="flex flex-col gap-4 text-xs font-bold uppercase tracking-widest">
+                <button onclick="showHome()" class="text-left hover:text-cyan-400"><i class="fas fa-home mr-3"></i> Home Page</button>
+                <button onclick="showBookings()" class="text-left hover:text-violet-400"><i class="fas fa-history mr-3"></i> Earlier Bookings</button>
+                <a href="https://wa.me/919850600200" class="hover:text-green-400"><i class="fab fa-whatsapp mr-3"></i> Support</a>
+                <button onclick="logout()" class="text-left text-red-500 mt-4 border-t border-white/5 pt-4"><i class="fas fa-sign-out-alt mr-3"></i> Logout</button>
             </div>
         </div>
     </nav>
 
-    <!-- 🏠 HOME CONTENT -->
-    <main id="home-view">
-        <section class="h-screen flex flex-col items-center justify-center text-center px-6">
-            <h1 class="text-7xl md:text-9xl font-black text-crazy leading-none mb-6">RACK 'EM</h1>
-            <p class="text-gray-400 tracking-[0.5em] mb-10">THE ELITE CUE CLUB</p>
-            <a href="#booking" class="btn-neon px-10 py-4 rounded-full font-bold text-black uppercase">Book a Table</a>
+    <!-- 🏠 HOME VIEW -->
+    <div id="home-view">
+        <section class="h-screen flex items-center justify-center relative px-6">
+            <div class="text-center relative z-10">
+                <h1 class="text-7xl md:text-[10rem] font-black leading-none tracking-tighter uppercase mb-6">
+                    Rack <br> <span class="text-crazy">'Em Up.</span>
+                </h1>
+                <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-12 uppercase tracking-[0.4em]">The Elite Midnight Sanctuary</p>
+                <a href="#booking" class="btn-neon px-16 py-5 uppercase tracking-widest text-sm">Reserve Table</a>
+            </div>
         </section>
 
-        <!-- 📅 BOOKING SECTION -->
-        <section id="booking" class="py-20 px-6 max-w-4xl mx-auto">
-            <div class="one-ui-glass p-8 md:p-12">
-                <h2 class="text-3xl font-black mb-8">Reserve Table</h2>
-                <form id="bookingForm" class="space-y-6">
+        <!-- BOOKING FORM -->
+        <section id="booking" class="py-32 px-6">
+            <div class="max-w-4xl mx-auto one-ui-glass p-10 border-white/10">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-black mb-2">Book Your <span class="text-crazy">Slot</span></h2>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-[0.4em]">Live Table Availability</p>
+                </div>
+
+                <form id="bookingForm" class="space-y-8">
                     <div class="grid md:grid-cols-2 gap-6">
-                        <input type="text" id="form-name" placeholder="Name" required>
-                        <input type="tel" id="form-phone" placeholder="Phone" required>
+                        <input type="text" id="name" placeholder="YOUR NAME" required>
+                        <input type="tel" id="phone" placeholder="PHONE NUMBER" required>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <select id="game-type" onchange="updateTableList()">
-                            <option value="Pool">8-Ball Pool (9 Tables)</option>
-                            <option value="Snooker">Snooker (2 Tables)</option>
-                        </select>
-                        <select id="table-number" required>
-                            <!-- Dynamic tables load here -->
+
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 mb-4 block">1. Select Game</label>
+                        <select id="game-type" onchange="renderTableGrid()">
+                            <option value="Pool">8-Ball Pool (₹250/hr)</option>
+                            <option value="Snooker">Snooker (₹400/hr)</option>
                         </select>
                     </div>
-                    <input type="datetime-local" id="form-datetime" required>
-                    <button type="submit" class="btn-neon w-full py-4 rounded-xl font-black text-black">CONFIRM SLOT</button>
+
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 mb-4 block">2. Choose Table</label>
+                        <div id="table-grid" class="grid grid-cols-3 md:grid-cols-5 gap-4">
+                            <!-- JS Dynamic Injection -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">3. Date & Time</label>
+                        <input type="datetime-local" id="datetime" required>
+                    </div>
+
+                    <button type="submit" class="btn-neon w-full py-6 uppercase tracking-[0.3em] text-sm">Confirm Reservation</button>
                 </form>
             </div>
         </section>
-    </main>
+    </div>
 
-    <!-- 📜 BOOKINGS HISTORY VIEW -->
-    <div id="bookings-view">
+    <!-- 📜 BOOKINGS HISTORY -->
+    <div id="bookings-view" class="px-6">
         <div class="max-w-4xl mx-auto">
-            <div class="flex justify-between items-center mb-10">
-                <h2 class="text-4xl font-black">My <span class="text-violet-500">History</span></h2>
-                <button onclick="showHome()" class="bg-white/10 px-6 py-2 rounded-full text-xs font-bold uppercase">Back Home</button>
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-5xl font-black">My <span class="text-crazy">Records</span></h2>
+                <button onclick="showHome()" class="text-xs border-b border-cyan-500 pb-1">Back Home</button>
             </div>
-            <div id="bookings-list" class="space-y-4">
-                <!-- Bookings items -->
+            <div id="bookings-list" class="space-y-6">
+                <!-- User Bookings Load Here -->
             </div>
-            <button onclick="showHome(); document.getElementById('booking').scrollIntoView();" class="btn-neon w-full mt-10 py-4 rounded-xl font-black text-black">BOOK NOW</button>
+            <button onclick="showHome(); document.getElementById('booking').scrollIntoView();" class="btn-neon w-full mt-10 py-5 text-xs">BOOK NEW SLOT</button>
         </div>
     </div>
 
-    <script>
-        const API_URL = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
-        let currentUser = null;
-        let allTablesStatus = [];
+    <footer class="py-20 border-t border-white/5 text-center text-[10px] text-gray-600 uppercase tracking-[0.8em]">
+        &copy; 2026 Night Rider's Cue Club
+    </footer>
 
-        // --- PERSISTENCE LOGIC ---
+    <script>
+        const API = 'https://script.google.com/macros/s/AKfycbxWB--kmORogE05a71QfGp1odkVEEBWybrtegWtdNJ4PAVdnFk24k_DyKTJVJGoVG4/exec';
+        let currentUser = null;
+        let selectedTableId = null;
+        let masterTables = [];
+
+        // --- SESSION MANAGEMENT ---
         window.onload = () => {
-            const savedUser = localStorage.getItem('nr_user');
-            if (savedUser) {
-                currentUser = JSON.parse(savedUser);
-                completeLogin(currentUser);
+            const saved = localStorage.getItem('nr_user_v2');
+            if (saved) {
+                currentUser = JSON.parse(saved);
+                applyUserUI();
             }
-            fetchTableData();
+            fetchTableStatus();
         };
 
         function onSignIn(response) {
             const payload = JSON.parse(atob(response.credential.split('.')[1]));
-            currentUser = {
-                name: payload.name,
-                email: payload.email,
-                picture: payload.picture
-            };
-            localStorage.setItem('nr_user', JSON.stringify(currentUser));
-            completeLogin(currentUser);
-        }
-
-        function completeLogin(user) {
+            currentUser = { name: payload.name, email: payload.email, img: payload.picture };
+            localStorage.setItem('nr_user_v2', JSON.stringify(currentUser));
+            applyUserUI();
             document.getElementById('auth-gate').style.display = 'none';
-            document.getElementById('user-display').innerHTML = `
-                <img src="${user.picture}" class="w-10 h-10 rounded-full border-2 border-cyan-500">
-                <span class="hidden md:block text-xs font-bold">${user.name.split(' ')[0]}</span>
+        }
+
+        function applyUserUI() {
+            document.getElementById('auth-gate').style.display = 'none';
+            document.getElementById('nav-user-ui').innerHTML = `
+                <div class="text-right"><p class="text-[10px] font-black">${currentUser.name}</p></div>
+                <img src="${currentUser.img}" class="w-10 h-10 rounded-2xl border border-violet-500">
             `;
-            document.getElementById('menu-user-name').innerText = user.name;
-            document.getElementById('menu-user-email').innerText = user.email;
-            document.getElementById('form-name').value = user.name;
+            document.getElementById('menu-user-name').innerText = currentUser.name;
+            document.getElementById('name').value = currentUser.name;
         }
 
-        function logout() {
-            localStorage.removeItem('nr_user');
-            location.reload();
-        }
+        function logout() { localStorage.removeItem('nr_user_v2'); location.reload(); }
+        function unlockGuest() { document.getElementById('auth-gate').style.display = 'none'; }
 
-        // --- UI TOGGLES ---
+        // --- NAVIGATION ---
         function toggleMenu() { document.getElementById('profile-menu').classList.toggle('active'); }
+        function showHome() {
+            document.getElementById('home-view').style.display = 'block';
+            document.getElementById('bookings-view').style.display = 'none';
+            if(document.getElementById('profile-menu').classList.contains('active')) toggleMenu();
+        }
         function showBookings() {
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('bookings-view').style.display = 'block';
             toggleMenu();
-            fetchUserBookings();
-        }
-        function showHome() {
-            document.getElementById('home-view').style.display = 'block';
-            document.getElementById('bookings-view').style.display = 'none';
+            loadHistory();
         }
 
-        // --- DYNAMIC TABLES ---
-        async function fetchTableData() {
+        // --- TABLE LOGIC ---
+        async function fetchTableStatus() {
             try {
-                const res = await fetch(`${API_URL}?action=getTables`);
-                allTablesStatus = await res.json();
-                updateTableList();
-            } catch (e) { console.error("Error fetching tables", e); }
+                const res = await fetch(`${API}?action=getTables`);
+                masterTables = await res.json();
+                renderTableGrid();
+            } catch (e) { console.error("Sync Error", e); }
         }
 
-        function updateTableList() {
+        function renderTableGrid() {
+            const grid = document.getElementById('table-grid');
             const type = document.getElementById('game-type').value;
-            const select = document.getElementById('table-number');
-            select.innerHTML = '';
+            grid.innerHTML = '';
             
-            const filtered = allTablesStatus.filter(t => t.type === type);
-            
-            filtered.forEach(t => {
-                const opt = document.createElement('option');
-                opt.value = t.id;
-                opt.className = "bg-black";
-                opt.disabled = t.status !== 'Free';
-                opt.innerHTML = `${t.id} — [${t.status}]`;
-                select.appendChild(opt);
+            masterTables.filter(t => t.type === type).forEach(t => {
+                const div = document.createElement('div');
+                const statusClass = t.status.toLowerCase().replace(" ", "-");
+                div.className = `table-card ${statusClass}`;
+                div.innerHTML = `<div class="text-xs font-black">${t.id}</div><div class="text-[8px] uppercase">${t.status}</div>`;
+                
+                if(t.status === 'Free') {
+                    div.onclick = () => {
+                        document.querySelectorAll('.table-card').forEach(c => c.classList.remove('selected'));
+                        div.classList.add('selected');
+                        selectedTableId = t.id;
+                    };
+                }
+                grid.appendChild(div);
             });
         }
 
-        // --- BOOKING LOGIC ---
+        // --- FORM SUBMISSION ---
         document.getElementById('bookingForm').onsubmit = async (e) => {
             e.preventDefault();
-            if(!currentUser) return alert("Please login first");
+            if(!selectedTableId) return alert("Select an available table first!");
 
+            const btn = e.target.querySelector('button');
             const data = {
-                name: document.getElementById('form-name').value,
-                email: currentUser.email,
-                phone: document.getElementById('form-phone').value,
+                name: document.getElementById('name').value,
+                email: currentUser ? currentUser.email : 'guest@nightrider.com',
+                phone: document.getElementById('phone').value,
                 game: document.getElementById('game-type').value,
-                tableNumber: document.getElementById('table-number').value,
-                datetime: document.getElementById('form-datetime').value
+                table: selectedTableId,
+                datetime: document.getElementById('datetime').value
             };
 
-            await fetch(API_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(data)
-            });
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> SAVING...';
+            
+            await fetch(API, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
 
-            const waText = `New Booking: ${data.game} ${data.tableNumber} for ${data.datetime}`;
-            window.open(`https://wa.me/919850600200?text=${encodeURIComponent(waText)}`);
-            alert("Booking Sent Successfully!");
+            setTimeout(() => {
+                const text = `NIGHT RIDERS BOOKING: ${data.name} | ${data.game} | Table ${data.table} | ${data.datetime}`;
+                window.open(`https://wa.me/919850600200?text=${encodeURIComponent(text)}`, '_blank');
+                alert("Booking Successful! Refreshing status...");
+                location.reload();
+            }, 1000);
         };
 
-        async function fetchUserBookings() {
+        async function loadHistory() {
             const list = document.getElementById('bookings-list');
-            list.innerHTML = '<p class="text-center py-10 opacity-50">Fetching your records...</p>';
+            list.innerHTML = '<p class="text-center opacity-30">Retrieving records...</p>';
             
-            const res = await fetch(`${API_URL}?action=getBookings&email=${currentUser.email}`);
+            if(!currentUser) {
+                list.innerHTML = '<p class="text-center text-red-400">Login to see your history.</p>';
+                return;
+            }
+
+            const res = await fetch(`${API}?action=getBookings&email=${currentUser.email}`);
             const data = await res.json();
             
-            list.innerHTML = data.length ? '' : '<p class="text-center py-10 opacity-50">No bookings found.</p>';
-            data.reverse().forEach(row => {
+            list.innerHTML = data.length ? '' : '<p class="text-center opacity-30 py-10">No bookings yet.</p>';
+            data.reverse().forEach(b => {
                 list.innerHTML += `
-                    <div class="one-ui-glass p-6 flex justify-between items-center">
+                    <div class="one-ui-glass p-6 flex justify-between items-center border-white/5">
                         <div>
-                            <h4 class="font-black text-violet-400">${row[4]} — Table ${row[5]}</h4>
-                            <p class="text-xs text-gray-500">${new Date(row[6]).toLocaleString()}</p>
+                            <h4 class="font-bold text-cyan-400">${b.game} - ${b.table}</h4>
+                            <p class="text-[10px] text-gray-500 uppercase mt-1">${new Date(b.date).toLocaleString()}</p>
                         </div>
-                        <div class="text-right">
-                            <span class="status-badge status-booked">Confirmed</span>
-                        </div>
+                        <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full">Confirmed</span>
                     </div>
                 `;
             });
         }
 
-        function unlockGuest() { document.getElementById('auth-gate').style.display = 'none'; }
+        // Mouse Spotlight
+        const spot = document.getElementById('spotlight');
+        document.addEventListener('mousemove', e => {
+            spot.style.setProperty('--x', e.clientX + 'px');
+            spot.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        ScrollReveal().reveal('.one-ui-glass', { delay: 200, distance: '20px', origin: 'bottom' });
     </script>
 </body>
 </html>
