@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattva Grid — Entrance Portal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tattva Grid",
+      "url": "https://www.tattvagrid.com",
+      "description": "Next-Gen Digital Infrastructure & High-Performance Business Automation Platforms.",
+      "author": {
+        "@type": "Person",
+        "name": "Neel Athane",
+        "jobTitle": "Lead System Architect & Developer",
+        "description": "Engineered and deployed the core backend systems, automation parameters, and digital infrastructure foundations of Tattva Grid."
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Tattva Grid"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tattva Grid",
+      "url": "https://www.tattvagrid.com",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Neel Athane",
+          "jobTitle": "Founder & Chief Technology Officer & Chief Financial Officer"
+        },
+        {
+          "@type": "Person",
+          "name": "Rohit Badgujar",
+          "jobTitle": "Founder & Chief Executive Officer"
+        },
+        {
+          "@type": "Person",
+          "name": "Aaryesh Honrao",
+          "jobTitle": "Founder & Chief Marketing Officer & Chief Operational Officer"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* --- CSS VARIABLES & THEME MANAGEMENT --- */
+        :root {
+            --brand-navy: #032b69;
+            --brand-cyan: #00b5d6;
+            --brand-seafoam: #00f2fe;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 8px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html[data-theme="dark"] {
+            --bg-color: #060a12;
+            --bg-grid: rgba(255, 255, 255, 0.015);
+            --surface: #0c1220;
+            --surface-contrast: #0f192b;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.06);
+            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 20px 40px -10px rgba(0, 181, 214, 0.15);
+            --glass-bg: rgba(12, 18, 32, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --btn-bg: #f8fafc;
+            --btn-text: #060a12;
+            --hero-overlay: rgba(6, 10, 18, 0.78);
+            --hero-img: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1920');
+            --form-bg: #0c1220;
+        }
+
+        html[data-theme="light"] {
+            --bg-color: #f8fafc;
+            --bg-grid: rgba(3, 43, 105, 0.02);
+            --surface: #ffffff;
+            --surface-contrast: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border-color: rgba(15, 23, 42, 0.08);
+            --shadow-soft: 0 10px 40px -10px rgba(15, 43, 105, 0.06);
+            --shadow-hover: 0 20px 40px -10px rgba(3, 43, 105, 0.12);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(15, 23, 42, 0.12);
+            --btn-bg: #032b69;
+            --btn-text: #ffffff;
+            --hero-overlay: rgba(248, 250, 252, 0.82);
+            --hero-img: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1920');
+            --form-bg: #ffffff;
+        }
+
+        /* --- GLOBAL BASE BASELINES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(var(--bg-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .container { 
+            max-width: 1280px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+
+        /* --- ANIMATION SEQUENCES --- */
+        .fade-in-page { 
+            animation: pageFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+        }
+        @keyframes pageFade {
+            0 { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(25px); 
+            transition: var(--transition);
+            transition-duration: 0.8s;
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* --- STICKY HEADER FIXED WRAPPER --- */
+        .header-fixed-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            padding: 1.25rem 0;
+        }
+
+        header {
+            margin: 0 auto;
+            width: 92%; 
+            max-width: 1200px; 
+            border-radius: 100px; 
+            padding: 0.85rem 2.5rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .logo { 
+            font-size: 1.25rem; 
+            font-weight: 800; 
+            color: var(--text-dark); 
+            letter-spacing: 0.05em; 
+            cursor: pointer; 
+        }
+        .logo span { 
+            color: var(--brand-cyan); 
+        }
+        
+        .header-actions { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            background: var(--surface-contrast);
+            border: 1px solid var(--border-color);
+            padding: 4px;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            width: 68px;
+            height: 34px;
+            user-select: none;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle-slider {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--btn-bg);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            left: 4px;
+            z-index: 1;
+        }
+        
+        html[data-theme="light"] .theme-toggle-slider {
+            transform: translateX(34px);
+        }
+
+        .theme-toggle-icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 6px;
+            z-index: 2;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        html[data-theme="dark"] .fa-moon { color: var(--brand-cyan); }
+        html[data-theme="light"] .fa-sun { color: #f59e0b; }
+
+        /* --- BUTTON RULES --- */
+        .btn { 
+            padding: 14px 30px; 
+            border-radius: 50px; 
+            border: none; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            cursor: pointer; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            transition: var(--transition); 
+            text-decoration: none; 
+        }
+        .btn:active { 
+            transform: scale(0.97); 
+        }
+        
+        .btn-primary { 
+            background: var(--btn-bg); 
+            color: var(--btn-text); 
+            box-shadow: var(--shadow-soft); 
+        }
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: var(--shadow-hover); 
+        }
+        
+        .btn-outline { 
+            background: transparent; 
+            border: 1.5px solid var(--border-color); 
+            color: var(--text-dark); 
+        }
+        .btn-outline:hover { 
+            background: var(--text-dark); 
+            color: var(--bg-color); 
+        }
+
+        /* --- HERO SPLASH SCENARIO WRAPPER --- */
+        .hero { 
+            padding-top: 180px; 
+            padding-bottom: 80px; 
+            min-height: 95vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            background-image: var(--hero-img);
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            transition: background-image 0.4s ease; 
+        }
+        .hero-curtain { 
+            position: absolute; 
+            inset: 0; 
+            background: var(--hero-overlay); 
+            z-index: 1; 
+            transition: background 0.4s ease; 
+        }
+        
+        .hero-content { 
+            text-align: center; 
+            max-width: 950px; 
+            padding: 2rem; 
+            position: relative; 
+            z-index: 2; 
+        }
+        .tagline { 
+            display: inline-block; 
+            padding: 8px 18px; 
+            background: rgba(0, 181, 214, 0.08); 
+            border: 1px solid rgba(0, 181, 214, 0.2); 
+            color: var(--text-dark); 
+            border-radius: 50px; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.06em; 
+            margin-bottom: 2rem; 
+            text-transform: uppercase; 
+        }
+        .hero h1 { 
+            font-size: clamp(2.2rem, 5.2vw, 3.8rem); 
+            line-height: 1.2; 
+            margin-bottom: 1.5rem; 
+            font-weight: 800; 
+            letter-spacing: -0.02em; 
+            white-space: nowrap;
+        }
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--text-dark) 30%, var(--brand-cyan) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .hero p { 
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem); 
+            color: var(--text-muted); 
+            margin-bottom: 3rem; 
+            line-height: 1.6; 
+        }
+        .hero-btns { 
+            display: flex; 
+            gap: 1.2rem; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+
+        /* --- HERO REAL SYSTEM METRICS --- */
+        .metric-ticker { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1.5rem; 
+            max-width: 850px; 
+            margin: 4.5rem auto 0 auto; 
+            border-top: 1px solid var(--border-color); 
+            padding-top: 2.5rem; 
+        }
+        .metric-item { text-align: center; }
+        .metric-item h4 { 
+            font-size: 1.6rem; 
+            font-weight: 700; 
+            color: var(--text-dark); 
+        }
+        .metric-item p { 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+            text-transform: uppercase; 
+            letter-spacing: 0.06em; 
+            margin-top: 0.3rem; 
+        }
+
+        /* --- CAPABILITIES SECTORS --- */
+        .services-section { 
+            padding: 120px 0; 
+            border-top: 1px solid var(--border-color); 
+        }
+        .section-header { 
+            text-align: center; 
+            margin-bottom: 5rem; 
+        }
+        .section-header h2 { 
+            font-size: 2.75rem; 
+            font-weight: 800; 
+            margin-bottom: 1rem; 
+            letter-spacing: -0.02em; 
+        }
+        .section-header p { 
+            color: var(--text-muted); 
+            font-size: 1.1rem; 
+        }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 2rem; 
+        }
+        .service-module { 
+            background: var(--surface); 
+            border: 1px solid var(--border-color); 
+            border-radius: var(--radius-md); 
+            padding: 0; 
+            overflow: hidden;
+            box-shadow: var(--shadow-soft); 
+            transition: var(--transition); 
+        }
+        .service-module:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-hover); 
+            border-color: rgba(0, 181, 214, 0.3); 
+        }
+        
+        .service-banner-wrapper {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            background: #111827;
+        }
+        .service-banner-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .service-module:hover .service-banner-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .service-content-wrapper {
+            padding: 2.25rem;
+        }
+        .service-module h3 { 
+            font-size: 1.35rem; 
+            font-weight: 700; 
+            margin-bottom: 0.75rem; 
+            color: var(--text-dark); 
+        }
+        .service-module p { 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+            line-height: 1.55; 
+        }
+
+        /* --- GENESIS STRIP BLOCK --- */
+        .genesis-strip { 
+            background: var(--surface-contrast); 
+            padding: 120px 0; 
+            border-top: 1px solid var(--border-color); 
+            border-bottom: 1px solid var(--border-color); 
+            transition: background 0.4s ease; 
+        }
+        .genesis-layout { 
+            display: grid; 
+            grid-template-columns: 1.20fr 1fr; 
+            gap: 4.5rem; 
+            align-items: center; 
+        }
+        .genesis-body h2 { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            margin-bottom: 1.5rem; 
+            letter-spacing: -0.02em; 
+        }
+        .genesis-body p { 
+            font-size: 1.1rem; 
+            line-height: 1.75; 
+            color: var(--text-muted); 
+        }
+        .genesis-media { 
+            position: relative; 
+            border-radius: var(--radius-lg); 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            box-shadow: var(--shadow-soft); 
+            height: 400px; 
+        }
+        .genesis-media img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            filter: brightness(0.85); 
+        }
+
+        /* --- FOUNDERS DECK --- */
+        .founders-section { 
+            padding: 130px 0; 
+        }
+        .founders-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 2.5rem; 
+        }
+        .founder-card { 
+            background: var(--surface); 
+            border-radius: var(--radius-lg); 
+            border: 1px solid var(--border-color); 
+            padding: 2.5rem; 
+            box-shadow: var(--shadow-soft); 
+            transition: var(--transition); 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1.75rem; 
+        }
+        .founder-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: var(--shadow-hover); 
+            border-color: rgba(0, 181, 214, 0.35); 
+        }
+        
+        .founder-avatar { 
+            width: 100%; 
+            height: 280px; 
+            border-radius: var(--radius-md); 
+            overflow: hidden; 
+            background: #111827; 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+        .founder-avatar img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+        .founder-info h3 { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin-bottom: 0.3rem; 
+            color: var(--text-dark); 
+        }
+        .founder-info .role { 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: var(--brand-cyan); 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            margin-bottom: 1.25rem; 
+        }
+        .founder-info p { 
+            color: var(--text-muted); 
+            font-size: 1rem; 
+            line-height: 1.55; 
+        }
+
+        /* --- CONTACT SECTIONS --- */
+        .contact-section { 
+            padding: 120px 0; 
+            background: var(--surface-contrast); 
+            border-top: 1px solid var(--border-color); 
+        }
+        .contact-layout { 
+            display: grid; 
+            grid-template-columns: 1fr 1.15fr; 
+            gap: 5rem; 
+        }
+        .contact-details { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 2.25rem; 
+        }
+        
+        .channel-card { 
+            background: var(--surface); 
+            border: 1px solid var(--border-color); 
+            padding: 2rem; 
+            border-radius: var(--radius-md); 
+            display: flex; 
+            align-items: center; 
+            gap: 1.75rem; 
+            box-shadow: var(--shadow-soft); 
+        }
+        .channel-icon { 
+            width: 56px; 
+            height: 56px; 
+            background: rgba(0, 181, 214, 0.1); 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--brand-cyan); 
+            font-size: 1.35rem; 
+        }
+        .channel-info h4 { 
+            font-size: 1.05rem; 
+            font-weight: 700; 
+            color: var(--text-dark); 
+            margin-bottom: 0.25rem; 
+        }
+        .channel-info p { 
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            color: var(--brand-cyan); 
+            letter-spacing: 0.02em; 
+        }
+        .channel-info span { 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+            display: block; 
+            margin-top: 0.25rem; 
+        }
+
+        .inquiry-box { 
+            background: var(--form-bg); 
+            border: 1px solid var(--border-color); 
+            padding: 3.5rem; 
+            border-radius: var(--radius-lg); 
+            box-shadow: var(--shadow-soft); 
+        }
+        .form-group { 
+            margin-bottom: 1.75rem; 
+        }
+        .form-group label { 
+            display: block; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            margin-bottom: 0.6rem; 
+            color: var(--text-dark); 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+        }
+        .form-group input { 
+            width: 100%; 
+            padding: 16px; 
+            background: var(--surface-contrast); 
+            border: 1px solid var(--border-color); 
+            border-radius: var(--radius-sm); 
+            color: var(--text-dark); 
+            font-size: 0.95rem; 
+            outline: none; 
+            transition: var(--transition); 
+        }
+        .form-group input:focus { 
+            border-color: var(--brand-cyan); 
+            box-shadow: 0 0 0 3px rgba(0, 181, 214, 0.12); 
+        }
+
+        /* --- PREMIUM DETAILED MULTI-COLUMN FOOTER --- */
+        footer { 
+            background: #080d16; 
+            color: #f8fafc; 
+            padding: 6rem 0 3rem 0; 
+            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+        .footer-grid-premium {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 3.5rem;
+            margin-bottom: 5rem;
+        }
+        .footer-brand-col h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            color: #ffffff;
+        }
+        .footer-brand-col h3 span {
+            color: var(--brand-cyan);
+        }
+        .footer-brand-col p {
+            color: #94a3b8;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            max-width: 440px;
+            margin-bottom: 2rem;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background: var(--brand-cyan);
+            color: #060a12;
+            transform: translateY(-3px);
+        }
+        .footer-premium-col h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.75rem;
+            color: #ffffff;
+            position: relative;
+        }
+        .footer-premium-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 24px;
+            height: 2px;
+            background: var(--brand-cyan);
+        }
+        .footer-premium-links {
+            list-style: none;
+        }
+        .footer-premium-links li {
+            margin-bottom: 0.85rem;
+        }
+        .footer-premium-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+        .footer-premium-links a:hover {
+            color: var(--brand-cyan);
+            transform: translateX(4px);
+        }
+        .footer-bottom { 
+            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+            padding-top: 2.5rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #475569; 
+            font-size: 0.9rem; 
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .footer-bottom-links a {
+            color: #475569;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-bottom-links a:hover {
+            color: #94a3b8;
+        }
+
+        /* --- RESPONSIVE MATRIX --- */
+        @media(max-width: 968px) {
+            .hero h1 { white-space: normal; }
+            .genesis-layout, .founders-grid, .contact-layout { 
+                grid-template-columns: 1fr; 
+                gap: 3rem; 
+            }
+            .footer-grid-premium { 
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem; 
+            }
+        }
+        @media(max-width: 600px) {
+            .header-fixed-container { 
+                padding: 0.75rem 0; 
+            }
+            header { 
+                width: 94% !important; 
+                padding: 0.75rem 1.5rem; 
+            }
+            .hero { 
+                padding-top: 150px; 
+            }
+            .services-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 1.5rem !important; 
+            }
+            .service-module { 
+                padding: 0; 
+            }
+            .service-banner-wrapper {
+                height: 140px;
+            }
+            .service-content-wrapper {
+                padding: 1.5rem 1.25rem;
+            }
+            .service-module h3 { 
+                font-size: 1.15rem; 
+            }
+            .service-module p { 
+                font-size: 0.85rem; 
+                line-height: 1.45; 
+            }
+            .inquiry-box { 
+                padding: 2.5rem 1.75rem; 
+            }
+            .metric-ticker {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            .footer-grid-premium {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.25rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="fade-in-page">
+
+    <div class="header-fixed-container">
+        <header class="glass">
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">TATTVA <span>GRID</span></div>
+            <div class="header-actions">
+                <div class="theme-toggle-container" id="themeToggleGroup" aria-label="Toggle Framework Base Color">
+                    <div class="theme-toggle-slider"></div>
+                    <div class="theme-toggle-icons">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                </div>
+                <a href="index.html" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.85rem;">Console →</a>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <section class="hero" id="heroContainer">
+            <div class="hero-curtain"></div>
+            <div class="hero-content">
+                <div class="tagline">/// Operational Infrastructure Grid</div>
+                <h1>Welcome to <span>Tattva Grid</span></h1>
+                <p>Next-Generation Digital Infrastructure and High-Performance Business Automation Platforms engineered for enterprise resilience.</p>
+                
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Explore Ecosystem Solutions <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline">Request Technical Specifications</a>
+                </div>
+
+                <div class="metric-ticker">
+                    <div class="metric-item">
+                        <h4 style="color: #25D366;">100%</h4>
+                        <p>Core Integrity</p>
+                    </div>
+                    <div class="metric-item">
+                        <h4>High-Fidelity</h4>
+                        <p>Automation Scaling</p>
+                    </div>
+                    <div class="metric-item">
+                        <h4>Enterprise</h4>
+                        <p>Infrastructure Yield</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Our Capabilities</h2>
+                    <p>Comprehensive engineering execution structures provided across critical technical channels.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-module reveal">
+                        <div class="service-banner-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Landing Pages and Booking Systems">
+                        </div>
+                        <div class="service-content-wrapper">
+                            <h3>Landing Pages &amp; Booking Systems</h3>
+                            <p>Designing high-converting frontends and structural booking interfaces built to secure customer capture arrays.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-module reveal">
+                        <div class="service-banner-wrapper">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=600" alt="Automated Turf Booking Infrastructure">
+                        </div>
+                        <div class="service-content-wrapper">
+                            <h3>Automated Turf Bookings</h3>
+                            <p>Developing seamless slot scheduling engines and real-time ledger sync processes for sports arenas and turf sectors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-module reveal">
+                        <div class="service-banner-wrapper">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600" alt="Photography and Videography Custom Systems">
+                        </div>
+                        <div class="service-content-wrapper">
+                            <h3>Photography &amp; Videography</h3>
+                            <p>Deploying dedicated high-speed asset management frames and visual pipeline hubs tailored for media creators.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-module reveal">
+                        <div class="service-banner-wrapper">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600" alt="Multi-Sector Enterprise Platforms">
+                        </div>
+                        <div class="service-content-wrapper">
+                            <h3>Multi-Sector Business Sites</h3>
+                            <p>Engineering robust operations architectures and dynamic content management engines across varying business sectors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="genesis-strip">
+            <div class="container">
+                <div class="genesis-layout">
+                    <div class="genesis-body reveal">
+                        <h2>Our Genesis</h2>
+                        <p>
+                            Tattva Grid was originally conceptualized and architected independently by Neel Athane. Operating as the sole technical architect, Neel independently built the initial software foundations, landing systems, and backend logic. 
+                            <br><br>
+                            Recognizing that scaling a world-class enterprise requires multidimensional execution, Neel strategically connected with and onboarded elite specialized minds to finish the ecosystem. He brought on Rohit Badgujar to pilot strategic business development and institutional growth as CEO, and Aaryesh Honrao to pioneer cinematic media production and creative marketing execution as CMO. Today, they operate as a unified founding team, working as founders toward the collective success of Tattva Grid.
+                        </p>
+                    </div>
+                    <div class="genesis-media reveal">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" alt="Tattva Grid Production Hub">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="founders-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>The Founders</h2>
+                    <p>The leadership architecture directing our core systemic development arrays.</p>
+                </div>
+                
+                <div class="founders-grid">
+                    <div class="founder-card reveal">
+                        <div class="founder-avatar">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=500" alt="Neel Athane Portfolio Profile Picture">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Neel Athane</h3>
+                            <div class="role">Founder / Chief Technology Officer &amp; Chief Financial Officer</div>
+                            <p>Original Visionary &amp; Lead System Architect who engineered the baseline core software frameworks, automation parameters, and secure pipeline logic arrays.</p>
+                        </div>
+                    </div>
+
+                    <div class="founder-card reveal">
+                        <div class="founder-avatar">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500" alt="Rohit Badgujar Portfolio Profile Picture">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Rohit Badgujar</h3>
+                            <div class="role">Founder / Chief Executive Officer</div>
+                            <p>Directs corporate expansion parameters, institutional asset scaling models, market capture integrations, and core commercial operations pipelines.</p>
+                        </div>
+                    </div>
+
+                    <div class="founder-card reveal">
+                        <div class="founder-avatar">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=500" alt="Aaryesh Honrao Portfolio Profile Picture">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Aaryesh Honrao</h3>
+                            <div class="role">Founder / Chief Marketing Officer & Chief Operational Officer</div>
+                            <p>Pioneers custom multi-tonal cinematic media pipelines, narrative architectural framing, brand presentation logic, and digital outreach assets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-layout">
+                    
+                    <div class="contact-details reveal">
+                        <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                            <h2>Connect With Us</h2>
+                            <p>Get in immediate touch with our specialist channels regarding system implementations or corporate queries.</p>
+                        </div>
+                        
+                        <div class="channel-card">
+                            <div class="channel-icon"><i class="fa-solid fa-coins"></i></div>
+                            <div class="channel-info">
+                                <h4>Financial &amp; Technical Specifications Desk</h4>
+                                <p>+91 94222 31321</p>
+                                <span>Direct Infrastructure Pipeline Line — Neel Athane</span>
+                            </div>
+                        </div>
+
+                        <div class="channel-card">
+                            <div class="channel-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="channel-info">
+                                <h4>Operations &amp; Marketing Channels</h4>
+                                <p>+91 91750 23438</p>
+                                <span>Media &amp; Institutional Outreach Line — Aaryesh Honrao</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inquiry-box reveal">
+                        <form id="mailLeadForm" onsubmit="generatePrefilledEmail(event);">
+                            <div class="form-group">
+                                <label for="clientName">Your Name / Organization</label>
+                                <input type="text" id="clientName" required placeholder="Enter your name or company">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientContact">Contact Phone Number / Email</label>
+                                <input type="text" id="clientContact" required placeholder="Where can our founders reach you?">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiryType">Primary Interest Or Business Domain</label>
+                                <input type="text" id="inquiryType" required placeholder="e.g. Sports Turf Site, Media Portfolio, Automation">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
+                                Draft Official Inquiry Email <i class="fa-solid fa-envelope"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid-premium">
+                <div class="footer-brand-col">
+                    <h3>TATTVA <span>GRID</span></h3>
+                    <p>High-performance enterprise infrastructure layouts engineered alongside fluid multi-tonal data automation layers. Processing industrial-grade software resilience patterns securely.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-premium-col">
+                    <h4>Ecosystem Links</h4>
+                    <ul class="footer-premium-links">
+                        <li><a href="#services">Landing Architectures</a></li>
+                        <li><a href="#services">Turf Booking Automations</a></li>
+                        <li><a href="#services">Media Hub Portfolios</a></li>
+                        <li><a href="#services">Multi-Sector Sites</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-premium-col">
+                    <h4>Company</h4>
+                    <ul class="footer-premium-links">
+                        <li><a href="#">About Identity</a></li>
+                        <li><a href="#">System Genesis</a></li>
+                        <li><a href="#">Leadership Stack</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-premium-col">
+                    <h4>Contact Records</h4>
+                    <ul class="footer-premium-links">
+                        <li><a href="mailto:tattvagrids@gmail.com"><i class="fa-regular fa-envelope"></i> tattvagrids@gmail.com</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-headset"></i> Support Desk</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-phone"></i> Direct Technical Line</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Tattva Grid. Made by Tattva Grid | Developed by Neel Athane. All rights reserved.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Framework</a>
+                    <a href="#">Terms of Infrastructure Service</a>
+                    <a href="#">Security Protocol Docs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function generatePrefilledEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const contact = document.getElementById('clientContact').value;
+            const scope = document.getElementById('inquiryType').value;
+
+            const baseRecipient = "tattvagrids@gmail.com";
+            const emailSubject = encodeURIComponent(`Tattva Grid Ecosystem Request - ${scope}`);
+            const emailBody = encodeURIComponent(
+                `Hello Tattva Grid Founders Technical Team,\n\n` +
+                `My name is ${name}.\n` +
+                `I am submitting a baseline request regarding our operational interest in: ${scope}.\n\n` +
+                `Primary Client Contact Information:\n` +
+                `- Callback Vector: ${contact}\n\n` +
+                `Please review these basic parameters and have the appropriate founder reach out to coordinate an introductory consultation loop.\n\n` +
+                `Best Regards,\n${name}`
+            );
+
+            window.location.href = `mailto:${baseRecipient}?subject=${emailSubject}&body=${emailBody}`;
+        }
+
+        const htmlElement = document.documentElement;
+        const themeToggleGroup = document.getElementById('themeToggleGroup');
+
+        themeToggleGroup.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                htmlElement.setAttribute('data-theme', 'light');
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+            }
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: "0px 0px -40px 0px"
+        });
+
+        revealElements.forEach(element => revealObserver.observe(element));
+    </script>
+</body>
+</html>
