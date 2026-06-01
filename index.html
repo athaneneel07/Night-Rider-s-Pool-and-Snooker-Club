@@ -3,52 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tattva Grid — Entrance Portal &amp; System Infrastructure</title>
+    <title>Tattva Grid — Digital Infrastructure &amp; Systems Engineering</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Next-Gen Digital Infrastructure &amp; High-Performance Business Automation Platforms engineered by Tattva Grid. Explore our capabilities in automated scheduling, high-conversion web frontends, and custom media pipelines.">
-    <meta name="keywords" content="Tattva Grid, Neel Athane, Business Automation, Digital Infrastructure, Turf Booking, Custom Software, High-Performance Web Architecture, Systems Engineering">
+    <meta name="description" content="Tattva Grid builds high-performance custom frontends, scheduling engines, academic ERP systems, and secure database workflows designed for reliability.">
+    <meta name="keywords" content="Tattva Grid, Neel Athane, Rohit Badgujar, Aaryesh Honrao, Business Automation, Turf Booking, Custom ERP, Systems Engineering">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.tattvagrid.com/">
-    <meta property="og:title" content="Tattva Grid — Entrance Portal">
-    <meta property="og:description" content="Next-Gen Digital Infrastructure &amp; High-Performance Business Automation Platforms. Developed by Neel Athane.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.tattvagrid.com/">
-    <meta property="twitter:title" content="Tattva Grid — Entrance Portal">
-    <meta property="twitter:description" content="Next-Gen Digital Infrastructure &amp; High-Performance Business Automation Platforms. Developed by Neel Athane.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- SEO Schema JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Tattva Grid",
-      "url": "https://www.tattvagrid.com",
-      "description": "Next-Gen Digital Infrastructure & High-Performance Business Automation Platforms.",
-      "author": {
-        "@type": "Person",
-        "name": "Neel Athane",
-        "jobTitle": "Founder & Chief Technology Officer & Chief Financial Officer",
-        "description": "Engineered and deployed the core backend systems, automation parameters, and digital infrastructure foundations of Tattva Grid."
-      },
-      "creator": {
-        "@type": "Person",
-        "name": "Neel Athane"
-      }
-    }
-    </script>
-
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -57,91 +25,63 @@
       "url": "https://www.tattvagrid.com",
       "logo": "https://www.tattvagrid.com/logo.jpeg",
       "founder": [
-        {
-          "@type": "Person",
-          "name": "Neel Athane",
-          "jobTitle": "Founder & Chief Technology Officer & Chief Financial Officer"
-        },
-        {
-          "@type": "Person",
-          "name": "Rohit Badgujar",
-          "jobTitle": "Co-Founder & Chief Executive Officer"
-        },
-        {
-          "@type": "Person",
-          "name": "Aaryesh Honrao",
-          "jobTitle": "Co-Founder & Chief Marketing Officer & Chief Operational Officer"
-        }
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/company/tattvagrid",
-        "https://twitter.com/tattvagrid"
+        { "@type": "Person", "name": "Neel Athane", "jobTitle": "Founder & CTO & CFO" },
+        { "@type": "Person", "name": "Rohit Badgujar", "jobTitle": "Co-Founder & CEO" },
+        { "@type": "Person", "name": "Aaryesh Honrao", "jobTitle": "Co-Founder & CMO & COO" }
       ]
     }
     </script>
 
     <style>
-        /* --- CSS VARIABLES & THEME MANAGEMENT --- */
+        /* --- BRAND DESIGN VARIABLES --- */
         :root {
-            --brand-navy: #032b69;
+            --brand-navy: #042554;
             --brand-cyan: #00b5d6;
             --brand-seafoam: #00f2fe;
-            --radius-lg: 24px;
-            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
             --radius-sm: 8px;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
+        /* --- THEME PALETTES (No Pure Blacks / Pure Whites) --- */
         html[data-theme="dark"] {
-            --bg-color: #030712;
+            --bg-color: #080c16; /* Soft Obsidian Navy */
             --bg-grid: rgba(255, 255, 255, 0.015);
-            --surface: #090f1c;
-            --surface-contrast: #0f172a;
-            --text-dark: #f8fafc;
+            --surface: #0e1424; /* Slate slate-900 */
+            --surface-contrast: #172035;
+            --text-dark: #f1f5f9; /* Warm off-white */
             --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
-            --shadow-hover: 0 20px 40px -10px rgba(0, 181, 214, 0.2);
-            --glass-bg: rgba(3, 7, 18, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --btn-bg: #00b5d6;
-            --btn-text: #030712;
-            --hero-overlay: rgba(3, 7, 18, 0.85);
-            --hero-img: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1920');
-            --form-bg: #090f1c;
-            --tab-inactive: rgba(255, 255, 255, 0.03);
-            --tab-active: rgba(0, 181, 214, 0.15);
-            --glow-color: rgba(0, 181, 214, 0.4);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --header-bg: rgba(8, 12, 22, 0.5);
+            --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 20px 40px -10px rgba(0, 181, 214, 0.15);
+            --glow: rgba(0, 181, 214, 0.3);
+            --card-spotlight: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 181, 214, 0.08), transparent 80%);
         }
 
         html[data-theme="light"] {
-            --bg-color: #f8fafc;
-            --bg-grid: rgba(3, 43, 105, 0.02);
+            --bg-color: #f3f5f9; /* Warm slate light gray */
+            --bg-grid: rgba(4, 37, 84, 0.02);
             --surface: #ffffff;
             --surface-contrast: #e2e8f0;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --border-color: rgba(15, 23, 42, 0.08);
-            --shadow-soft: 0 10px 40px -10px rgba(15, 43, 105, 0.06);
-            --shadow-hover: 0 20px 40px -10px rgba(3, 43, 105, 0.12);
-            --glass-bg: rgba(248, 250, 252, 0.8);
-            --glass-border: rgba(15, 23, 42, 0.08);
-            --btn-bg: #032b69;
-            --btn-text: #ffffff;
-            --hero-overlay: rgba(248, 250, 252, 0.86);
-            --hero-img: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1920');
-            --form-bg: #ffffff;
-            --tab-inactive: rgba(15, 23, 42, 0.04);
-            --tab-active: rgba(0, 181, 214, 0.1);
-            --glow-color: rgba(3, 43, 105, 0.2);
+            --text-dark: #0f172a; /* Slate deep blue-gray */
+            --text-muted: #475569;
+            --border-color: rgba(15, 23, 42, 0.06);
+            --header-bg: rgba(243, 245, 249, 0.5);
+            --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+            --shadow-hover: 0 20px 40px -10px rgba(4, 37, 84, 0.08);
+            --glow: rgba(4, 37, 84, 0.1);
+            --card-spotlight: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 181, 214, 0.04), transparent 80%);
         }
 
-        /* --- BASE MOBILE-FIRST STYLES --- */
+        /* --- GLOBAL BASICS --- */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-family);
         }
 
         body {
@@ -149,54 +89,64 @@
             background-image: 
                 linear-gradient(var(--bg-grid) 1px, transparent 1px),
                 linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-size: 40px 40px;
             color: var(--text-dark);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
 
-        .container { 
+        .container {
             width: 100%;
-            max-width: 1280px; 
-            margin: 0 auto; 
-            padding: 0 1.25rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
         }
 
-        /* --- STICKY PREMIUM PILL HEADER --- */
-        .header-fixed-container {
+        /* --- SCROLL-TRIGGERED ANIMS (Lenis / Motion Mimicry) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* --- HEADER (Medium Glassmorphic Floating Pill) --- */
+        .header-container {
             position: fixed;
-            top: 20px;
+            top: 15px;
             left: 50%;
             transform: translateX(-50%);
             width: 92%;
-            max-width: 1200px;
+            max-width: 1100px;
             z-index: 9999;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
         }
 
-        header.premium-pill {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+        header.pill-navigation {
+            background: var(--header-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
             border-radius: 100px;
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 1.25rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.35), 
-                        inset 0 1px 2px rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
         }
 
-        header.premium-pill:hover {
+        header.pill-navigation:hover {
             border-color: var(--brand-cyan);
-            box-shadow: 0 15px 40px -5px var(--glow-color), 
-                        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -5px var(--glow);
         }
 
-        .brand-logo-block {
+        .logo-block {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -204,66 +154,64 @@
             cursor: pointer;
         }
 
-        .brand-logo-img {
-            width: 34px;
-            height: 34px;
+        .logo-img {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             object-fit: cover;
             border: 1.5px solid var(--brand-cyan);
-            background: #000;
         }
 
-        .logo { 
-            font-size: 1.1rem; 
-            font-weight: 800; 
-            color: var(--text-dark); 
-            letter-spacing: 0.05em; 
-        }
-        .logo span { 
-            color: var(--brand-cyan); 
+        .logo-text {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
         }
 
-        /* Nav Pills inside Header */
-        .header-nav {
+        .logo-text span {
+            color: var(--brand-cyan);
+        }
+
+        .desktop-nav {
             display: none;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .nav-pill-btn {
+        .nav-link {
             background: transparent;
-            border: 1px solid transparent;
+            border: none;
             color: var(--text-muted);
             padding: 6px 14px;
             border-radius: 30px;
             font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
-        .nav-pill-btn:hover {
+        .nav-link:hover {
             color: var(--text-dark);
-            background: var(--tab-inactive);
+            background: var(--border-color);
         }
 
-        .nav-pill-btn.active {
-            background: var(--tab-active);
+        .nav-link.active {
+            background: rgba(0, 181, 214, 0.12);
             color: var(--brand-cyan);
-            border-color: rgba(0, 181, 214, 0.25);
-        }
-        
-        .header-actions { 
-            display: flex; 
-            align-items: center; 
-            gap: 0.75rem;
         }
 
-        /* Theme Toggle styles */
-        .theme-toggle-container {
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Dark / Light Toggle Switch */
+        .toggle-track {
             display: flex;
             align-items: center;
             background: var(--surface-contrast);
@@ -272,176 +220,197 @@
             border-radius: 30px;
             position: relative;
             cursor: pointer;
-            width: 58px;
-            height: 28px;
+            width: 52px;
+            height: 26px;
             user-select: none;
         }
-        
-        .theme-toggle-slider {
+
+        .toggle-thumb {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: var(--text-dark);
-            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             left: 3px;
-            z-index: 1;
-        }
-        
-        html[data-theme="light"] .theme-toggle-slider {
-            transform: translateX(30px);
         }
 
-        .theme-toggle-icons {
+        html[data-theme="light"] .toggle-thumb {
+            transform: translateX(26px);
+        }
+
+        .toggle-icons {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
             padding: 0 4px;
-            z-index: 2;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
+            pointer-events: none;
         }
-
-        html[data-theme="dark"] .fa-moon { color: var(--brand-cyan); }
-        html[data-theme="light"] .fa-sun { color: #f59e0b; }
 
         /* --- BUTTONS --- */
-        .btn { 
-            padding: 10px 20px; 
-            border-radius: 50px; 
-            border: none; 
-            font-weight: 600; 
-            font-size: 0.85rem; 
-            cursor: pointer; 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 8px; 
-            transition: var(--transition); 
-            text-decoration: none; 
-        }
-        .btn:active { 
-            transform: scale(0.97); 
-        }
-        
-        .btn-primary { 
-            background: var(--btn-bg); 
-            color: var(--btn-text); 
-            box-shadow: var(--shadow-soft); 
-        }
-        .btn-primary:hover { 
-            transform: translateY(-2px); 
-            box-shadow: var(--shadow-hover); 
-        }
-        
-        .btn-outline { 
-            background: transparent; 
-            border: 1.5px solid var(--border-color); 
-            color: var(--text-dark); 
-        }
-        .btn-outline:hover { 
-            background: var(--text-dark); 
-            color: var(--bg-color); 
+        .btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            border: none;
         }
 
-        /* --- SYSTEM PAGES / VIEWS CONTAINER --- */
-        .view-pane {
-            display: block;
-        }
-        .view-pane.hidden {
-            display: none !important;
+        .btn:active {
+            transform: scale(0.96);
         }
 
-        /* --- HERO ZONE --- */
-        .hero { 
-            padding-top: 150px; 
-            padding-bottom: 50px; 
-            min-height: 85vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: relative; 
-            background-image: var(--hero-img);
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat;
-            transition: background-image 0.4s ease; 
-        }
-        .hero-curtain { 
-            position: absolute; 
-            inset: 0; 
-            background: var(--hero-overlay); 
-            z-index: 1; 
-        }
-        
-        .hero-content { 
-            text-align: center; 
-            max-width: 900px; 
-            padding: 1rem; 
-            position: relative; 
-            z-index: 2; 
-        }
-        .tagline { 
-            display: inline-block; 
-            padding: 6px 14px; 
-            background: rgba(0, 181, 214, 0.08); 
-            border: 1px solid rgba(0, 181, 214, 0.2); 
-            color: var(--text-dark); 
-            border-radius: 50px; 
-            font-weight: 600; 
-            font-size: 0.75rem; 
-            letter-spacing: 0.06em; 
-            margin-bottom: 1.5rem; 
-            text-transform: uppercase; 
-        }
-        .hero h1 { 
-            font-size: clamp(2rem, 5vw, 3.8rem); 
-            line-height: 1.15; 
-            margin-bottom: 1rem; 
-            font-weight: 850; 
-            letter-spacing: -0.02em; 
-        }
-        .hero h1 span { 
-            background: linear-gradient(135deg, var(--text-dark) 30%, var(--brand-cyan) 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        .hero p { 
-            font-size: clamp(0.95rem, 1.5vw, 1.15rem); 
-            color: var(--text-muted); 
-            margin-bottom: 2rem; 
-            line-height: 1.5; 
-        }
-        .hero-btns { 
-            display: flex; 
-            gap: 1rem; 
-            justify-content: center; 
-            flex-wrap: wrap; 
+        .btn-primary {
+            background: var(--brand-cyan);
+            color: #080c16;
+            box-shadow: var(--shadow-soft);
         }
 
-        /* --- DETAILED / DYNAMIC TRAILER CARDS (THE SUSPENSE HOOK QUESTIONS) --- */
-        .trailer-showcase-grid {
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--surface-contrast);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-dark);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            padding-top: 150px;
+            padding-bottom: 60px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-banner {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(0, 181, 214, 0.08) 0%, transparent 65%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(0, 181, 214, 0.08);
+            border: 1px solid rgba(0, 181, 214, 0.2);
+            color: var(--brand-cyan);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-inner h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 850;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-inner h1 span {
+            background: linear-gradient(135deg, var(--text-dark) 30%, var(--brand-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-inner p {
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            color: var(--text-muted);
+            margin-bottom: 2.25rem;
+            line-height: 1.5;
+        }
+
+        .hero-actions-group {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- SIZZLE SECTION (The Three Questions) --- */
+        .sizzle-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 850;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .sizzle-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 3rem;
-            text-align: left;
+            gap: 1.25rem;
         }
 
-        .trailer-question-card {
+        .sizzle-card {
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
             padding: 2rem;
             box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
-            transition: var(--transition);
         }
 
-        .trailer-question-card::before {
+        .sizzle-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-cyan);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .sizzle-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -451,14 +420,8 @@
             background: var(--brand-cyan);
         }
 
-        .trailer-question-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--brand-cyan);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .trailer-number {
-            font-size: 0.8rem;
+        .sizzle-card .index-no {
+            font-size: 0.75rem;
             font-weight: 800;
             color: var(--brand-cyan);
             letter-spacing: 0.1em;
@@ -467,1096 +430,982 @@
             display: block;
         }
 
-        .trailer-question-card h3 {
-            font-size: 1.35rem;
+        .sizzle-card h3 {
+            font-size: 1.2rem;
             font-weight: 800;
-            margin-bottom: 1rem;
             color: var(--text-dark);
-            line-height: 1.3;
+            margin-bottom: 0.75rem;
         }
 
-        .trailer-answer {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .trailer-link {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--brand-cyan);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
-        }
-
-        .trailer-link:hover {
-            color: var(--text-dark);
-            transform: translateX(4px);
-        }
-
-        /* --- SECTION GENERIC STYLING --- */
-        .landing-section {
-            padding: 5rem 0;
-            border-bottom: 1px solid var(--border-color);
-            scroll-mt: 100px;
-        }
-
-        .section-header { 
-            text-align: center; 
-            margin-bottom: 3.5rem; 
-        }
-        .section-header h2 { 
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem); 
-            font-weight: 850; 
-            margin-bottom: 0.75rem; 
-            letter-spacing: -0.02em; 
-        }
-        .section-header p { 
-            color: var(--text-muted); 
-            font-size: 1rem; 
-        }
-
-        /* --- THE PITCH / CORE PULL COMPONENT --- */
-        .pitch-container {
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            margin-top: 2rem;
-            text-align: left;
-            box-shadow: var(--shadow-soft);
-        }
-        .pitch-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        .pitch-header i {
-            color: var(--brand-cyan);
-            font-size: 1.25rem;
-        }
-        .pitch-header h3 {
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .pitch-text {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1.25rem;
-        }
-        .pitch-bullets {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-        .pitch-bullet {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-dark);
-        }
-        .pitch-bullet i {
-            color: var(--brand-cyan);
-            margin-top: 3px;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .intro-card {
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.75rem;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-        .intro-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--brand-cyan);
-        }
-        .intro-card-icon {
-            font-size: 1.75rem;
-            color: var(--brand-cyan);
-            margin-bottom: 1rem;
-        }
-        .intro-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        .intro-card p {
-            font-size: 0.9rem;
+        .sizzle-card p {
+            font-size: 0.88rem;
             color: var(--text-muted);
             line-height: 1.5;
         }
 
-        /* --- SERVICES (CAPABILITIES) SECTION --- */
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 1.5rem; 
+        /* --- SERVICES SECTION (Mobile-First 2-Column Grid) --- */
+        .services-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+            background: rgba(0, 181, 214, 0.01);
         }
-        .service-module { 
-            background: var(--surface); 
-            border: 1px solid var(--border-color); 
-            border-radius: var(--radius-md); 
+
+        .services-grid {
+            display: grid;
+            /* Explicit Mobile-First Pair of Two */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-cyan);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(0, 181, 214, 0.08);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-cyan);
+            font-size: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .service-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* --- PORTFOLIO (OUR WORK) SECTION --- */
+        .portfolio-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            box-shadow: var(--shadow-soft); 
-            transition: var(--transition); 
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
         }
-        .service-module:hover { 
-            transform: translateY(-3px); 
-            border-color: rgba(0, 181, 214, 0.35); 
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-cyan);
+            box-shadow: var(--shadow-hover);
         }
-        
-        .service-banner-wrapper {
+
+        .portfolio-media {
             width: 100%;
-            height: 160px;
+            height: 170px;
+            background: var(--surface-contrast);
+            position: relative;
             overflow: hidden;
-            border-bottom: 1px solid var(--border-color);
-            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .service-banner-wrapper img {
+
+        .portfolio-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
-        }
-        .service-module:hover .service-banner-wrapper img {
-            transform: scale(1.03);
+            transition: var(--transition-smooth);
+            filter: grayscale(20%);
         }
 
-        .service-content-wrapper {
-            padding: 1.5rem;
-        }
-        .service-module h3 { 
-            font-size: 1.15rem; 
-            font-weight: 700; 
-            margin-bottom: 0.5rem; 
-            color: var(--text-dark); 
-        }
-        .service-module p { 
-            color: var(--text-muted); 
-            font-size: 0.85rem; 
-            line-height: 1.5; 
+        .portfolio-card:hover .portfolio-media img {
+            transform: scale(1.05);
+            filter: grayscale(0);
         }
 
-        /* --- GENESIS BLOCK --- */
-        .genesis-strip { 
-            background: var(--surface-contrast); 
-            padding: 2.5rem 1.25rem; 
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color); 
-            margin-bottom: 3rem;
-        }
-        .genesis-layout { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 2rem; 
-            align-items: center; 
-        }
-        .genesis-body h2 { 
-            font-size: 1.8rem; 
-            font-weight: 850; 
-            margin-bottom: 1.25rem; 
-            letter-spacing: -0.02em; 
-        }
-        .genesis-body p { 
-            font-size: 0.95rem; 
-            line-height: 1.6; 
-            color: var(--text-muted); 
-        }
-        .genesis-media { 
-            position: relative; 
-            border-radius: var(--radius-md); 
-            overflow: hidden; 
-            border: 1px solid var(--border-color); 
-            height: 250px; 
-        }
-        .genesis-media img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
+        .portfolio-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(8, 12, 22, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--brand-cyan);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
         }
 
-        /* --- FOUNDERS DECK --- */
-        .founders-grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 1.5rem; 
-        }
-        .founder-card { 
-            background: var(--surface); 
-            border-radius: var(--radius-lg); 
-            border: 1px solid var(--border-color); 
-            padding: 1.5rem; 
-            box-shadow: var(--shadow-soft); 
-            transition: var(--transition); 
-            display: flex; 
-            flex-direction: column; 
-            gap: 1.25rem; 
-        }
-        .founder-card:hover { 
-            transform: translateY(-4px); 
-            border-color: rgba(0, 181, 214, 0.35); 
-        }
-        
-        .founder-avatar { 
-            width: 100%; 
-            height: 240px; 
-            border-radius: var(--radius-md); 
-            overflow: hidden; 
-            background: #111827; 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
-        }
-        .founder-avatar img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-        }
-        .founder-info h3 { 
-            font-size: 1.25rem; 
-            font-weight: 700; 
-            margin-bottom: 0.25rem; 
-            color: var(--text-dark); 
-        }
-        .founder-info .role { 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            color: var(--brand-cyan); 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            margin-bottom: 0.75rem; 
-        }
-        .founder-info p { 
-            color: var(--text-muted); 
-            font-size: 0.85rem; 
-            line-height: 1.5; 
+        .portfolio-info {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        /* --- CONTACT & INQUIRIES --- */
-        .contact-layout { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 2rem; 
-        }
-        .contact-details { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 1.25rem; 
-        }
-        
-        .channel-card { 
-            background: var(--surface); 
-            border: 1px solid var(--border-color); 
-            padding: 1.25rem; 
-            border-radius: var(--radius-md); 
-            display: flex; 
-            align-items: center; 
-            gap: 1rem; 
-        }
-        .channel-icon { 
-            width: 44px; 
-            height: 44px; 
-            background: rgba(0, 181, 214, 0.1); 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: var(--brand-cyan); 
-            font-size: 1.1rem; 
-            flex-shrink: 0;
-        }
-        .channel-info h4 { 
-            font-size: 0.85rem; 
-            font-weight: 700; 
-            color: var(--text-dark); 
-            margin-bottom: 0.15rem; 
-        }
-        .channel-info p { 
-            font-size: 1rem; 
-            font-weight: 700; 
-            color: var(--brand-cyan); 
-        }
-        .channel-info span { 
-            font-size: 0.75rem; 
-            color: var(--text-muted); 
-            display: block; 
+        .portfolio-info h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-dark);
         }
 
-        .inquiry-box { 
-            background: var(--form-bg); 
-            border: 1px solid var(--border-color); 
-            padding: 1.5rem; 
-            border-radius: var(--radius-lg); 
-            box-shadow: var(--shadow-soft); 
-        }
-        .form-group { 
-            margin-bottom: 1.25rem; 
-        }
-        .form-group label { 
-            display: block; 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            margin-bottom: 0.5rem; 
-            color: var(--text-dark); 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-        }
-        .form-group input { 
-            width: 100%; 
-            padding: 12px; 
-            background: var(--surface-contrast); 
-            border: 1px solid var(--border-color); 
-            border-radius: var(--radius-sm); 
-            color: var(--text-dark); 
-            font-size: 0.85rem; 
-            outline: none; 
-            transition: var(--transition); 
-        }
-        .form-group input:focus { 
-            border-color: var(--brand-cyan); 
-            box-shadow: 0 0 0 3px rgba(0, 181, 214, 0.12); 
+        .portfolio-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.45;
         }
 
-        /* --- FOCUSED PAGE CONTAINER (When link clicked) --- */
-        .focused-page-overlay {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            min-height: 100vh;
+        .portfolio-more {
+            text-align: center;
         }
 
-        .back-action-bar {
-            margin-bottom: 2rem;
+        /* --- WHO ARE WE SECTION (Story + Founders) --- */
+        .who-are-we-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+            background: rgba(0, 181, 214, 0.01);
         }
 
-        .back-btn {
+        .story-container {
             background: var(--surface);
             border: 1px solid var(--border-color);
-            color: var(--text-dark);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 3.5rem;
+        }
+
+        .story-preview {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .story-extended {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .story-trigger {
+            background: none;
+            border: none;
+            color: var(--brand-cyan);
+            font-size: 0.82rem;
+            font-weight: 800;
             cursor: pointer;
+            margin-top: 1rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            transition: var(--transition);
+            gap: 6px;
         }
 
-        .back-btn:hover {
-            border-color: var(--brand-cyan);
-            color: var(--brand-cyan);
-            transform: translateX(-3px);
+        .founders-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
         }
 
-        .focused-content-card {
+        .founder-card {
             background: var(--surface);
             border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-cyan);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .founder-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--brand-cyan);
+            background: var(--surface-contrast);
+        }
+
+        .founder-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-meta h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.15rem;
+        }
+
+        .founder-meta .role {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--brand-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .founder-meta p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* --- CONTACT & INQUIRY SECTION --- */
+        .contact-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-pill {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-pill-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 181, 214, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-cyan);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-pill-details h4 {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-pill-details p {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .contact-pill-details span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .inquiry-form-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
             box-shadow: var(--shadow-soft);
         }
 
-        .focused-content-card h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 850;
-            margin-bottom: 1.5rem;
+        .form-row {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-row label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 800;
             color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
         }
 
-        .focused-content-body {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .focused-content-body p {
-            margin-bottom: 1.5rem;
-        }
-
-        .focused-meta-box {
-            background: var(--surface-contrast);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            margin-top: 2rem;
+        .form-row input, .form-row select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-color);
             border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition-smooth);
         }
 
-        /* --- METRICS TICKER --- */
-        .metric-ticker { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 1.25rem; 
-            max-width: 850px; 
-            margin: 2.5rem auto 0 auto; 
-            border-top: 1px solid var(--border-color); 
-            padding-top: 1.75rem; 
-        }
-        .metric-item { text-align: center; }
-        .metric-item h4 { 
-            font-size: 1.4rem; 
-            font-weight: 700; 
-            color: var(--text-dark); 
-        }
-        .metric-item p { 
-            font-size: 0.75rem; 
-            color: var(--text-muted); 
-            text-transform: uppercase; 
-            letter-spacing: 0.06em; 
-            margin-top: 0.25rem; 
+        .form-row input:focus, .form-row select:focus {
+            border-color: var(--brand-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 181, 214, 0.1);
         }
 
-        /* --- PREMIUM DETAILED FOOTER --- */
-        footer { 
-            background: #040711; 
-            color: #f8fafc; 
-            padding: 4rem 0 2rem 0; 
-            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+        /* --- FOOTER --- */
+        footer {
+            background: #060912;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            padding: 4rem 0 2rem 0;
         }
-        .footer-grid-premium {
+
+        .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
             margin-bottom: 3rem;
         }
-        .footer-brand-col {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .footer-logo-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .footer-logo-img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1.5px solid var(--brand-cyan);
-        }
-        .footer-brand-col h3 {
-            font-size: 1.2rem;
-            font-weight: 800;
+
+        .footer-brand h3 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin-bottom: 0.75rem;
             letter-spacing: 0.05em;
-            color: #ffffff;
         }
-        .footer-brand-col h3 span {
+
+        .footer-brand h3 span {
             color: var(--brand-cyan);
         }
-        .footer-brand-col p {
-            color: #94a3b8;
-            line-height: 1.6;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+
+        .footer-brand p {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
         }
+
         .footer-socials {
             display: flex;
             gap: 0.75rem;
         }
-        .social-link {
-            width: 36px;
-            height: 36px;
+
+        .footer-socials a {
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #94a3b8;
             text-decoration: none;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
+            font-size: 0.85rem;
         }
-        .social-link:hover {
+
+        .footer-socials a:hover {
             background: var(--brand-cyan);
-            color: #060a12;
+            color: #060912;
             transform: translateY(-2px);
         }
-        .footer-premium-col h4 {
-            font-size: 0.8rem;
-            font-weight: 700;
+
+        .footer-links h4 {
+            font-size: 0.75rem;
+            color: #f1f5f9;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 1.25rem;
-            color: #ffffff;
-            position: relative;
+            margin-bottom: 1rem;
         }
-        .footer-premium-col h4::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 20px;
-            height: 2px;
-            background: var(--brand-cyan);
-        }
-        .footer-premium-links {
+
+        .footer-links ul {
             list-style: none;
         }
-        .footer-premium-links li {
-            margin-bottom: 0.6rem;
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
         }
-        .footer-premium-links a {
+
+        .footer-links ul a {
+            font-size: 0.8rem;
             color: #94a3b8;
             text-decoration: none;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
         }
-        .footer-premium-links a:hover {
+
+        .footer-links ul a:hover {
             color: var(--brand-cyan);
-            transform: translateX(3px);
+            padding-left: 3px;
         }
-        .footer-bottom { 
-            border-top: 1px solid rgba(255, 255, 255, 0.05); 
-            padding-top: 1.5rem; 
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
             text-align: center;
-            color: #475569; 
-            font-size: 0.75rem; 
+            font-size: 0.75rem;
         }
+
         .footer-bottom-links {
             display: flex;
             justify-content: center;
             gap: 1rem;
         }
+
         .footer-bottom-links a {
             color: #475569;
             text-decoration: none;
         }
+
         .footer-bottom-links a:hover {
             color: #94a3b8;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES (TABLET & DESKTOP STYLES) --- */
+        /* --- PORTFOLIO DYNAMIC OVERLAY MODAL --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 12, 22, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            width: 100%;
+            max-width: 600px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-hover);
+            transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.1rem;
+            font-weight: 850;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            padding: 1.25rem;
+        }
+
+        .modal-project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-project-item {
+            display: flex;
+            gap: 1rem;
+            background: var(--surface-contrast);
+            padding: 0.75rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-project-img {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--bg-color);
+            flex-shrink: 0;
+        }
+
+        .modal-project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-project-desc h4 {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.15rem;
+        }
+
+        .modal-project-desc p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (min-width: 768px) {
-            body {
-                background-size: 40px 40px;
-            }
-            .container {
-                padding: 0 2rem;
-            }
-            .header-fixed-container {
-                top: 25px;
-            }
-            header.premium-pill {
-                padding: 0.6rem 2.5rem;
-            }
-            .header-nav {
+            .desktop-nav {
                 display: flex;
             }
-            .logo {
-                font-size: 1.2rem;
-            }
-            .theme-toggle-container {
-                width: 68px;
-                height: 34px;
-                padding: 4px;
-            }
-            .theme-toggle-slider {
-                width: 24px;
-                height: 24px;
-                left: 4px;
-            }
-            html[data-theme="light"] .theme-toggle-slider {
-                transform: translateX(34px);
-            }
-            .theme-toggle-icons {
-                font-size: 0.8rem;
-            }
-            .btn {
-                padding: 12px 26px;
-                font-size: 0.95rem;
-            }
-            .hero {
-                padding-top: 180px;
-                padding-bottom: 70px;
-            }
-            .tagline {
-                font-size: 0.85rem;
-                margin-bottom: 2rem;
-            }
-            .hero p {
-                font-size: clamp(1.1rem, 1.8vw, 1.25rem);
-                margin-bottom: 2.5rem;
-            }
-            .trailer-showcase-grid {
+
+            .sizzle-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
             }
-            .metric-ticker {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-                margin-top: 3.5rem;
-                padding-top: 2.25rem;
-            }
-            .metric-item h4 {
-                font-size: 1.6rem;
-            }
-            .metric-item p {
-                font-size: 0.8rem;
-            }
-            .pitch-container {
-                padding: 2.5rem;
-                margin-top: 3rem;
-            }
-            .pitch-header h3 {
-                font-size: 1.3rem;
-            }
-            .pitch-text {
-                font-size: 1.05rem;
-            }
-            .pitch-bullets {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-            .pitch-bullet {
-                font-size: 0.95rem;
-            }
-            .intro-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-            .intro-card {
-                padding: 2.25rem;
-            }
-            .intro-card h3 {
-                font-size: 1.25rem;
-            }
+
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
             }
-            .service-banner-wrapper {
-                height: 180px;
+
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            .service-content-wrapper {
-                padding: 2rem;
-            }
-            .service-module h3 {
-                font-size: 1.25rem;
-            }
-            .service-module p {
-                font-size: 0.9rem;
-            }
-            .genesis-strip {
-                padding: 4rem 3rem;
-            }
-            .genesis-layout {
-                grid-template-columns: 1.25fr 1fr;
-                gap: 3.5rem;
-            }
-            .genesis-body h2 {
-                font-size: 2.2rem;
-            }
-            .genesis-media {
-                height: 320px;
-            }
+
             .founders-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
             }
-            .founder-card {
-                padding: 2rem;
-            }
-            .founder-avatar {
-                height: 280px;
-            }
-            .founder-info h3 {
-                font-size: 1.4rem;
-            }
+
             .contact-layout {
                 grid-template-columns: 1fr 1.1fr;
                 gap: 3.5rem;
             }
-            .contact-details {
-                gap: 2rem;
-            }
-            .channel-card {
-                padding: 1.75rem;
-                gap: 1.5rem;
-            }
-            .inquiry-box {
-                padding: 3rem;
-            }
-            .footer-grid-premium {
+
+            .footer-grid {
                 grid-template-columns: 2fr repeat(3, 1fr);
-                gap: 2.5rem;
             }
+
             .footer-bottom {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
-                font-size: 0.85rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- FIXED STICKY NAVIGATION PREMIUM PILL -->
-    <div class="header-fixed-container">
-        <header class="premium-pill">
-            <a class="brand-logo-block" onclick="navigateToSection('hero-section');">
-                <img src="logo.jpeg" alt="Tattva Grid Logo" class="brand-logo-img" onerror="this.style.display='none';">
-                <div class="logo">TATTVA <span>GRID</span></div>
+    <!-- STICKY FLOATING GLASS PIL NAVIGATION -->
+    <div class="header-container">
+        <header class="pill-navigation">
+            <a class="logo-block" onclick="navigateToSection('hero-section');">
+                <img src="logo.jpeg" alt="Tattva Grid Logo" class="logo-img" onerror="this.style.display='none';">
+                <div class="logo-text">TATTVA <span>GRID</span></div>
             </a>
             
-            <nav class="header-nav">
-                <button class="nav-pill-btn active" id="nav-btn-intro" onclick="navigateToSection('intro')">
-                    <i class="fa-solid fa-circle-info"></i> Who Are We?
-                </button>
-                <button class="nav-pill-btn" id="nav-btn-services" onclick="navigateToSection('services')">
-                    <i class="fa-solid fa-cubes"></i> Services
-                </button>
-                <button class="nav-pill-btn" id="nav-btn-genesis" onclick="navigateToSection('genesis')">
-                    <i class="fa-solid fa-dna"></i> Our Story
-                </button>
-                <button class="nav-pill-btn" id="nav-btn-contact" onclick="navigateToSection('contact')">
-                    <i class="fa-solid fa-phone"></i> Contact Us
-                </button>
+            <nav class="desktop-nav" id="navLinks">
+                <button class="nav-link active" id="nav-btn-sizzle" onclick="navigateToSection('sizzle')">Concept</button>
+                <button class="nav-link" id="nav-btn-services" onclick="navigateToSection('services')">Capabilities</button>
+                <button class="nav-link" id="nav-btn-portfolio" onclick="navigateToSection('portfolio')">Work</button>
+                <button class="nav-link" id="nav-btn-who-are-we" onclick="navigateToSection('who-are-we')">Identity</button>
+                <button class="nav-link" id="nav-btn-contact" onclick="navigateToSection('contact')">Connect</button>
             </nav>
 
             <div class="header-actions">
-                <div class="theme-toggle-container" id="themeToggleGroup" aria-label="Toggle Framework Base Color">
-                    <div class="theme-toggle-slider"></div>
-                    <div class="theme-toggle-icons">
+                <div class="toggle-track" id="themeSwitch" aria-label="Toggle Framework Color Palette">
+                    <div class="toggle-thumb"></div>
+                    <div class="toggle-icons">
                         <i class="fa-solid fa-moon"></i>
                         <i class="fa-solid fa-sun"></i>
                     </div>
                 </div>
-                <button onclick="navigateToSection('contact')" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Console →</button>
             </div>
         </header>
     </div>
 
-    <!-- MAIN LANDING VIEW (Everything is accessible sequentially here) -->
-    <main id="showcase-view" class="view-pane">
+    <!-- MAIN VIEWPANE -->
+    <main id="showcase-view">
         
-        <!-- SYSTEM SPLASH HERO ZONE -->
-        <section class="hero" id="hero-section">
-            <div class="hero-curtain"></div>
-            <div class="hero-content">
-                <div class="tagline">/// System Infrastructure Grid</div>
-                <h1>Welcome to <span>Tattva Grid</span></h1>
-                <p>High-Performance Digital Infrastructure &amp; Dynamic Business Automation Platforms engineered for absolute resilience.</p>
-                
-                <div class="hero-btns">
-                    <button onclick="navigateToSection('intro')" class="btn btn-primary">Launch Decisive Pitch <i class="fa-solid fa-compass"></i></button>
-                    <button onclick="navigateToSection('contact')" class="btn btn-outline">Technical Specifications</button>
-                </div>
-
-                <!-- DYNAMIC TRAILER CARDS (The 3 Suspense Hook Questions) -->
-                <div class="trailer-showcase-grid">
-                    <!-- Question 1 -->
-                    <div class="trailer-question-card">
-                        <span class="trailer-number">01 / Ecosystem Design</span>
-                        <h3>Why Tattva Grid?</h3>
-                        <p class="trailer-answer">
-                            In a hyper-connected environment, business failure occurs due to disconnected digital architectures and structural latency. Tattva Grid resolves this paradigm. We replace fragile multi-party integrations with unified, lightweight logic environments, direct database synchronization, and modern automation arrays.
-                        </p>
-                        <a href="javascript:void(0);" onclick="switchToFocusedView('who-are-we-focus')" class="trailer-link">
-                            Enter the Deep Dive <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+        <!-- SECTION 1: SYSTEM SPLASH HERO ZONE -->
+        <section class="hero-section" id="hero-section">
+            <div class="hero-banner"></div>
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-circle-nodes"></i> Digital System Architecture
                     </div>
-
-                    <!-- Question 2 -->
-                    <div class="trailer-question-card">
-                        <span class="trailer-number">02 / Technical Stack</span>
-                        <h3>What all services do they provide?</h3>
-                        <p class="trailer-answer">
-                            We architect high-fidelity digital solutions structured around four major operational pipelines: Advanced Web Solutions, specialized ERP systems built for Educational Institutes, highly customizable operational ERP layouts, and robust Website Automation integrations.
-                        </p>
-                        <a href="javascript:void(0);" onclick="switchToFocusedView('services-focus')" class="trailer-link">
-                            Examine Capabilities <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-
-                    <!-- Question 3 -->
-                    <div class="trailer-question-card">
-                        <span class="trailer-number">03 / Yield Management</span>
-                        <h3>How are they helpful for my business?</h3>
-                        <p class="trailer-answer">
-                            By unifying isolated manual routines into smooth, automated logic engines, we remove operational drag. We ensure transactional synchronization, custom data architectures, and fast asset pipelines, resulting in consistent, predictable digital yield for your brand.
-                        </p>
-                        <a href="javascript:void(0);" onclick="switchToFocusedView('contact-focus')" class="trailer-link">
-                            Establish Connection <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="metric-ticker">
-                    <div class="metric-item">
-                        <h4 style="color: #25D366;">100%</h4>
-                        <p>Core Integrity</p>
-                    </div>
-                    <div class="metric-item">
-                        <h4>High-Fidelity</h4>
-                        <p>Automation Scaling</p>
-                    </div>
-                    <div class="metric-item">
-                        <h4>Enterprise</h4>
-                        <p>Infrastructure Yield</p>
+                    <h1>Digital Solutions Engineered For <span>Resilience &amp; Scale</span></h1>
+                    <p>We build independent, custom web software platforms that automate workflows, simplify management, and optimize performance.</p>
+                    
+                    <div class="hero-actions-group">
+                        <button onclick="navigateToSection('sizzle')" class="btn btn-primary">See the Blueprint <i class="fa-solid fa-arrow-right"></i></button>
+                        <button onclick="navigateToSection('contact')" class="btn btn-secondary">Direct Connect</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- LANDING SECTION 1: WHO ARE WE? -->
-        <section class="landing-section" id="intro">
+        <!-- SECTION 2: SIZZLE ZONE (The Three Questions) -->
+        <section class="sizzle-section reveal" id="sizzle">
             <div class="container">
                 <div class="section-header">
-                    <h2>Who Are We?</h2>
-                    <p>Why Tattva Grid remains the premium choice for modern digital infrastructure execution.</p>
+                    <h2>The Architecture Framework</h2>
+                    <p>Direct answers behind our infrastructure design methodology.</p>
                 </div>
 
-                <div class="pitch-container">
-                    <div class="pitch-header">
-                        <i class="fa-solid fa-circle-nodes"></i>
-                        <h3>A 30-Second Decisive Preview</h3>
+                <div class="sizzle-grid">
+                    <!-- Card 1 -->
+                    <div class="sizzle-card">
+                        <span class="index-no">01 / Identity</span>
+                        <h3>What is Tattva Grid?</h3>
+                        <p>
+                            A specialized systems studio that builds custom database systems, lightweight web designs, and background automations from scratch.
+                        </p>
                     </div>
-                    <p class="pitch-text">
-                        We represent a dedicated collective of technical developers, financial planners, and media operations strategists. Tattva Grid replaces fragile, disconnected structures with highly resilient custom-built software architectures. We establish native systems with minimum generic library reliance, resulting in superior performance parameters.
-                    </p>
-                    <div class="pitch-bullets">
-                        <div class="pitch-bullet">
-                            <i class="fa-solid fa-check"></i>
-                            <span><strong>Unified Operation Modules:</strong> High-conversion frontends integrated natively with core scheduling and real-time ledger engines.</span>
-                        </div>
-                        <div class="pitch-bullet">
-                            <i class="fa-solid fa-check"></i>
-                            <span><strong>Optimized Asset Delivery:</strong> Multi-tonal digital pipelines optimized for fast asset loading and low operational drag.</span>
-                        </div>
-                        <div class="pitch-bullet">
-                            <i class="fa-solid fa-check"></i>
-                            <span><strong>In-House Custom Logic:</strong> Zero generic framework dependency. Built and deployed natively by specialist engineers.</span>
-                        </div>
-                        <div class="pitch-bullet">
-                            <i class="fa-solid fa-check"></i>
-                            <span><strong>Absolute Financial Control:</strong> Financial parameter allocation architectures ensuring systematic yield tracking and operations.</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="intro-grid">
-                    <div class="intro-card">
-                        <div class="intro-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Enterprise Resilience</h3>
-                        <p>Continuous data tracking, automated failure mitigation, and redundant database security maintain systematic uptime regardless of load peaks.</p>
+                    <!-- Card 2 -->
+                    <div class="sizzle-card">
+                        <span class="index-no">02 / Purpose</span>
+                        <h3>Why Tattva Grid?</h3>
+                        <p>
+                            We replace heavy commercial templates and fragile integrations with clean, independent code that ensures continuous uptime and safety.
+                        </p>
                     </div>
-                    <div class="intro-card">
-                        <div class="intro-card-icon"><i class="fa-solid fa-gauge-high"></i></div>
-                        <h3>High-Fidelity Speed</h3>
-                        <p>Lightweight baseline execution ensures micro-second load behaviors, boosting conversions and lowering digital abandonment rates.</p>
-                    </div>
-                </div>
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button onclick="switchToFocusedView('who-are-we-focus')" class="btn btn-outline">Read Detailed Specifications <i class="fa-solid fa-arrow-right"></i></button>
+                    <!-- Card 3 -->
+                    <div class="sizzle-card">
+                        <span class="index-no">03 / Operation</span>
+                        <h3>How does it help?</h3>
+                        <p>
+                            By translating repetitive administrative tasks into automated workflows, we eliminate operational delays and improve execution speeds.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- LANDING SECTION 2: SERVICES -->
-        <section class="landing-section" id="services">
+        <!-- SECTION 3: SERVICES ZONE (Mobile-First Pair-of-Two Grid) -->
+        <section class="services-section reveal" id="services">
             <div class="container">
                 <div class="section-header">
                     <h2>Ecosystem Capabilities</h2>
-                    <p>Our core technical execution sectors across custom automation channels.</p>
+                    <p>Native services engineered to optimize your operational yield.</p>
                 </div>
 
-                <!-- 2x2 Services Grid Structured exactly around your provided graphic layout -->
                 <div class="services-grid">
-                    <!-- Card 1: Advanced Web Solutions -->
-                    <div class="service-module">
-                        <div class="service-banner-wrapper">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Advanced Web Solutions Development">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h3>Advanced Web Solutions</h3>
-                            <p>Designing and constructing high-converting responsive frontends and structural application systems optimized for fast asset deployment.</p>
-                        </div>
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Web Solutions</h3>
+                        <p>Fast frontends designed with clean code for rapid loading speeds.</p>
                     </div>
-                    
-                    <!-- Card 2: ERP for Educational Institutes -->
-                    <div class="service-module">
-                        <div class="service-banner-wrapper">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600" alt="ERP for Educational Institutes Systems">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h3>ERP for Educational Institutes</h3>
-                            <p>Developing seamless educational operational infrastructure systems, combining course schedulers, dynamic rosters, and central registries.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 3: ERP for Solutions -->
-                    <div class="service-module">
-                        <div class="service-banner-wrapper">
-                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=600" alt="ERP for Solutions">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h3>ERP for Solutions</h3>
-                            <p>Engineering specialized corporate resource dashboards, ledger modules, and database structures designed around custom business processes.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 4: Website Automation -->
-                    <div class="service-module">
-                        <div class="service-banner-wrapper">
-                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600" alt="Website Automation Pipelines">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h3>Website Automation</h3>
-                            <p>Deploying automated background tasks, real-time sync schedulers, API connections, and continuous integration engines.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button onclick="switchToFocusedView('services-focus')" class="btn btn-outline">Explore Capabilities Panel <i class="fa-solid fa-arrow-right"></i></button>
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Academic ERP</h3>
+                        <p>Integrating schedules, database registries, and tracking panels.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Enterprise ERP</h3>
+                        <p>Bespoke dashboards tracking resource assets and client operations.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>Automations</h3>
+                        <p>Continuous background synchronization without manual oversight.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- LANDING SECTION 3: SYSTEM GENESIS (OUR STORY) -->
-        <section class="landing-section" id="genesis">
+        <!-- SECTION 4: PORTFOLIO ZONE (OUR WORK - 6 Projects) -->
+        <section class="portfolio-section reveal" id="portfolio">
             <div class="container">
-                
-                <!-- ORIGIN STRIP (Exact Text Incorporated) -->
-                <div class="genesis-strip">
-                    <div class="genesis-layout">
-                        <div class="genesis-body">
-                            <h2>The Genesis of Tattva Grid</h2>
-                            <p>
-                                Every great venture begins with a conversation, and Tattva Grid was no different.
-                                <br><br>
-                                Founded in a college library by Rohit, Neil, and Aryesh, Tattva Grid started as a shared vision to build meaningful solutions through technology and innovation.
-                                <br><br>
-                                Rohit took on the role of CEO, leading the company's vision and growth. Neel became CTO & CFO, overseeing technology and financial strategy, while Aaryesh led Marketing and Operations.
-                                <br><br>
-                                Today, Tattva Grid serves as the foundation for multiple future products and ventures, driven by a commitment to innovation, collaboration, and impact.
-                            </p>
+                <div class="section-header">
+                    <h2>Our Executed Deployments</h2>
+                    <p>A selection of custom systems engineered for direct business application.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Project 1 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-media">
+                            <span class="portfolio-tag">Scheduler Engine</span>
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=500" alt="Turf Booking Scheduler">
                         </div>
-                        <div class="genesis-media">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" alt="Tattva Grid Coding Engine">
+                        <div class="portfolio-info">
+                            <h3>TurfPro Scheduler</h3>
+                            <p>Real-time slot booking scheduler designed to handle multi-court sports bookings smoothly.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-media">
+                            <span class="portfolio-tag">Academic ERP</span>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=500" alt="EduTrack Dashboard">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>EduTrack Core</h3>
+                            <p>Unified database environment combining academic class grids with dynamic roster trackers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-media">
+                            <span class="portfolio-tag">Finance Web</span>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" alt="LedgerFlow Portal">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>LedgerFlow Dashboard</h3>
+                            <p>Custom financial tracking platform built to display real-time transaction pipelines.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-media">
+                            <span class="portfolio-tag">Asset Portfolio</span>
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=500" alt="MediaHub Studio">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>MediaHub Studio</h3>
+                            <p>High-conversion responsive showcase designed to optimize image loading times.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-media">
+                            <span class="portfolio-tag">Task Sync</span>
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=500" alt="SyncGrid Engine">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>SyncGrid Engine</h3>
+                            <p>Database synchronization microservice that processes continuous background tasks securely.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-media">
+                            <span class="portfolio-tag">E-Commerce</span>
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=500" alt="AeroCart Portal">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>AeroCart Portal</h3>
+                            <p>Lightweight mobile storefront with rapid checkout logic to minimize abandonment rates.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- LEADERSHIP ARRAYS -->
+                <div class="portfolio-more">
+                    <button onclick="openPortfolioModal();" class="btn btn-secondary">Explore Extended Repository</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WHO ARE WE ZONE (Story + Founders Grid) -->
+        <section class="who-are-we-section reveal" id="who-are-we">
+            <div class="container">
                 <div class="section-header">
-                    <h2>The Founders</h2>
-                    <p>The leadership architecture directing our core systemic development arrays.</p>
+                    <h2>Our Technical Structure</h2>
+                    <p>The vision and the engineering team behind the Tattva Grid architecture.</p>
+                </div>
+
+                <div class="story-container">
+                    <div class="story-preview">
+                        Tattva Grid was founded in a college library by Rohit, Neel, and Aaryesh with a shared goal of building clean, resilient software systems. We believe digital operations should be built on independent logic rather than fragile, pre-made templates.
+                        <div class="story-extended" id="storyExtended">
+                            Today, our frameworks serve as the foundation for modern scheduling platforms, ERP portals, and automated database sync services, allowing teams to scale their operations securely.
+                        </div>
+                    </div>
+                    <button class="story-trigger" id="storyTriggerBtn" onclick="toggleStoryExpansion();">Read Detailed History <i class="fa-solid fa-angle-down"></i></button>
                 </div>
 
                 <div class="founders-grid">
+                    <!-- Founder 1 -->
                     <div class="founder-card">
                         <div class="founder-avatar">
-                            <img src="Founder.jpg" alt="Neel Athane - Founder, CTO &amp; CFO" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                            <img src="Founder.jpg" alt="Neel Athane" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'">
                         </div>
-                        <div class="founder-info">
+                        <div class="founder-meta">
                             <h3>Neel Athane</h3>
-                            <div class="role">Founder - CTO &amp; CFO</div>
-                            <p>Technical Infrastructure Architecture, Core Engineering Stack, Capital Allocation, and Financial Systems.</p>
+                            <span class="role">CTO &amp; CFO</span>
+                            <p>Directs technical infrastructure design, database logic pipelines, and system financial setups.</p>
                         </div>
                     </div>
 
+                    <!-- Founder 2 -->
                     <div class="founder-card">
                         <div class="founder-avatar">
-                            <img src="Co-Founder 1.jpg" alt="Rohit Badgujar - Co-Founder &amp; CEO" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400'">
+                            <img src="Co-Founder 1.jpg" alt="Rohit Badgujar" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'">
                         </div>
-                        <div class="founder-info">
+                        <div class="founder-meta">
                             <h3>Rohit Badgujar</h3>
-                            <div class="role">Co-Founder - CEO</div>
-                            <p>Strategic Vision, Client Allocations, Corporate Direction, and Brand Ecosystem Management.</p>
+                            <span class="role">CEO</span>
+                            <p>Directs corporate expansion parameters, partner alignment, and core ecosystem strategy.</p>
                         </div>
                     </div>
 
+                    <!-- Founder 3 -->
                     <div class="founder-card">
                         <div class="founder-avatar">
-                            <img src="Co-Founder 2.jpg" alt="Aaryesh Honrao - Co-Founder, CMO &amp; COO" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'">
+                            <img src="Co-Founder 2.jpg" alt="Aaryesh Honrao" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'">
                         </div>
-                        <div class="founder-info">
+                        <div class="founder-meta">
                             <h3>Aaryesh Honrao</h3>
-                            <div class="role">Co-Founder - CMO &amp; COO</div>
-                            <p>Day-to-day Operations, Service Delivery Lifecycle, Marketing Operations, and Customer Support Frameworks.</p>
+                            <span class="role">CMO &amp; COO</span>
+                            <p>Directs marketing campaigns, client relationship workflows, and product launch lifecycles.</p>
                         </div>
                     </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button onclick="switchToFocusedView('genesis-focus')" class="btn btn-outline">Read Expanded Story Module <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- LANDING SECTION 4: CONTACT US (TERMINAL ACCESS) -->
-        <section class="landing-section" id="contact">
+        <!-- SECTION 6: CONNECT ZONE (Simple Form + Details) -->
+        <section class="contact-section reveal" id="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>Connect With Us</h2>
-                    <p>Get in touch regarding systematic implementations or custom ecosystem queries.</p>
+                    <h2>Initiate Integration</h2>
+                    <p>Connect directly with our engineering team to draft system requirements.</p>
                 </div>
 
                 <div class="contact-layout">
-                    <div class="contact-details">
-                        <div class="channel-card">
-                            <div class="channel-icon"><i class="fa-solid fa-coins"></i></div>
-                            <div class="channel-info">
-                                <h4>Financial &amp; Technical Specifications Desk</h4>
+                    <div class="contact-info-block">
+                        <div class="contact-pill">
+                            <div class="contact-pill-icon"><i class="fa-solid fa-coins"></i></div>
+                            <div class="contact-pill-details">
+                                <h4>Technical Operations desk</h4>
                                 <p>+91 94222 31321</p>
-                                <span>Direct Infrastructure Line — Neel Athane</span>
+                                <span>Infrastructure Line — Neel Athane</span>
                             </div>
                         </div>
 
-                        <div class="channel-card">
-                            <div class="channel-icon"><i class="fa-solid fa-bullhorn"></i></div>
-                            <div class="channel-info">
-                                <h4>Operations &amp; Marketing Channels</h4>
+                        <div class="contact-pill">
+                            <div class="contact-pill-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="contact-pill-details">
+                                <h4>Operations Desk</h4>
                                 <p>+91 91750 23438</p>
-                                <span>Media &amp; Outreach Line — Aaryesh Honrao</span>
+                                <span>Marketing Line — Aaryesh Honrao</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-pill">
+                            <div class="contact-pill-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-pill-details">
+                                <h4>Direct Email Address</h4>
+                                <p>tattvagrids@gmail.com</p>
+                                <span>Global Inquiry Inbox</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="inquiry-box">
-                        <form id="mailLeadForm" onsubmit="generatePrefilledEmail(event);">
-                            <div class="form-group">
-                                <label for="clientName">Your Name / Organization</label>
-                                <input type="text" id="clientName" required placeholder="Enter your name or company">
+                    <div class="inquiry-form-card">
+                        <form id="tattvaMailEngine" onsubmit="generatePrefilledEmail(event);">
+                            <div class="form-row">
+                                <label for="entryName">Name / Organization</label>
+                                <input type="text" id="entryName" required placeholder="Enter details">
                             </div>
-                            <div class="form-group">
-                                <label for="clientContact">Contact Phone Number / Email</label>
-                                <input type="text" id="clientContact" required placeholder="Where can our founders reach you?">
+                            <div class="form-row">
+                                <label for="entryEmail">Email Address</label>
+                                <input type="email" id="entryEmail" required placeholder="name@domain.com">
                             </div>
-                            <div class="form-group">
-                                <label for="inquiryType">Primary Interest Or Business Domain</label>
-                                <input type="text" id="inquiryType" required placeholder="e.g. Sports Turf Site, Media Portfolio, Automation">
+                            <div class="form-row">
+                                <label for="entryPhone">Callback Number</label>
+                                <input type="text" id="entryPhone" required placeholder="Phone connection">
+                            </div>
+                            <div class="form-row">
+                                <label for="entryReq">Required Deployment Pipeline</label>
+                                <select id="entryReq" required>
+                                    <option value="" disabled selected>Choose pipeline category...</option>
+                                    <option value="Advanced Web Solutions">Advanced Web Solutions</option>
+                                    <option value="Educational ERP Systems">Educational ERP Systems</option>
+                                    <option value="Custom Database & Ledger ERP">Custom Database &amp; Ledger ERP</option>
+                                    <option value="Automated Synchronization Engines">Automated Synchronization Engines</option>
+                                </select>
+                            </div>
+                            <div class="form-row" style="display:none;">
+                                <input type="text" id="entryLocation" value="Global">
+                                <input type="text" id="entryDoubts" value="Intro Portal Core Connection Sequence">
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
-                                Draft Official Inquiry Email <i class="fa-solid fa-envelope"></i>
+                                Draft Project Blueprint <i class="fa-solid fa-envelope"></i>
                             </button>
                         </form>
                     </div>
@@ -1566,155 +1415,47 @@
 
     </main>
 
-    <!-- FOCUSED SINGLE VIEW OVERLAY (Displays ONLY the selected deep-dive option) -->
-    <main id="focused-view" class="view-pane hidden">
-        <div class="container focused-page-overlay">
-            
-            <div class="back-action-bar">
-                <button onclick="switchToShowcaseView();" class="back-btn">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Main Showcase
-                </button>
-            </div>
-
-            <!-- Focus Content Block 1: Who Are We? -->
-            <div id="who-are-we-focus" class="focus-detail-block hidden">
-                <div class="focused-content-card">
-                    <h1>Who Are We?</h1>
-                    <div class="focused-content-body">
-                        <p><strong>Tattva Grid</strong> was established on the fundamental belief that robust technical operations require native, integrated development frameworks. We eliminate fragile dependencies, excessive template overheads, and non-optimized assets, building instead from clean logic bases.</p>
-                        <p>Operating as a collaborative, multi-disciplinary engineering grid, we align precise logic stacks, low-overhead codebases, and targeted business deployment routines to keep systems reliable, fast, and scalable.</p>
-                        
-                        <div class="focused-meta-box">
-                            <h3 style="color: var(--brand-cyan); margin-bottom: 0.5rem; font-weight: 800;">Our Core Philosophy</h3>
-                            <p style="font-size: 0.9rem; margin-bottom: 0;">We build for absolute structural longevity. By treating technology as an integrated, secure, and self-correcting grid, we prevent long-term software friction and let our clients scale their operations with confidence.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Focus Content Block 2: Capabilities (Services) -->
-            <div id="services-focus" class="focus-detail-block hidden">
-                <div class="focused-content-card">
-                    <h1>Ecosystem Capabilities</h1>
-                    <div class="focused-content-body">
-                        <p>Our solutions target maximum conversion, reduced administrative labor, and structural systems security. We execute native development protocols across four main categories:</p>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem;">
-                            <div style="background: var(--surface-contrast); padding: 1.25rem; border-radius: var(--radius-md);">
-                                <h3 style="color: var(--brand-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Advanced Web Solutions</h3>
-                                <p style="font-size: 0.9rem; margin: 0;">Fast-loading, completely custom web interfaces. We optimize asset trees, image structures, and CSS files to achieve lightning-fast scores across any mobile viewport.</p>
-                            </div>
-
-                            <div style="background: var(--surface-contrast); padding: 1.25rem; border-radius: var(--radius-md);">
-                                <h3 style="color: var(--brand-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;">2. ERP for Educational Institutes</h3>
-                                <p style="font-size: 0.9rem; margin: 0;">Complete operational software architectures containing registration panels, roster grids, resource allocation grids, and student tracking tools built into a unified portal.</p>
-                            </div>
-
-                            <div style="background: var(--surface-contrast); padding: 1.25rem; border-radius: var(--radius-md);">
-                                <h3 style="color: var(--brand-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;">3. ERP for Solutions</h3>
-                                <p style="font-size: 0.9rem; margin: 0;">Bespoke internal enterprise trackers built around custom business pipelines. Handles supply tracking, customer logs, scheduling grids, and performance monitoring.</p>
-                            </div>
-
-                            <div style="background: var(--surface-contrast); padding: 1.25rem; border-radius: var(--radius-md);">
-                                <h3 style="color: var(--brand-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;">4. Website Automation</h3>
-                                <p style="font-size: 0.9rem; margin: 0;">Intelligent background routines, automated cron triggers, client update pipelines, and relational database backups running without human oversight.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Focus Content Block 3: Story -->
-            <div id="genesis-focus" class="focus-detail-block hidden">
-                <div class="focused-content-card">
-                    <h1>System Genesis</h1>
-                    <div class="focused-content-body">
-                        <p><strong>Every great venture begins with a conversation, and Tattva Grid was no different.</strong></p>
-                        <p>Founded in a college library by Rohit, Neil, and Aryesh, Tattva Grid started as a shared vision to build meaningful solutions through technology and innovation.</p>
-                        <p>Rohit took on the role of CEO, leading the company's vision and growth. Neel became CTO & CFO, overseeing technology and financial strategy, while Aaryesh led Marketing and Operations.</p>
-                        <p>Today, Tattva Grid serves as the foundation for multiple future products and ventures, driven by a commitment to innovation, collaboration, and impact.</p>
-                        
-                        <div class="focused-meta-box">
-                            <h3 style="color: var(--brand-cyan); margin-bottom: 0.5rem; font-weight: 800;">Looking Ahead</h3>
-                            <p style="font-size: 0.9rem; margin-bottom: 0;">With strategic positions established across custom web engineering, enterprise scheduling automation, and digital asset distribution layers, the founding team continues to refine our core engines to empower tomorrow's leading operators.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Focus Content Block 4: Contact Us -->
-            <div id="contact-focus" class="focus-detail-block hidden">
-                <div class="focused-content-card">
-                    <h1>Terminal Access</h1>
-                    <div class="focused-content-body">
-                        <p>Establish direct communication parameters with our core architects to evaluate scope criteria, draft technical specifications, or request system blueprints.</p>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr sm:grid-cols-2 gap: 1.5rem; margin-top: 1.5rem;">
-                            <div style="background: var(--surface-contrast); padding: 1.5rem; border-radius: var(--radius-md);">
-                                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--brand-cyan); font-weight: 700;">Infrastructure Desk</span>
-                                <h4 style="color: var(--text-dark); margin: 0.25rem 0 0.5rem 0; font-size: 1.1rem;">Neel Athane</h4>
-                                <p style="font-size: 0.85rem; margin: 0; color: var(--text-muted);">Direct line for backend specifications, hosting parameters, financial setups, and databases.</p>
-                                <p style="font-size: 0.95rem; font-weight: 700; color: var(--brand-cyan); margin-top: 0.75rem;">+91 94222 31321</p>
-                            </div>
-
-                            <div style="background: var(--surface-contrast); padding: 1.5rem; border-radius: var(--radius-md);">
-                                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--brand-cyan); font-weight: 700;">Outreach Desk</span>
-                                <h4 style="color: var(--text-dark); margin: 0.25rem 0 0.5rem 0; font-size: 1.1rem;">Aaryesh Honrao</h4>
-                                <p style="font-size: 0.85rem; margin: 0; color: var(--text-muted);">Direct line for branding integration, cinematic deployment schedules, and client relationships.</p>
-                                <p style="font-size: 0.95rem; font-weight: 700; color: var(--brand-cyan); margin-top: 0.75rem;">+91 91750 23438</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
     <!-- PREMIUM DETAILED MULTI-COLUMN FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-grid-premium">
-                <div class="footer-brand-col">
-                    <div class="footer-logo-row">
-                        <img src="logo.jpeg" alt="Tattva Grid Logo" class="footer-logo-img" onerror="this.style.display='none';">
-                        <h3>TATTVA <span>GRID</span></h3>
-                    </div>
-                    <p>High-performance enterprise infrastructure layouts engineered alongside fluid, multi-tonal data automation layers. Processing industrial-grade software resilience patterns securely.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TATTVA <span>GRID</span></h3>
+                    <p>Custom digital systems engineered for reliable performance. Built on independent logic stacks that eliminate overhead drag.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="social-link" aria-label="X-Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/tattvagrids" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tattvagrids" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://x.com/tattvagrids" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/tattvagrids" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
 
-                <div class="footer-premium-col">
-                    <h4>Ecosystem Links</h4>
-                    <ul class="footer-premium-links">
-                        <li><a href="#services" onclick="navigateToSection('services')">Landing Architectures</a></li>
-                        <li><a href="#services" onclick="navigateToSection('services')">Turf Booking Automations</a></li>
-                        <li><a href="#services" onclick="navigateToSection('services')">Media Hub Portfolios</a></li>
-                        <li><a href="#services" onclick="navigateToSection('services')">Multi-Sector Sites</a></li>
+                <div class="footer-links">
+                    <h4>Ecosystem Services</h4>
+                    <ul>
+                        <li><a href="#services" onclick="navigateToSection('services')">Custom Portals</a></li>
+                        <li><a href="#services" onclick="navigateToSection('services')">Sports Booking Automations</a></li>
+                        <li><a href="#services" onclick="navigateToSection('services')">Academic Registries</a></li>
+                        <li><a href="#services" onclick="navigateToSection('services')">Task Schedulers</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-premium-col">
-                    <h4>Company</h4>
-                    <ul class="footer-premium-links">
-                        <li><a href="#genesis" onclick="navigateToSection('genesis')">About Identity</a></li>
-                        <li><a href="#genesis" onclick="navigateToSection('genesis')">System Genesis</a></li>
-                        <li><a href="#genesis" onclick="navigateToSection('genesis')">Leadership Stack</a></li>
-                        <li><a href="#contact" onclick="navigateToSection('contact')">Careers</a></li>
+                <div class="footer-links">
+                    <h4>About Tattva</h4>
+                    <ul>
+                        <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Framework Identity</a></li>
+                        <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Systems Genesis</a></li>
+                        <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Founders Stack</a></li>
+                        <li><a href="#contact" onclick="navigateToSection('contact')">Integrate</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-premium-col">
-                    <h4>Contact Records</h4>
-                    <ul class="footer-premium-links">
+                <div class="footer-links">
+                    <h4>Operations</h4>
+                    <ul>
                         <li><a href="mailto:tattvagrids@gmail.com"><i class="fa-regular fa-envelope"></i> tattvagrids@gmail.com</a></li>
-                        <li><a href="#contact" onclick="navigateToSection('contact')"><i class="fa-solid fa-headset"></i> Support Desk</a></li>
-                        <li><a href="#contact" onclick="navigateToSection('contact')"><i class="fa-solid fa-phone"></i> Direct Technical Line</a></li>
+                        <li><a href="#contact" onclick="navigateToSection('contact')"><i class="fa-solid fa-headset"></i> Support Portal</a></li>
+                        <li><a href="#contact" onclick="navigateToSection('contact')"><i class="fa-solid fa-phone"></i> Technical Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -1724,117 +1465,171 @@
                     &copy; 2026 Tattva Grid. Developed by Neel Athane. All rights reserved.
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Framework</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security Protocol</a>
+                    <a href="#">Security Charter</a>
+                    <a href="#">Terms of Use</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- INTERACTIVE PORTFOLIO MODAL (Explore Extended Repository) -->
+    <div class="modal-overlay" id="portfolioModal" onclick="closePortfolioModalOnOutsideClick(event);">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Additional Engineering Blueprints</h3>
+                <button class="modal-close" onclick="closePortfolioModal();"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-project-list">
+                    <!-- Modal Project Item 1 -->
+                    <div class="modal-project-item">
+                        <div class="modal-project-img">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=100" alt="Data Engine">
+                        </div>
+                        <div class="modal-project-desc">
+                            <h4>LedgerCore API</h4>
+                            <p>Automated database connection layer processing thousands of ledger updates per minute securely.</p>
+                        </div>
+                    </div>
+                    <!-- Modal Project Item 2 -->
+                    <div class="modal-project-item">
+                        <div class="modal-project-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=100" alt="Secure Gateway">
+                        </div>
+                        <div class="modal-project-desc">
+                            <h4>AuthGrid Gateway</h4>
+                            <p>Custom security authentication proxy designed to handle client access protocols with zero external libraries.</p>
+                        </div>
+                    </div>
+                    <!-- Modal Project Item 3 -->
+                    <div class="modal-project-item">
+                        <div class="modal-project-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=100" alt="Workflow Tool">
+                        </div>
+                        <div class="modal-project-desc">
+                            <h4>TaskFlow Cron</h4>
+                            <p>Background process management utility scheduling administrative tasks with automated failure notifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SYSTEM SCRIPTS -->
     <script>
-        // --- VIEW NAVIGATION ENGINE (Showcase vs Deep-Dive focus states) ---
+        // Smooth scroll transition handler between main views
         function navigateToSection(sectionId) {
-            // First ensure we are displaying the full showcase view
-            switchToShowcaseView();
-
-            // Locate corresponding button in header navigation to highlight
-            const navButtons = document.querySelectorAll('.nav-pill-btn');
-            navButtons.forEach(btn => btn.classList.remove('active'));
-
-            const targetBtn = document.getElementById(`nav-btn-${sectionId}`);
-            if (targetBtn) {
-                targetBtn.classList.add('active');
-            }
-
-            // Scroll down cleanly to specified section anchor
             const element = document.getElementById(sectionId);
             if (element) {
                 const targetY = element.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({
-                    top: targetY - 100,
+                    top: targetY - 90,
                     behavior: 'smooth'
                 });
             }
         }
 
-        // Show showcase main view
-        function switchToShowcaseView() {
-            document.getElementById('focused-view').classList.add('hidden');
-            document.getElementById('showcase-view').classList.remove('hidden');
-        }
+        // Expanded About Story expansion handler
+        function toggleStoryExpansion() {
+            const extendedText = document.getElementById('storyExtended');
+            const triggerBtn = document.getElementById('storyTriggerBtn');
 
-        // Switch to the focused single-page layout when a specific focus action is executed
-        function switchToFocusedView(focusBlockId) {
-            // Hide all detail blocks inside focused page view
-            const blocks = document.querySelectorAll('.focus-detail-block');
-            blocks.forEach(block => block.classList.add('hidden'));
-
-            // Show our targeted focus detail block
-            const targetBlock = document.getElementById(focusBlockId);
-            if (targetBlock) {
-                targetBlock.classList.remove('hidden');
+            if (extendedText.style.display === 'block') {
+                extendedText.style.display = 'none';
+                triggerBtn.innerHTML = 'Read Detailed History <i class="fa-solid fa-angle-down"></i>';
+            } else {
+                extendedText.style.display = 'block';
+                triggerBtn.innerHTML = 'Collapse Story Module <i class="fa-solid fa-angle-up"></i>';
             }
-
-            // Hide the standard showcase and display focus overlays
-            document.getElementById('showcase-view').classList.add('hidden');
-            document.getElementById('focused-view').classList.remove('hidden');
-
-            // Scroll smoothly back to top of viewport
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         }
 
-        // --- PREFILLED EMAIL FORM BUILDER ---
+        // Portfolio Extended Repository Modal Logic
+        function openPortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closePortfolioModalOnOutsideClick(event) {
+            const modal = document.getElementById('portfolioModal');
+            if (event.target === modal) {
+                closePortfolioModal();
+            }
+        }
+
+        // Security Form Pre-filled Email Generation Engine
         function generatePrefilledEmail(event) {
             event.preventDefault();
-            const name = document.getElementById('clientName').value;
-            const contact = document.getElementById('clientContact').value;
-            const scope = document.getElementById('inquiryType').value;
+            const name = document.getElementById('entryName').value;
+            const email = document.getElementById('entryEmail').value;
+            const phone = document.getElementById('entryPhone').value;
+            const scope = document.getElementById('entryReq').value;
+            const location = document.getElementById('entryLocation').value || "Global";
+            const doubts = document.getElementById('entryDoubts').value || "Intro Portal Core Connection Sequence";
 
             const baseRecipient = "tattvagrids@gmail.com";
             const emailSubject = encodeURIComponent(`Tattva Grid Ecosystem Request - ${scope}`);
             const emailBody = encodeURIComponent(
-                `Hello Tattva Grid Founders Technical Team,\n\n` +
-                `My name is ${name}.\n` +
-                `I am submitting a baseline request regarding our operational interest in: ${scope}.\n\n` +
-                `Primary Client Contact Information:\n` +
-                `- Callback Vector: ${contact}\n\n` +
-                `Please review these basic parameters and have the appropriate founder reach out to coordinate an introductory consultation loop.\n\n` +
-                `Best Regards,\n${name}`
+                `====== TATTVA GRID DEPLOYMENT MANIFEST ======\n\n` +
+                `Executive Name: ${name}\n` +
+                `Secure Route: ${email}\n` +
+                `Contact Node: ${phone}\n` +
+                `Deployment Location: ${location}\n` +
+                `Selected Infrastructure: ${scope}\n\n` +
+                `Operational Details / Custom Requirements:\n${doubts}\n\n` +
+                `=============================================`
             );
 
             window.location.href = `mailto:${baseRecipient}?subject=${emailSubject}&body=${emailBody}`;
         }
 
-        // --- THEME MANAGEMENT CONFIGURATION ---
+        // Dark/Light Theme Switching Mechanics
         const htmlElement = document.documentElement;
-        const themeToggleGroup = document.getElementById('themeToggleGroup');
+        const themeToggleBtn = document.getElementById('themeSwitch');
 
-        themeToggleGroup.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                htmlElement.setAttribute('data-theme', 'light');
-            } else {
-                htmlElement.setAttribute('data-theme', 'dark');
-            }
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    htmlElement.setAttribute('data-theme', 'light');
+                } else {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                }
+            });
+        }
+
+        // Lenis/Motion Style Scroll reveal implementation (Physics-based Reveal effects)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const scrollRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.15
         });
 
-        // --- SCROLL INTERSECTION DETECTION (Update Active Navigation Tab dynamically on scroll) ---
-        const sections = document.querySelectorAll('.landing-section, #hero-section');
-        const observerOptions = {
-            root: null,
-            threshold: 0.35,
-            rootMargin: "-100px 0px -100px 0px"
-        };
+        revealElements.forEach(element => {
+            scrollRevealObserver.observe(element);
+        });
 
-        const sectionObserver = new IntersectionObserver((entries) => {
+        // Sticky floating header highlighting based on section navigation
+        const sections = document.querySelectorAll('.landing-section, section[id]');
+        const sectionHeaderObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.getAttribute('id');
-                    const navButtons = document.querySelectorAll('.nav-pill-btn');
+                    const navButtons = document.querySelectorAll('.nav-link');
                     
                     navButtons.forEach(btn => btn.classList.remove('active'));
                     const targetBtn = document.getElementById(`nav-btn-${sectionId}`);
@@ -1843,9 +1638,15 @@
                     }
                 }
             });
-        }, observerOptions);
+        }, {
+            root: null,
+            threshold: 0.4
+        });
 
-        sections.forEach(section => sectionObserver.observe(section));
+        sections.forEach(sec => sectionHeaderObserver.observe(sec));
     </script>
+
+    <!-- CONNECTION TO THE GLOBAL EXTERNAL SCRIPT -->
+    <script src="script.js" defer></script>
 </body>
 </html>
