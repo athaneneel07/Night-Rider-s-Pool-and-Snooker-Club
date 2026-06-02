@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Executed Deployments — Tattva Grid Case Studies</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Technical blueprints and dynamic case studies for Tattva Grid systems: AKS Turf, Saraswati Academy, LedgerFlow, and AeroCart.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- BRAND DESIGN VARIABLES --- */
+        :root {
+            --brand-navy: #042554;
+            --brand-cyan: #00b5d6;
+            --brand-seafoam: #00f2fe;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* --- THEME PALETTES --- */
+        html[data-theme="dark"] {
+            --bg-color: #050811;
+            --bg-grid: rgba(255, 255, 255, 0.015);
+            --surface: #0a1122;
+            --surface-contrast: #141f38;
+            --text-dark: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.06);
+            --header-bg: rgba(5, 8, 17, 0.8);
+            --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+            --shadow-hover: 0 20px 40px -10px rgba(0, 181, 214, 0.18);
+        }
+
+        html[data-theme="light"] {
+            --bg-color: #ecf0f6;
+            --bg-grid: rgba(4, 37, 84, 0.02);
+            --surface: #f8fafc;
+            --surface-contrast: #cbd5e1;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: rgba(15, 23, 42, 0.08);
+            --header-bg: rgba(236, 240, 246, 0.85);
+            --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
+            --shadow-hover: 0 20px 40px -10px rgba(4, 37, 84, 0.12);
+        }
+
+        /* --- GLOBAL BASICS --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(var(--bg-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --- HEADER NAVIGATION --- */
+        .header-container {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1100px;
+            z-index: 9999;
+            transition: var(--transition-smooth);
+        }
+
+        header.pill-navigation {
+            background: var(--header-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 0.6rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid var(--brand-cyan);
+        }
+
+        .logo-text {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
+        }
+
+        .logo-text span {
+            color: var(--brand-cyan);
+        }
+
+        .desktop-nav {
+            display: none;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-link {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: var(--text-dark);
+            background: var(--border-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+        }
+
+        .mobile-menu-container {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+            width: 100%;
+        }
+
+        .mobile-menu-container.open {
+            display: flex;
+        }
+
+        /* Dark / Light Toggle Switch */
+        .toggle-track {
+            display: flex;
+            align-items: center;
+            background: var(--surface-contrast);
+            border: 1px solid var(--border-color);
+            padding: 3px;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            width: 52px;
+            height: 26px;
+            user-select: none;
+        }
+
+        .toggle-thumb {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--text-dark);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            left: 3px;
+        }
+
+        html[data-theme="light"] .toggle-thumb {
+            transform: translateX(26px);
+        }
+
+        .toggle-icons {
+            display: flex;
+            justify-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 4px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        /* --- CONTENT DESIGN --- */
+        .details-wrapper {
+            padding-top: 140px;
+            padding-bottom: 80px;
+        }
+
+        .intro-block {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-block h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 850;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .intro-block p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- CASE STUDY GRID STRUCTURE --- */
+        .project-detail-section {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            scroll-margin-top: 130px;
+            transition: var(--transition-smooth);
+        }
+
+        .project-detail-section:hover {
+            border-color: var(--brand-cyan);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-title-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-title-bar h2 {
+            font-size: 2rem;
+            font-weight: 850;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .infrastructure-provided {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand-cyan);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-body-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media(min-width: 768px) {
+            .project-body-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+            .desktop-nav {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .project-info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .info-section h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-section h3 i {
+            color: var(--brand-cyan);
+            font-size: 0.95rem;
+        }
+
+        .info-section p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Review Design Block */
+        .client-review-card {
+            background: var(--surface-contrast);
+            border-left: 3px solid var(--brand-cyan);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .client-review-card p {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .client-reviewer {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--brand-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Screenshot / Interface Gallery */
+        .project-gallery-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .gallery-header {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background: var(--surface-contrast);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--brand-cyan);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            background: var(--surface);
+            padding: 0.75rem 1rem;
+            font-size: 0.78rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: var(--surface-contrast);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+            margin-top: 2rem;
+        }
+
+        .btn-back-home:hover {
+            background: var(--brand-cyan);
+            color: #050811;
+            border-color: var(--brand-cyan);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #04070e;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            font-size: 0.82rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY FLOATING GLASS NAVIGATION -->
+    <div class="header-container">
+        <header class="pill-navigation" id="pillNavigation">
+            <div class="header-row">
+                <a class="logo-block" href="index.html" title="Tattva Grid - Return Home">
+                    <img src="logo.jpeg" alt="Tattva Grid Logo" class="logo-img" onerror="this.style.display='none';">
+                    <div class="logo-text">TATTVA <span>GRID</span></div>
+                </a>
+                
+                <nav class="desktop-nav">
+                    <a href="index.html#sizzle" class="nav-link">Concept</a>
+                    <a href="index.html#services" class="nav-link">Capabilities</a>
+                    <a href="index.html#portfolio" class="nav-link">Work</a>
+                    <a href="index.html#who-are-we" class="nav-link">Who Are We</a>
+                    <a href="index.html#contact" class="nav-link">Connect</a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="toggle-track" id="themeSwitch" aria-label="Toggle Palette">
+                        <div class="toggle-thumb"></div>
+                        <div class="toggle-icons">
+                            <i class="fa-solid fa-moon"></i>
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+
+            <div class="mobile-menu-container" id="mobileMenuContainer">
+                <a href="index.html#sizzle" class="nav-link" onclick="toggleMobileMenu()">Concept</a>
+                <a href="index.html#services" class="nav-link" onclick="toggleMobileMenu()">Capabilities</a>
+                <a href="index.html#portfolio" class="nav-link" onclick="toggleMobileMenu()">Work</a>
+                <a href="index.html#who-are-we" class="nav-link" onclick="toggleMobileMenu()">Who Are We</a>
+                <a href="index.html#contact" class="nav-link" onclick="toggleMobileMenu()">Connect</a>
+            </div>
+        </header>
+    </div>
+
+    <main class="container details-wrapper">
+        <div class="intro-block">
+            <h1>Deployment blue-prints</h1>
+            <p>A closer look at production systems created by Tattva Grid for continuous client operations.</p>
+        </div>
+
+        <!-- 1. AKS Turf -->
+        <section class="project-detail-section" id="aks-turf">
+            <div class="project-title-bar">
+                <h2>AKS Turf, NIBM</h2>
+                <div class="infrastructure-provided">
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Scheduler Engine &amp; Booking Ledger
+                </div>
+            </div>
+
+            <div class="project-body-grid">
+                <div class="project-info-column">
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
+                        <p>
+                            AKS Turf managed dynamic field reservations across various coordinate messengers and telephone channels manually. Peak operational hours suffered scheduling overlaps, double-bookings, and manual calculation errors, which created high administrative overhead.
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
+                        <p>
+                            We engineered a custom scheduling board featuring concurrent state protection locks. When a coordinator processes a transaction, database slots lock temporarily, preventing overlaps. This system works directly with an operational daily bookkeeper, managing revenue flow instantly.
+                        </p>
+                    </div>
+
+                    <div class="client-review-card">
+                        <p>
+                            "The scheduler eliminated booking overlaps on day one. Daily ledgers let our managers run operations cleanly without manual overhead."
+                        </p>
+                        <div class="client-reviewer">Operations Director — AKS Turf, NIBM</div>
+                    </div>
+                </div>
+
+                <div class="project-gallery-column">
+                    <div class="gallery-header">System Interface Visuals</div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=600" alt="Scheduler Interface UI Screenshot">
+                            <div class="gallery-caption">Administrative Reservation Grid UI Mockup</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Saraswati Academy -->
+        <section class="project-detail-section" id="saraswati-academy">
+            <div class="project-title-bar">
+                <h2>Saraswati Academy</h2>
+                <div class="infrastructure-provided">
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Academic Management ERP &amp; Registries
+                </div>
+            </div>
+
+            <div class="project-body-grid">
+                <div class="project-info-column">
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
+                        <p>
+                            Administrative personnel used complex spreadsheet chains to balance dynamic schedules across classrooms, matching student rosters and class schedules manually. This distributed data caused resource collision alerts and slow administration responses.
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
+                        <p>
+                            We built an academic administration ERP system with automated coordinate checking. This tool validates room capacity, confirms coordinator availability, and updates student indexes across rosters simultaneously, keeping educational records safe and central.
+                        </p>
+                    </div>
+
+                    <div class="client-review-card">
+                        <p>
+                            "Managing complex timetables is now seamless. The classroom scheduler handles class changes efficiently and securely."
+                        </p>
+                        <div class="client-reviewer">Academic Registrar — Saraswati Academy</div>
+                    </div>
+                </div>
+
+                <div class="project-gallery-column">
+                    <div class="gallery-header">System Interface Visuals</div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600" alt="ERP Student Database Panel Screenshot">
+                            <div class="gallery-caption">Roster Management and Scheduling Console</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. LedgerFlow -->
+        <section class="project-detail-section" id="ledgerflow">
+            <div class="project-title-bar">
+                <h2>LedgerFlow Dashboard</h2>
+                <div class="infrastructure-provided">
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Bookkeeping Engine &amp; Transaction Pipelines
+                </div>
+            </div>
+
+            <div class="project-body-grid">
+                <div class="project-info-column">
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
+                        <p>
+                            Corporate audit preparation required auditing multiple business ledger sources manually. This complicated financial processes, leading to reporting bottlenecks and data integrity validation challenges.
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
+                        <p>
+                            We created an enterprise-level financial audit terminal. This dashboard uses cryptographically signed audit logs to maintain transaction history integrity. Built-in query filters generate precise cash flow reports, reducing auditing times considerably.
+                        </p>
+                    </div>
+
+                    <div class="client-review-card">
+                        <p>
+                            "LedgerFlow reduced audit compilation times from weeks to hours. Verifying historical transactions is now straightforward and highly secure."
+                        </p>
+                        <div class="client-reviewer">Chief Compliance Officer — Financial Operations</div>
+                    </div>
+                </div>
+
+                <div class="project-gallery-column">
+                    <div class="gallery-header">System Interface Visuals</div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="LedgerFlow Dashboard screen UI mockup">
+                            <div class="gallery-caption">Immutable Transaction Logs Console UI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. AeroCart -->
+        <section class="project-detail-section" id="aerocart">
+            <div class="project-title-bar">
+                <h2>AeroCart Storefront</h2>
+                <div class="infrastructure-provided">
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Lightweight Storefront &amp; Inventory Alerts
+                </div>
+            </div>
+
+            <div class="project-body-grid">
+                <div class="project-info-column">
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
+                        <p>
+                            Standard mobile e-commerce templates caused page lag during high-traffic flash sales, leading to user drops at checkout. Live stock levels lagged behind real-time orders, creating backorder conflicts.
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
+                        <p>
+                            We developed a streamlined, static-rendered checkout application running on cached system layers. AeroCart checks stock levels in real-time, sending automatic alerts to the inventory team to maintain correct supply lists across checkout paths.
+                        </p>
+                    </div>
+
+                    <div class="client-review-card">
+                        <p>
+                            "Transaction speeds improved immediately. Customers checked out easily, and real-time inventory alerts stopped supply issues completely."
+                        </p>
+                        <div class="client-reviewer">Director of Logistics — AeroCart Brand Store</div>
+                    </div>
+                </div>
+
+                <div class="project-gallery-column">
+                    <div class="gallery-header">System Interface Visuals</div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="E-Commerce checkout flow UI screenshot">
+                            <div class="gallery-caption">Mobile checkout flow metric visualization</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html#portfolio" class="btn-back-home"><i class="fa-solid fa-arrow-left"></i> Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tattva Grid. Developed by Neel Athane. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenuContainer');
+            menu.classList.toggle('open');
+        }
+
+        const htmlElement = document.documentElement;
+        const themeToggleBtn = document.getElementById('themeSwitch');
+        
+        // Sync with index preference
+        if(localStorage.getItem('theme')) {
+            htmlElement.setAttribute('data-theme', localStorage.getItem('theme'));
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                htmlElement.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('theme', nextTheme);
+            });
+        }
+    </script>
+</body>
+</html>
