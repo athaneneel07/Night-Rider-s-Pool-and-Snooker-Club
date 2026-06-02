@@ -7,28 +7,67 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Tattva Grid builds high-performance custom frontends, scheduling engines, academic ERP systems, and secure database workflows designed for reliability.">
-    <meta name="keywords" content="Tattva Grid, Neel Athane, Rohit Badgujar, Aaryesh Honrao, Business Automation, Turf Booking, Custom ERP, Systems Engineering">
+    <meta name="keywords" content="Tattva Grid, Neel Athane, Business Automation, Turf Booking, Custom ERP, Systems Engineering">
+    <meta name="author" content="Neel Athane">
     <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tattvagrid.com">
+    <meta property="og:title" content="Tattva Grid — Digital Infrastructure &amp; Systems Engineering">
+    <meta property="og:description" content="High-performance custom frontends, scheduling engines, and secure database workflows designed for reliability.">
+    <meta property="og:image" content="https://www.tattvagrid.com/logo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.tattvagrid.com">
+    <meta property="twitter:title" content="Tattva Grid — Digital Infrastructure &amp; Systems Engineering">
+    <meta property="twitter:description" content="High-performance custom frontends, scheduling engines, and secure database workflows designed for reliability.">
+    <meta property="twitter:image" content="https://www.tattvagrid.com/logo.jpeg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data for Search Engine Optimization -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tattva Grid",
-      "url": "https://www.tattvagrid.com",
-      "logo": "https://www.tattvagrid.com/logo.jpeg",
-      "founder": [
-        { "@type": "Person", "name": "Neel Athane", "jobTitle": "Founder & CTO & CFO" },
-        { "@type": "Person", "name": "Rohit Badgujar", "jobTitle": "Co-Founder & CEO" },
-        { "@type": "Person", "name": "Aaryesh Honrao", "jobTitle": "Co-Founder & CMO & COO" }
-      ]
-    }
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tattva Grid",
+        "url": "https://www.tattvagrid.com",
+        "logo": "https://www.tattvagrid.com/logo.jpeg",
+        "founder": [
+          { 
+            "@type": "Person", 
+            "name": "Neel Athane", 
+            "jobTitle": "Founder, CTO & CFO" 
+          },
+          { 
+            "@type": "Person", 
+            "name": "Rohit Badgujar", 
+            "jobTitle": "Co-Founder & CEO" 
+          },
+          { 
+            "@type": "Person", 
+            "name": "Aaryesh Honrao", 
+            "jobTitle": "Co-Founder, CMO & COO" 
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Tattva Grid",
+        "url": "https://www.tattvagrid.com",
+        "creator": {
+          "@type": "Person",
+          "name": "Neel Athane"
+        }
+      }
+    ]
     </script>
 
     <style>
@@ -76,8 +115,10 @@
             --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
             --shadow-hover: 0 20px 40px -10px rgba(4, 37, 84, 0.12);
             --glow: rgba(4, 37, 84, 0.15);
-            --hero-bg-img: url('https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=1600');
-            --hero-overlay: linear-gradient(180deg, rgba(236, 240, 246, 0.45) 0%, rgba(236, 240, 246, 0.85) 100%);
+            
+            /* Changed light theme background to a modern architecture/structural layout with an increased contrast overlay */
+            --hero-bg-img: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600');
+            --hero-overlay: linear-gradient(180deg, rgba(236, 240, 246, 0.88) 0%, rgba(236, 240, 246, 0.95) 100%);
         }
 
         /* --- GLOBAL BASICS --- */
@@ -421,6 +462,10 @@
             text-shadow: 0 2px 14px rgba(5, 8, 17, 0.75); /* Soft drop shadow for legibility over active graphics */
         }
 
+        html[data-theme="light"] .hero-inner h1 {
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+        }
+
         .hero-inner h1 span {
             background: linear-gradient(135deg, var(--text-dark) 30%, var(--brand-cyan) 100%);
             -webkit-background-clip: text;
@@ -433,6 +478,12 @@
             margin-bottom: 2.25rem;
             line-height: 1.6;
             text-shadow: 0 1px 4px rgba(5, 8, 17, 0.75);
+        }
+
+        html[data-theme="light"] .hero-inner p {
+            text-shadow: none;
+            color: #334155;
+            font-weight: 600;
         }
 
         .hero-actions-group {
@@ -547,7 +598,6 @@
             background: rgba(0, 181, 214, 0.01);
         }
 
-        /* Responsive Mobile layout explicitly organized into 2 pairs side-by-side */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -567,6 +617,9 @@
             gap: 0.75rem;
             text-align: left;
             height: 100%;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
 
         .service-card:hover {
@@ -623,6 +676,9 @@
             display: flex;
             flex-direction: column;
             text-align: left;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
 
         .portfolio-card:hover {
@@ -933,6 +989,11 @@
             margin-bottom: 4rem;
         }
 
+        .footer-brand .logo-block {
+            margin-bottom: 1rem;
+            pointer-events: none;
+        }
+
         .footer-brand h3 {
             font-size: 1.15rem;
             color: #f1f5f9;
@@ -1233,7 +1294,7 @@
                     <button class="nav-link" id="nav-btn-portfolio" onclick="navigateToSection('portfolio')">Work</button>
                     <button class="nav-link" id="nav-btn-who-are-we" onclick="navigateToSection('who-are-we')">Who Are We</button>
                     <button class="nav-link" id="nav-btn-contact" onclick="navigateToSection('contact')">Connect</button>
-                    <a href="main.html" class="nav-link nav-link-special" id="nav-btn-special-arrow" title="Go Deeper to Core Architectures">
+                    <a href="main.html#systems-architecture" class="nav-link nav-link-special" id="nav-btn-special-arrow" title="Go Deeper to Core Architectures">
                         Go Deeper <i class="fa-solid fa-arrow-right-long" style="margin-left: 4px;"></i>
                     </a>
                 </nav>
@@ -1259,7 +1320,7 @@
                 <button class="nav-link" onclick="navigateToSection('portfolio'); toggleMobileMenu();">Work</button>
                 <button class="nav-link" onclick="navigateToSection('who-are-we'); toggleMobileMenu();">Who Are We</button>
                 <button class="nav-link" onclick="navigateToSection('contact'); toggleMobileMenu();">Connect</button>
-                <a href="main.html" class="nav-link nav-link-special">Go Deeper <i class="fa-solid fa-arrow-right-long" style="margin-left: 4px;"></i></a>
+                <a href="main.html#systems-architecture" class="nav-link nav-link-special">Go Deeper <i class="fa-solid fa-arrow-right-long" style="margin-left: 4px;"></i></a>
             </div>
         </header>
     </div>
@@ -1284,7 +1345,7 @@
 
                     <!-- Specialty navigation button positioned below standard shortcut elements -->
                     <div class="hero-dive-deeper-container">
-                        <a href="main.html" class="btn btn-dive-deeper" title="Dive Deeper into Core Code Architectures">
+                        <a href="main.html#systems-architecture" class="btn btn-dive-deeper" title="Dive Deeper into Core Code Architectures">
                             Dive Deeper into Core Architectures <i class="fa-solid fa-angles-down" style="margin-left: 4px;"></i>
                         </a>
                     </div>
@@ -1331,7 +1392,7 @@
 
                 <!-- Section Navigation Anchor Button -->
                 <div class="section-action-wrapper">
-                    <a href="main.html" class="btn btn-dive-deeper" title="Dive deeper into the Framework Architecture">
+                    <a href="main.html#systems-architecture" class="btn btn-dive-deeper" title="Dive deeper into the Framework Architecture">
                         Dive Deeper into Core Frameworks <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 4px;"></i>
                     </a>
                 </div>
@@ -1349,37 +1410,37 @@
                 <!-- Neatly arranged grid displaying 2 pairs side-by-side on mobile, 4 columns on desktop -->
                 <div class="services-grid">
                     <!-- Service 1 -->
-                    <div class="service-card">
+                    <a href="services-details.html#web-solutions" class="service-card" title="Explore Detailed Web Solutions">
                         <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
                         <h3>Web Solutions</h3>
-                        <p>Fast frontends designed with clean code for rapid loading speeds.</p>
-                    </div>
+                        <p>Fast frontends designed with clean code for rapid loading speeds. Click for detailed documentation.</p>
+                    </a>
 
                     <!-- Service 2 -->
-                    <div class="service-card">
+                    <a href="services-details.html#academic-erp" class="service-card" title="Explore Detailed Academic ERP">
                         <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                         <h3>Academic ERP</h3>
-                        <p>Integrating schedules, database registries, and tracking panels.</p>
-                    </div>
+                        <p>Integrating schedules, database registries, and tracking panels. Click for detailed documentation.</p>
+                    </a>
 
                     <!-- Service 3 -->
-                    <div class="service-card">
+                    <a href="services-details.html#enterprise-erp" class="service-card" title="Explore Detailed Enterprise ERP">
                         <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
                         <h3>Enterprise ERP</h3>
-                        <p>Bespoke dashboards tracking resource assets and client operations.</p>
-                    </div>
+                        <p>Bespoke dashboards tracking resource assets and client operations. Click for detailed documentation.</p>
+                    </a>
 
                     <!-- Service 4 -->
-                    <div class="service-card">
+                    <a href="services-details.html#automations" class="service-card" title="Explore Detailed Automations">
                         <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
                         <h3>Automations</h3>
-                        <p>Continuous background synchronization without manual oversight.</p>
-                    </div>
+                        <p>Continuous background synchronization without manual oversight. Click for detailed documentation.</p>
+                    </a>
                 </div>
 
-                <!-- Section Navigation Anchor Button -->
+                <!-- Section Navigation Anchor Button redirects to systems-architecture section -->
                 <div class="section-action-wrapper">
-                    <a href="main.html" class="btn btn-dive-deeper" title="Dive deeper into Systems Architecture details">
+                    <a href="main.html#systems-architecture" class="btn btn-dive-deeper" title="Dive deeper into Systems Architecture details">
                         Dive Deeper into Systems Architecture <i class="fa-solid fa-diagram-project" style="margin-left: 4px;"></i>
                     </a>
                 </div>
@@ -1396,7 +1457,7 @@
 
                 <div class="portfolio-grid">
                     <!-- Project 1: AKS Turf -->
-                    <div class="portfolio-card">
+                    <a href="work-details.html#aks-turf" class="portfolio-card" title="View AKS Turf Deployment Details">
                         <div class="portfolio-media">
                             <span class="portfolio-tag">Scheduler Engine</span>
                             <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=700" alt="AKS Turf NIBM Outdoor Football Complex" title="AKS Turf NIBM Visual Showcase">
@@ -1405,13 +1466,13 @@
                             <h3>AKS Turf, NIBM</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Real-time dynamic slot booking scheduler engine coupled with an integrated daily operation ledger database.
+                                Real-time dynamic slot booking scheduler engine coupled with an integrated daily operation ledger database. Click for detailed analysis.
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Project 2: Saraswati Academy -->
-                    <div class="portfolio-card">
+                    <a href="work-details.html#saraswati-academy" class="portfolio-card" title="View Saraswati Academy ERP Details">
                         <div class="portfolio-media">
                             <span class="portfolio-tag">Academic ERP</span>
                             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=700" alt="Saraswati Academy Structured Lecture Hall Database" title="Saraswati Academy ERP Portal Visual">
@@ -1420,13 +1481,13 @@
                             <h3>Saraswati Academy</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Unified central academic management ERP incorporating interactive student roster trackers and administrative logs.
+                                Unified central academic management ERP incorporating interactive student roster trackers and administrative logs. Click for detailed analysis.
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Project 3: LedgerFlow -->
-                    <div class="portfolio-card">
+                    <a href="work-details.html#ledgerflow" class="portfolio-card" title="View LedgerFlow Dashboard Details">
                         <div class="portfolio-media">
                             <span class="portfolio-tag">Finance Portal</span>
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=700" alt="Secure Enterprise Financial Dashboard Ledger" title="LedgerFlow Dashboard Display">
@@ -1435,13 +1496,13 @@
                             <h3>LedgerFlow Dashboard</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Custom bookkeeping and real-time transaction pipelines designed for complex corporate balance auditing.
+                                Custom bookkeeping and real-time transaction pipelines designed for complex corporate balance auditing. Click for detailed analysis.
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Project 4: AeroCart Storefront -->
-                    <div class="portfolio-card">
+                    <a href="work-details.html#aerocart" class="portfolio-card" title="View AeroCart Storefront Details">
                         <div class="portfolio-media">
                             <span class="portfolio-tag">E-Commerce</span>
                             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=700" alt="High-Performance E-Commerce Checkout Interface" title="AeroCart E-Commerce Interface Showcase">
@@ -1450,15 +1511,15 @@
                             <h3>AeroCart Storefront</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Lightweight mobile-first storefront equipped with ultra-low latency checkout routing and inventory alerts.
+                                Lightweight mobile-first storefront equipped with ultra-low latency checkout routing and inventory alerts. Click for detailed analysis.
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="portfolio-more">
                     <button onclick="openPortfolioModal();" class="btn btn-secondary">Explore Extended Repository</button>
-                    <a href="main.html" class="btn btn-dive-deeper" title="Dive deeper into active deployment architectures">
+                    <a href="main.html#code-repositories" class="btn btn-dive-deeper" title="Dive deeper into active deployment architectures">
                         Dive Deeper into Code Repositories <i class="fa-solid fa-network-wired" style="margin-left: 4px;"></i>
                     </a>
                 </div>
@@ -1487,11 +1548,11 @@
                     <!-- Founder 1 -->
                     <div class="founder-card">
                         <div class="founder-avatar">
-                            <img src="Founder.jpg" alt="Neel Athane, Chief Technology &amp; Finance Officer at Tattva Grid" title="Neel Athane - Technical Architecture &amp; Finance Lead" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'">
+                            <img src="Founder.jpg" alt="Neel Athane, Founder, Chief Technology &amp; Chief Finance Officer at Tattva Grid" title="Neel Athane - Founder, CTO &amp; CFO" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'">
                         </div>
                         <div class="founder-meta">
                             <h3>Neel Athane</h3>
-                            <span class="role">CTO &amp; CFO</span>
+                            <span class="role">Founder, CTO &amp; CFO</span>
                             <p>Directs technical infrastructure design, database logic pipelines, and system financial setups.</p>
                         </div>
                     </div>
@@ -1499,11 +1560,11 @@
                     <!-- Founder 2 -->
                     <div class="founder-card">
                         <div class="founder-avatar">
-                            <img src="Co-Founder 1.jpg" alt="Rohit Badgujar, Chief Executive Officer at Tattva Grid" title="Rohit Badgujar - Corporate Strategy &amp; Enterprise Growth" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'">
+                            <img src="Co-Founder 1.jpg" alt="Rohit Badgujar, Co-Founder &amp; Chief Executive Officer at Tattva Grid" title="Rohit Badgujar - Co-Founder &amp; CEO" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'">
                         </div>
                         <div class="founder-meta">
                             <h3>Rohit Badgujar</h3>
-                            <span class="role">CEO</span>
+                            <span class="role">Co-Founder &amp; CEO</span>
                             <p>Directs corporate expansion parameters, partner alignment, and core ecosystem strategy.</p>
                         </div>
                     </div>
@@ -1511,11 +1572,11 @@
                     <!-- Founder 3 -->
                     <div class="founder-card">
                         <div class="founder-avatar">
-                            <img src="Co-Founder 2.jpg" alt="Aaryesh Honrao, Chief Marketing &amp; Operating Officer at Tattva Grid" title="Aaryesh Honrao - Marketing Operations &amp; Client Partnerships" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'">
+                            <img src="Co-Founder 2.jpg" alt="Aaryesh Honrao, Co-Founder, Chief Marketing &amp; Operating Officer at Tattva Grid" title="Aaryesh Honrao - Co-Founder, CMO &amp; COO" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'">
                         </div>
                         <div class="founder-meta">
                             <h3>Aaryesh Honrao</h3>
-                            <span class="role">CMO &amp; COO</span>
+                            <span class="role">Co-Founder, CMO &amp; COO</span>
                             <p>Directs marketing campaigns, client relationship workflows, and product launch lifecycles.</p>
                         </div>
                     </div>
@@ -1605,7 +1666,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>TATTVA <span>GRID</span></h3>
+                    <div class="logo-block" style="margin-bottom: 1.5rem; pointer-events: none;">
+                        <img src="logo.jpeg" alt="Tattva Grid Logo" class="logo-img" onerror="this.style.display='none';">
+                        <div class="logo-text" style="color: #f1f5f9;">TATTVA <span style="color: var(--brand-cyan);">GRID</span></div>
+                    </div>
                     <p>Custom digital systems engineered for reliable performance. Built on independent logic stacks that eliminate overhead drag.</p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/tattva.grid" target="_blank" rel="noopener" title="Tattva Grid Corporate Instagram Feed">
@@ -1626,10 +1690,10 @@
                 <div class="footer-links">
                     <h4>Ecosystem Services</h4>
                     <ul>
-                        <li><a href="#services" onclick="navigateToSection('services')">Custom Portals</a></li>
-                        <li><a href="#services" onclick="navigateToSection('services')">Sports Booking Automations</a></li>
-                        <li><a href="#services" onclick="navigateToSection('services')">Academic Registries</a></li>
-                        <li><a href="#services" onclick="navigateToSection('services')">Task Schedulers</a></li>
+                        <li><a href="services-details.html#web-solutions">Custom Portals</a></li>
+                        <li><a href="services-details.html#automations">Sports Booking Automations</a></li>
+                        <li><a href="services-details.html#academic-erp">Academic Registries</a></li>
+                        <li><a href="services-details.html#automations">Task Schedulers</a></li>
                     </ul>
                 </div>
 
@@ -1637,7 +1701,7 @@
                     <h4>About Tattva</h4>
                     <ul>
                         <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Framework Identity</a></li>
-                        <li><a href="main.html">Architectural Systems Docs</a></li>
+                        <li><a href="main.html#systems-architecture">Architectural Systems Docs</a></li>
                         <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Founders Stack</a></li>
                         <li><a href="#contact" onclick="navigateToSection('contact')">Integrate</a></li>
                     </ul>
@@ -1681,7 +1745,7 @@
                         </div>
                         <div class="modal-project-desc">
                             <h4>LedgerCore API</h4>
-                            <p>Automated database connection layer processing thousands of ledger updates per minute securely.</p>
+                            <p>Automated database connection layer processing updates securely and reliably.</p>
                         </div>
                     </div>
                     <!-- Modal Project Item 2 -->
@@ -1757,12 +1821,14 @@
             document.body.style.overflow = 'hidden';
         }
 
+        // Close Portfolio Modal logic
         function closePortfolioModal() {
             const modal = document.getElementById('portfolioModal');
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
+        // Handle outside clicks to close modal
         function closePortfolioModalOnOutsideClick(event) {
             const modal = document.getElementById('portfolioModal');
             if (event.target === modal) {
