@@ -3,910 +3,2132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tattva Grid — Premium Enterprise Infrastructure</title>
+    <title>Tattva Grid — Digital Infrastructure &amp; Systems Engineering</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tattva Grid builds high-performance custom frontends, scheduling engines, academic ERP systems, and secure database workflows designed for reliability.">
+    <meta name="keywords" content="Tattva Grid, Neel Athane, Rohit Badgujar, Aaryesh Honrao, Business Automation, Turf Booking, Custom ERP, Systems Engineering">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/cabinet-grotesk" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Tattva Grid",
       "url": "https://www.tattvagrid.com",
-      "description": "Premium Digital Infrastructure and Automated Business Ecosystems.",
+      "logo": "https://www.tattvagrid.com/logo.jpeg",
       "founder": [
-        { "@type": "Person", "name": "Neel Athane", "jobTitle": "Founder / CTO & CFO" },
-        { "@type": "Person", "name": "Rohit Badgujar", "jobTitle": "Founder / CEO" },
-        { "@type": "Person", "name": "Aaryesh Honrao", "jobTitle": "Founder / CMO & COO" }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9175023438",
-        "contactType": "Customer Service",
-        "email": "tattvagrids@gmail.com"
-      }
+        { "@type": "Person", "name": "Neel Athane", "jobTitle": "Founder & CTO & CFO" },
+        { "@type": "Person", "name": "Rohit Badgujar", "jobTitle": "Co-Founder & CEO" },
+        { "@type": "Person", "name": "Aaryesh Honrao", "jobTitle": "Co-Founder & CMO & COO" }
+      ]
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =========================================
+           CORE CSS VARIABLES & ELITE PALETTES
+           ========================================= */
+        :root {
+            /* DARK THEME: Space-like Deep Navy-Black */
+            --bg-base: #040712; 
+            --bg-alt: #090d1a;  
+            --bg-section-1: #040712;
+            --bg-section-2: #090d1a;
+            --bg-section-3: #0c1224;
+            --bg-section-4: #050a18;
+            --bg-accent-section: linear-gradient(135deg, #040712 0%, #0c1224 50%, #090d1a 100%);
+            --surface: rgba(13, 19, 36, 0.45);  
+            --surface-hover: rgba(18, 26, 48, 0.85);
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            
+            /* Accents */
+            --primary: #38bdf8; 
+            --primary-hover: #0ea5e9;
+            --accent-glow: rgba(56, 189, 248, 0.08);
+
+            --panel-border: rgba(255, 255, 255, 0.04);
+            --panel-border-hover: rgba(56, 189, 248, 0.25);
+            
+            --shadow-premium: 0 15px 50px rgba(1, 2, 6, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            --shadow-premium-hover: 0 20px 60px rgba(56, 189, 248, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            
+            --header-bg: rgba(4, 7, 18, 0.75);
+            --toggle-bg: #0f172a;
+            --toggle-pill: #38bdf8;
+            --toggle-icon-color: #64748b;
+
+            --bg-hero: radial-gradient(circle at center, rgba(16, 28, 56, 0.35) 0%, rgba(4, 7, 18, 0.98) 100%);
+
+            --radius-pill: 50px;
+            --radius-card: 28px;
+            --radius-input: 12px;
+
+            /* Gradient Text Variables */
+            --accent-1-grad: linear-gradient(135deg, #38bdf8 30%, #818cf8 100%);
+            --accent-2-grad: linear-gradient(135deg, #bf5af2 30%, #f43f5e 100%);
+            --title-grad: linear-gradient(135deg, #f8fafc 40%, #94a3b8 100%);
+        }
+
+        [data-theme="light"] {
+            /* LIGHT THEME: Calibrated Luxury Warm Slate & Stone */
+            --bg-base: #f2f1ec; 
+            --bg-alt: #e6e4dc;  
+            --bg-section-1: #f2f1ec;
+            --bg-section-2: #eae8e1;
+            --bg-section-3: #e2e0d7;
+            --bg-section-4: #dad8cf;
+            --bg-accent-section: linear-gradient(135deg, #f2f1ec 0%, #eae8e1 50%, #e2e0d7 100%);
+            --surface: rgba(255, 255, 255, 0.45);  
+            --surface-hover: rgba(255, 255, 255, 0.85);
+            
+            --text-main: #1a1b18; 
+            --text-muted: #5e6059; 
+            
+            --primary: #0284c7; 
+            --primary-hover: #0369a1;
+            --accent-glow: rgba(2, 132, 199, 0.05);
+
+            --panel-border: rgba(26, 27, 24, 0.08);
+            --panel-border-hover: rgba(2, 132, 199, 0.22);
+            
+            --shadow-premium: 0 12px 35px rgba(26, 27, 24, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.85);
+            --shadow-premium-hover: 0 18px 45px rgba(2, 132, 199, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+            
+            --header-bg: rgba(242, 241, 236, 0.75);
+            --toggle-bg: #d4d3cc;
+            --toggle-pill: #0284c7;
+            --toggle-icon-color: #5e6059;
+
+            --bg-hero: radial-gradient(circle at center, rgba(212, 211, 204, 0.45) 0%, rgba(242, 241, 236, 0.98) 100%);
+
+            /* Gradients for Light Mode */
+            --accent-1-grad: linear-gradient(135deg, #0284c7 30%, #4f46e5 100%);
+            --accent-2-grad: linear-gradient(135deg, #9333ea 30%, #db2777 100%);
+            --title-grad: linear-gradient(135deg, #1a1b18 40%, #5e6059 100%);
+        }
+
+        /* =========================================
+           GLOBAL STRUCTURE & PREMIUM REFINEMENTS
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-size: 1.05rem; 
+        }
+
+        /* Grid Pattern Background Overlay */
+        .grid-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(var(--panel-border) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--panel-border) 1px, transparent 1px);
+            background-size: 80px 80px;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Glassmorphism Spotlight Panels */
+        .premium-panel {
+            background: var(--surface);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-card); 
+            box-shadow: var(--shadow-premium);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--panel-border-hover), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .premium-panel:hover {
+            background: var(--surface-hover);
+            border-color: var(--panel-border-hover);
+            box-shadow: var(--shadow-premium-hover);
+            transform: translateY(-5px);
+        }
+
+        .premium-panel:hover::before { opacity: 1; }
+
+        /* Dynamic Falloff Light Spotlights behind cards */
+        .card-spotlight {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; height: 90%;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(40px);
+            opacity: 0.8;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Floating Light Spots */
+        .ambient-glow {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(100px);
+        }
+
+        .glow-top-right { top: -15%; right: -5%; }
+        .glow-bottom-left { bottom: -15%; left: -5%; }
+
+        .section-padding { 
+            padding: 130px 0; 
+            position: relative; 
+            z-index: 2; 
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .logo-text {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            color: var(--text-main);
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            background: var(--title-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .editorial-text { 
+            text-align: center; 
+            color: var(--text-muted); 
+            max-width: 720px; 
+            font-size: 1.15rem;
+            margin: 0 auto 50px;
+            font-weight: 400;
+        }
+
+        /* Global Dynamic Reveal Transitions on Scroll */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-up.active { opacity: 1; transform: translateY(0); }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-scale.active { opacity: 1; transform: scale(1); }
+
+        /* =========================================
+           BUTTONS & INLINE LINKS
+           ========================================= */
+        .btn {
+            padding: 16px 36px;
+            border-radius: var(--radius-pill);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+        }
+
+        [data-theme="light"] .btn-primary {
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.25);
+            color: #ffffff;
+        }
+
+        [data-theme="light"] .btn-primary:hover {
+            box-shadow: 0 12px 30px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border-hover);
+            color: var(--text-main);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-3px);
+        }
+
+        /* Specialty navigation button */
+        .btn-dive-deeper {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid var(--panel-border-hover);
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.05);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-dive-deeper:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           1. FLOATING PILL HEADER (GLASSMORPHIC)
+           ========================================= */
+        header {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1050px;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(25px) saturate(130%);
+            -webkit-backdrop-filter: blur(25px) saturate(130%);
+            border: 1px solid var(--panel-border-hover);
+            border-radius: var(--radius-pill); 
+            padding: 10px 30px;
+            box-shadow: var(--shadow-premium), inset 0 1px 12px rgba(255,255,255,0.05);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="light"] header {
+            box-shadow: 0 12px 40px rgba(26, 27, 24, 0.05), inset 0 1px 12px rgba(255, 255, 255, 0.7);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-wrap:hover {
+            opacity: 0.85;
+        }
+
+        .logo-img {
+            height: 32px;
+            width: 32px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1.5px solid var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--accent-1-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .nav-links button.nav-link {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 4px 8px;
+        }
+
+        .nav-links button.nav-link:hover, 
+        .nav-links button.nav-link.active { 
+            color: var(--text-main); 
+        }
+
+        .nav-link-special {
+            background: rgba(56, 189, 248, 0.08);
+            color: var(--primary) !important;
+            border: 1px solid rgba(56, 189, 248, 0.2) !important;
+            border-radius: 30px;
+            padding: 6px 16px !important;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link-special:hover {
+            background: var(--primary) !important;
+            color: #ffffff !important;
+        }
+
+        /* Theme Toggle Capsule Switch */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-switch {
+            position: relative;
+            width: 68px;
+            height: 32px;
+            background: var(--toggle-bg);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8px;
+            cursor: pointer;
+            border: 1px solid var(--panel-border);
+            transition: all 0.3s ease;
+        }
+
+        .theme-switch .switch-pill {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background: var(--toggle-pill);
+            border-radius: 50%;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        [data-theme="dark"] .theme-switch .switch-pill { transform: translateX(0px); }
+        [data-theme="light"] .theme-switch .switch-pill { transform: translateX(36px); }
+
+        .theme-switch i {
+            font-size: 0.8rem;
+            z-index: 2;
+            color: var(--toggle-icon-color);
+            transition: color 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-switch .icon-moon { color: #ffffff; }
+        [data-theme="light"] .theme-switch .icon-sun { color: #ffffff; }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.3rem;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        .mobile-menu-container {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--panel-border);
+            padding-top: 1rem;
+            width: 100%;
+        }
+
+        .mobile-menu-container.open {
+            display: flex;
+        }
+
+        .mobile-menu-container button.nav-link {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+            padding: 8px 4px;
+            width: 100%;
+        }
+
+        /* =========================================
+           2. PREMIUM TECH HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-hero);
+            position: relative;
+            padding-top: 150px;
+            padding-bottom: 130px;
+            overflow: hidden;
+        }
+
+        .hero-wireframe-sphere {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+            transition: filter 0.6s ease;
+        }
+
+        .sphere-left {
+            left: 4%;
+            top: 22%;
+            width: min(320px, 32vw);
+            height: min(320px, 32vw);
+            animation: rotateSphere 35s linear infinite;
+        }
+
+        .sphere-right {
+            right: 4%;
+            top: 18%;
+            width: min(340px, 35vw);
+            height: min(340px, 35vw);
+            animation: rotateSphere 45s linear infinite reverse;
+        }
+
+        @keyframes rotateSphere {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            backdrop-filter: blur(12px);
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #10b981; 
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: blinkDot 2s infinite;
+        }
+
+        @keyframes blinkDot {
+            0%, 100% { opacity: 0.5; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.15); box-shadow: 0 0 12px #10b981; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6.5vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+            color: var(--text-main);
+            line-height: 1.1;
+        }
+
+        .gradient-accent-1 {
+            background: var(--accent-1-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-accent-2 {
+            background: var(--accent-2-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 760px;
+            margin: 0 auto 45px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-btns .btn { min-width: 200px; }
+
+        .hero-dive-deeper-container {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .scroll-explore {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-explore:hover { opacity: 0.9; }
+
+        .scroll-explore i {
+            font-size: 0.8rem;
+            animation: bounceArrow 1.5s infinite;
+        }
+
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* =========================================
+           LIGHT MODE DISTINCT BACKGROUND SECTIONS
+           ========================================= */
+        #sizzle { background-color: var(--bg-section-2); }
+        #services { background-color: var(--bg-section-1); }
+        #portfolio { background-color: var(--bg-section-3); }
+        #who-are-we { background-color: var(--bg-section-2); }
+        #contact { background-color: var(--bg-section-1); }
+
+        /* =========================================
+           3. SIZZLE ZONE (Concept Grid)
+           ========================================= */
+        .sizzle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .sizzle-card {
+            padding: 45px 35px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .sizzle-card .index-no {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .sizzle-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .sizzle-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .section-action-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 3.5rem;
+        }
+
+        /* =========================================
+           4. SERVICES SECTION (Capabilities)
+           ========================================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            padding: 40px 28px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .service-header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.35rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="light"] .service-icon-box {
+            background: rgba(2, 132, 199, 0.06);
+            border-color: rgba(2, 132, 199, 0.15);
+        }
+
+        .service-card:hover .service-icon-box {
+            background: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+            transform: scale(1.05);
+        }
+
+        .service-glow-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            box-shadow: 0 0 8px var(--primary);
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover .service-glow-dot {
+            opacity: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-top: 1px solid var(--panel-border);
+            padding-top: 20px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        /* =========================================
+           5. PORTFOLIO SECTION
+           ========================================= */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .portfolio-card {
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .portfolio-image-wrapper {
+            width: 100%;
+            height: 290px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(4, 7, 18, 0.65);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 5;
+        }
+
+        .portfolio-info {
+            padding: 35px 30px;
+            text-align: left;
+            background: transparent;
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
+            position: relative;
+            z-index: 2;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .portfolio-meta-item {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .portfolio-meta-item strong {
+            color: var(--text-main);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+        }
+
+        .portfolio-more {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 3.5rem;
+        }
+
+        /* =========================================
+           6. WHO ARE WE SECTION (Story + Founders)
+           ========================================= */
+        .genesis-wrapper {
+            max-width: 1000px;
+            padding: 60px;
+            text-align: left;
+            margin: 0 auto 50px auto;
+        }
+
+        .genesis-wrapper p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .story-extended {
+            display: none;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--panel-border);
+        }
+
+        .story-trigger {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-card {
+            padding: 50px 35px;
+            text-align: left;
+        }
+
+        .team-card img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 1px solid var(--panel-border-hover);
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-card h3 { 
+            font-size: 1.35rem; 
+            margin-bottom: 10px; 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .team-card span {
+            display: block;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-card p { 
+            color: var(--text-muted); 
+            font-size: 1rem; 
+            position: relative; 
+            z-index: 2; 
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           7. CONNECT ZONE (Inquiry Form + Info)
+           ========================================= */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 80px;
+            align-items: flex-start;
+            padding: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-info-block { 
+            text-align: left; 
+            position: relative; 
+            z-index: 2;
+        }
+
+        .contact-list { list-style: none; }
+        .contact-list li { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            margin-bottom: 30px; 
+            font-size: 1.05rem; 
+            color: var(--text-muted); 
+        }
+
+        .contact-list li i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            background: transparent;
+            border: 1px solid var(--panel-border);
+            border-radius: 50%;
+            width: 48px; height: 48px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .contact-list-details h4 {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-list-details p {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .contact-list-details span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 3px;
+        }
+
+        .inquiry-form-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group-full {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-main);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 18px 22px;
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-input); 
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="light"] input, 
+        [data-theme="light"] select, 
+        [data-theme="light"] textarea {
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+            background: var(--surface-hover);
+            box-shadow: 0 0 0 4px var(--accent-glow);
+        }
+
+        option { background: var(--bg-alt); color: var(--text-main); }
+
+        /* =========================================
+           8. DYNAMIC OVERLAY MODAL
+           ========================================= */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 7, 18, 0.75);
+            backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--surface);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--panel-border-hover);
+            border-radius: var(--radius-card);
+            width: 100%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-premium-hover);
+            transform: scale(0.96);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: left;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.4rem;
+            font-weight: 900;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text-main);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .modal-project-item {
+            display: flex;
+            gap: 1.25rem;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 1.25rem;
+            border-radius: var(--radius-input);
+            border: 1px solid var(--panel-border);
+        }
+
+        .modal-project-img {
+            width: 75px;
+            height: 75px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .modal-project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-project-desc h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .modal-project-desc p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           9. PREMIUM FOOTER
+           ========================================= */
+        footer {
+            background: var(--bg-base); 
+            padding: 120px 0 50px;
+            border-top: 1px solid var(--panel-border);
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--accent-1-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p { 
+            color: var(--text-muted); 
+            font-size: 1rem; 
+            margin: 25px 0; 
+            max-width: 320px; 
+            line-height: 1.6;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-socials a {
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--panel-border);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .footer-socials a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .footer-links h4 { 
+            font-size: 1.15rem; 
+            margin-bottom: 25px; 
+        }
+
+        .footer-links ul { 
+            list-style: none; 
+        }
+
+        .footer-links ul li { 
+            margin-bottom: 15px; 
+        }
+
+        .footer-links a { 
+            color: var(--text-muted); 
+            font-size: 1rem; 
+            transition: color 0.3s; 
+        }
+
+        .footer-links a:hover { 
+            color: var(--text-main); 
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* =========================================
+           RESPONSIVE MOBILE OVERRIDES
+           ========================================= */
+        @media (max-width: 1024px) {
+            .about-grid, .contact-layout, .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+            .genesis-wrapper, .contact-layout { padding: 45px 30px; }
+            .sizzle-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .founders-grid { grid-template-columns: 1fr; }
+            header { width: 92%; }
+        }
+
+        @media (max-width: 768px) {
+            header { top: 15px; padding: 12px 20px; }
+            .nav-links {
+                display: none; 
+                flex-direction: column; 
+                position: absolute;
+                top: 75px; 
+                left: 50%; 
+                transform: translateX(-50%);
+                width: 95%; 
+                background: var(--header-bg);
+                backdrop-filter: blur(25px); 
+                border-radius: var(--radius-card);
+                padding: 35px; 
+                border: 1px solid var(--panel-border);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero-btns { flex-direction: column; gap: 12px; }
+            .hero-btns .btn { width: 100%; }
+            .form-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .section-padding { padding: 80px 0; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 1. HEADER (Floating Navigation Glass-Pill Element) -->
-    <header>
+    <!-- FLOATING PILL HEADER -->
+    <header id="pillNavigation">
         <div class="header-inner">
-            <a href="#" class="logo-wrap">
-                <img src="logo.jpeg" alt="Tattva Grid Logo" class="logo-img">
-                <span class="logo-text">TATTVA GRID</span>
+            <a class="logo-wrap" onclick="navigateToSection('hero-section');" title="Tattva Grid - Return to Top">
+                <img src="logo.jpeg" alt="Tattva Grid Logo" class="logo-img" onerror="this.style.display='none';">
+                <div class="logo-text">TATTVA GRID</div>
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            
             <nav class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#genesis">Genesis</a>
-                <a href="#founders">Founders</a>
-                <a href="#contact">Contact</a>
-                
-                <!-- Pill Toggle Switch -->
-                <div class="theme-switch-wrapper">
-                    <div class="theme-switch" id="themeSwitch" title="Switch Theme Mode">
-                        <span class="switch-pill"></span>
-                        <i class="fa-solid fa-moon icon-moon"></i>
-                        <i class="fa-solid fa-sun icon-sun"></i>
-                    </div>
-                </div>
+                <button class="nav-link active" id="nav-btn-sizzle" onclick="navigateToSection('sizzle')">Concept</button>
+                <button class="nav-link" id="nav-btn-services" onclick="navigateToSection('services')">Capabilities</button>
+                <button class="nav-link" id="nav-btn-portfolio" onclick="navigateToSection('portfolio')">Work</button>
+                <button class="nav-link" id="nav-btn-who-are-we" onclick="navigateToSection('who-are-we')">Who Are We</button>
+                <button class="nav-link" id="nav-btn-contact" onclick="navigateToSection('contact')">Connect</button>
+                <a href="main.html" class="nav-link nav-link-special" id="nav-btn-special-arrow">
+                    Go Deeper <i class="fa-solid fa-arrow-right-long" style="margin-left: 4px;"></i>
+                </a>
             </nav>
+
+            <div class="theme-switch-wrapper">
+                <div class="theme-switch" id="themeSwitch" aria-label="Toggle Framework Color Palette">
+                    <div class="switch-pill"></div>
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Expandable Panel -->
+        <div class="mobile-menu-container" id="mobileMenuContainer">
+            <button class="nav-link" onclick="navigateToSection('sizzle'); toggleMobileMenu();">Concept</button>
+            <button class="nav-link" onclick="navigateToSection('services'); toggleMobileMenu();">Capabilities</button>
+            <button class="nav-link" onclick="navigateToSection('portfolio'); toggleMobileMenu();">Work</button>
+            <button class="nav-link" onclick="navigateToSection('who-are-we'); toggleMobileMenu();">Who Are We</button>
+            <button class="nav-link" onclick="navigateToSection('contact'); toggleMobileMenu();">Connect</button>
+            <a href="main.html" class="nav-link nav-link-special" style="text-align: center; justify-content: center;">Go Deeper <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
     </header>
 
-    <!-- 2. PREMIUM HERO SECTION -->
-    <section class="hero">
-        <!-- 4-leaf Clover/Propeller Wireframe Grid (Left) -->
-        <svg class="hero-wireframe-sphere sphere-left" viewBox="0 0 200 200" fill="none">
-            <circle cx="100" cy="100" r="85" stroke="var(--primary)" stroke-width="0.75" stroke-dasharray="3 4" opacity="0.4"/>
-            <path d="M100,100 C60,40 20,80 100,100 C140,40 180,80 100,100 C140,160 180,120 100,100 C60,160 20,120 100,100 Z" stroke="var(--primary)" stroke-width="1.2" opacity="0.75"/>
-            <circle cx="100" cy="100" r="3" fill="var(--primary)"/>
-        </svg>
-
-        <!-- Concentric Circular Grid Segments (Right) -->
-        <svg class="hero-wireframe-sphere sphere-right" viewBox="0 0 200 200" fill="none">
-            <circle cx="100" cy="100" r="85" stroke="var(--primary)" stroke-width="0.75" opacity="0.25"/>
-            <circle cx="100" cy="100" r="60" stroke="var(--primary)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.2"/>
-            <line x1="15" y1="100" x2="185" y2="100" stroke="var(--primary)" stroke-width="0.75" opacity="0.3"/>
-            <line x1="100" y1="15" x2="100" y2="185" stroke="var(--primary)" stroke-width="0.75" opacity="0.3"/>
-            <line x1="40" y1="40" x2="160" y2="160" stroke="var(--primary)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
-            <line x1="40" y1="160" x2="160" y2="40" stroke="var(--primary)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
-            <path d="M100,15 A85,85 0 0,1 185,100" stroke="var(--primary)" stroke-width="1" opacity="0.4"/>
-            <path d="M100,15 A85,85 0 0,0 15,100" stroke="var(--primary)" stroke-width="1" opacity="0.4"/>
-        </svg>
-
+    <!-- PREMIUM TECH HERO ZONE -->
+    <section class="hero" id="hero-section">
         <div class="grid-overlay"></div>
         <div class="ambient-glow glow-top-right"></div>
-        
-        <div class="container reveal-scale">
-            <!-- Deployment Badge -->
+        <div class="ambient-glow glow-bottom-left"></div>
+
+        <!-- Wireframe sphere decoration -->
+        <svg class="hero-wireframe-sphere sphere-left" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.3">
+            <circle cx="50" cy="50" r="40" stroke-dasharray="2 2" />
+            <ellipse cx="50" cy="50" rx="40" ry="15" stroke-dasharray="1 1" />
+            <ellipse cx="50" cy="50" rx="15" ry="40" stroke-dasharray="1 1" />
+            <line x1="10" y1="50" x2="90" y2="50" />
+            <line x1="50" y1="10" x2="50" y2="90" />
+        </svg>
+
+        <svg class="hero-wireframe-sphere sphere-right" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.2">
+            <circle cx="50" cy="50" r="45" />
+            <ellipse cx="50" cy="50" rx="45" ry="20" />
+            <ellipse cx="50" cy="50" rx="20" ry="45" />
+        </svg>
+
+        <div class="container" style="position: relative; z-index: 10;">
             <div class="hero-status-pill">
-                <span class="status-dot"></span>
-                Available for Deployment
+                <div class="status-dot"></div>
+                Digital System Architecture
             </div>
-
-            <!-- Role Tags -->
-            <div class="hero-roles">
-                Infrastructure Architects <span>•</span> Automation Engineers <span>•</span> System Creators
-            </div>
-
-            <!-- Main Heading with reference gradients -->
             <h1>
-                Automate <span class="gradient-accent-1">Chaos.</span><br>
-                Engineer <span class="gradient-accent-2">Growth.</span>
+                Digital Solutions Engineered For <br>
+                <span class="gradient-accent-1">Resilience</span> &amp; <span class="gradient-accent-2">Scale</span>
             </h1>
-
-            <p>We build absolute reality for modern businesses. Stop managing the manual mess, and start scaling a highly efficient, automated corporate digital ecosystem.</p>
+            <p>We build independent, custom web software platforms that automate workflows, simplify management, and optimize performance.</p>
             
             <div class="hero-btns">
-                <a href="#pricing" class="btn btn-primary">Deployment Plans</a>
-                <a href="#contact" class="btn btn-outline">Consult Engineers</a>
+                <button onclick="navigateToSection('sizzle')" class="btn btn-primary">See the Blueprint</button>
+                <button onclick="navigateToSection('contact')" class="btn btn-outline">Direct Connect</button>
+            </div>
+
+            <div class="hero-dive-deeper-container">
+                <a href="main.html" class="btn-dive-deeper" title="Go Deeper to Core Architectures">
+                    Go Deeper into Core Architectures <i class="fa-solid fa-angles-down"></i>
+                </a>
             </div>
         </div>
 
-        <a href="#about" class="scroll-explore">
-            Scroll to Explore
+        <div class="scroll-explore">
+            <span>Explore Systems</span>
             <i class="fa-solid fa-chevron-down"></i>
-        </a>
-    </section>
-
-    <!-- 3. ABOUT US -->
-    <section id="about" class="section-padding">
-        <div class="grid-overlay"></div>
-        <div class="container">
-            <h2 class="section-title reveal-up">Architecting <span class="gradient-accent-1">Digital</span> Dominance</h2>
-            <p class="editorial-text reveal-up">We engineer comprehensive digital infrastructures tailored strictly for operational efficiency.</p>
-            
-            <div class="about-grid" style="margin-top: 50px;">
-                <div class="about-content reveal-up text-left">
-                    <p>We do not construct basic templates; we develop automated ecosystems systematically designed to eliminate human error and manual friction.</p>
-                    <p>From complex custom booking architectures for premium turf arenas to sophisticated cinematic landing pages for corporate entities, we handle the entire technological stack. We map the exact digital cure and deploy the bespoke solution.</p>
-                    
-                    <div style="margin-top: 35px;">
-                        <a href="about-detail.html" class="story-continue">Read the architecture story <i class="fa-solid fa-arrow-right-long"></i></a>
-                    </div>
-                </div>
-                <div class="about-img reveal-scale premium-panel">
-                    <div class="card-spotlight"></div>
-                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop" alt="Premium Corporate Development">
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- 4. SERVICES SECTION (RESTRUCTURED FOR FUTURISTIC SOLUTIONS) -->
-    <section id="services" class="section-padding">
-        <div class="grid-overlay"></div>
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title">Futuristic <span class="gradient-accent-1">Solutions</span></h2>
-                <p class="editorial-text">Premium high-performance software systems and custom enterprise architectures built for immediate operational control.</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service 1: Advanced Web Solutions -->
-                <div class="service-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="service-header-wrap">
-                        <div class="service-icon-box">
-                            <i class="fa-solid fa-globe"></i>
-                        </div>
-                        <div class="service-glow-dot"></div>
-                    </div>
-                    <h3>Advanced Web Solutions</h3>
-                    <p class="service-desc">Ultra-premium, fast corporate frontends and secure web portals. Developed using scalable frameworks like React and Next.js, combined with performance-tuned layouts and fluid visual motion.</p>
-                    <ul class="service-list">
-                        <li>React / Next.js Frameworks</li>
-                        <li>High-End Fluid Animations</li>
-                        <li>Standardised Technical SEO</li>
-                        <li>Blazing Fast Performance</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2: ERP for Educational Institutes -->
-                <div class="service-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="service-header-wrap">
-                        <div class="service-icon-box">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <div class="service-glow-dot"></div>
-                    </div>
-                    <h3>ERP for Educational Institutes</h3>
-                    <p class="service-desc">Engineered resource planning modules designed specifically for colleges, universities, and coaching networks. Streamlines admissions, fee collection grids, database control, and schedules.</p>
-                    <ul class="service-list">
-                        <li>Student Lifecycle Matrix</li>
-                        <li>Automated Fee Reconciliation</li>
-                        <li>Multi-Role Access Levels</li>
-                        <li>Unified Database Structuring</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3: Enterprise ERP Solutions -->
-                <div class="service-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="service-header-wrap">
-                        <div class="service-icon-box">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <div class="service-glow-dot"></div>
-                    </div>
-                    <h3>Enterprise ERP Solutions</h3>
-                    <p class="service-desc">Tailored operational engines designed to centralize critical pipelines. Perfect for tracking inventory metrics, human capital deployment, logistics networks, and real-time ledger accounting.</p>
-                    <ul class="service-list">
-                        <li>Operational Inventory Auditing</li>
-                        <li>Real-Time Ledger Pipelines</li>
-                        <li>Custom ERP Dashboard Sync</li>
-                        <li>Automated Transaction Controls</li>
-                    </ul>
-                </div>
-
-                <!-- Service 4: Website & Workflow Automation -->
-                <div class="service-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="service-header-wrap">
-                        <div class="service-icon-box">
-                            <i class="fa-solid fa-gears"></i>
-                        </div>
-                        <div class="service-glow-dot"></div>
-                    </div>
-                    <h3>Website & Workflow Automation</h3>
-                    <p class="service-desc">Eliminate manual tasks with modern background triggers. Connect your system cleanly to payment gateways, lead dispatchers, instant messaging alerts, and scheduled server jobs.</p>
-                    <ul class="service-list">
-                        <li>Webhooks & Script Integrations</li>
-                        <li>Automatic Booking Schedulers</li>
-                        <li>WhatsApp Lead Dispatches</li>
-                        <li>Zero Manual Management Needs</li>
-                    </ul>
-                </div>
-
-                <!-- Service 5: AI Integration & Systems -->
-                <div class="service-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="service-header-wrap">
-                        <div class="service-icon-box">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <div class="service-glow-dot"></div>
-                    </div>
-                    <h3>AI Integration & Systems</h3>
-                    <p class="service-desc">Embed artificial intelligence capabilities into your business platform. Deploy secure LLM API connections, contextual logic bots, and autonomous data processing algorithms.</p>
-                    <ul class="service-list">
-                        <li>Custom LLM API Routing</li>
-                        <li>Semantic Contextual Assistants</li>
-                        <li>Smart Conversion Funnels</li>
-                        <li>Real-time Vector Search</li>
-                    </ul>
-                </div>
-
-                <!-- Service 6: Android App Development -->
-                <div class="service-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="service-header-wrap">
-                        <div class="service-icon-box">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                        </div>
-                        <div class="service-glow-dot"></div>
-                    </div>
-                    <h3>Android App Development</h3>
-                    <p class="service-desc">Native Android software designed with Kotlin and modern Jetpack Compose. Configured with modular, clean architectures, fluid motion parameters, and offline-first cache structures.</p>
-                    <ul class="service-list">
-                        <li>Kotlin + Jetpack Compose</li>
-                        <li>Clean UI Architecture</li>
-                        <li>Real-Time Sync Modules</li>
-                        <li>Standardized Play Store Release</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. COMPARISON MATRIX -->
-    <section id="comparison" class="section-padding">
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title">The Reality <span class="gradient-accent-2">Matrix</span></h2>
-                <p class="editorial-text">Traditional operational inefficiencies compared against our premium architectural solutions.</p>
-            </div>
-
-            <div class="comparison-wrapper reveal-scale">
-                <div class="compare-row premium-panel">
-                    <div class="card-spotlight"></div>
-                    <div class="compare-side compare-problem">
-                        <i class="fa-solid fa-xmark compare-icon"></i>
-                        <h4>Manual Fragmented Communications</h4>
-                        <p>Losing track of critical reservations and customer communications due to scattered manual sheets and logs.</p>
-                    </div>
-                    <div class="compare-side compare-solution">
-                        <i class="fa-solid fa-check-double compare-icon"></i>
-                        <h4>Unified Automated Scheduler</h4>
-                        <p>Fully automated booking platform managing reservation streams and transactional records 24/7 without friction.</p>
-                    </div>
-                </div>
-
-                <div class="compare-row premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <div class="compare-side compare-problem">
-                        <i class="fa-solid fa-xmark compare-icon"></i>
-                        <h4>Financial Ledger Leakages</h4>
-                        <p>Unrecorded expenses and data mismatches caused by manual record tracking and offline spreadsheets.</p>
-                    </div>
-                    <div class="compare-side compare-solution">
-                        <i class="fa-solid fa-check-double compare-icon"></i>
-                        <h4>Real-Time Business Command</h4>
-                        <p>Interactive dashboard providing live transactional transparency, net tracking, and operational oversight.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. DIRECT REVENUE IMPACT -->
-    <section class="section-padding bg-accent-section">
-        <div class="grid-overlay"></div>
-        <div class="ambient-glow glow-bottom-left"></div>
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title">Direct <span class="gradient-accent-1">Revenue</span> Impact</h2>
-                <p class="editorial-text">Understanding exactly how our digital infrastructure translates directly into corporate profit and sustainable scalability.</p>
-            </div>
-            
-            <div class="qa-container">
-                <div class="qa-box premium-panel reveal-up">
-                    <div class="card-spotlight"></div>
-                    <div class="qa-question">
-                        <i class="fa-solid fa-arrow-trend-up qa-icon"></i>
-                        <h4>How does systemic automation increase my revenue?</h4>
-                    </div>
-                    <div class="qa-answer">
-                        By completely eliminating manual friction, you capture late-night and impulse reservations automatically. The system eliminates double-booking conflicts, ensuring consistent customer retention.
-                    </div>
-                </div>
-
-                <div class="qa-box premium-panel reveal-up">
-                    <div class="card-spotlight"></div>
-                    <div class="qa-question">
-                        <i class="fa-solid fa-wallet qa-icon"></i>
-                        <h4>How does the Command Dashboard protect capital?</h4>
-                    </div>
-                    <div class="qa-answer">
-                        Manual logs lead to leaks through unrecorded hours. Our dashboard provides real-time transaction reconciliation, ensuring complete oversight without requiring manual check-ins.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. PORTFOLIO -->
-    <section id="portfolio" class="section-padding">
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title">Deployed <span class="gradient-accent-2">Architectures</span></h2>
-                <p class="editorial-text">Premium digital systems systematically engineered for high-volume operational spaces.</p>
-            </div>
-            
-            <div class="grid-carousel col-3 portfolio-grid">
-                <!-- Card 1 -->
-                <div class="portfolio-card reveal-scale">
-                    <div class="portfolio-image-wrapper">
-                        <span class="portfolio-tag">Active Ecosystem</span>
-                        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=800&auto=format&fit=crop" alt="Metro Sports Arena">
-                    </div>
-                    <div class="portfolio-info">
-                        <div>
-                            <h4>Metro Sports Arena</h4>
-                            <p>Automated Turf Ecosystem</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="portfolio-card reveal-scale">
-                    <div class="portfolio-image-wrapper">
-                        <span class="portfolio-tag">Custom Engine</span>
-                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="Urban Brew Lounge">
-                    </div>
-                    <div class="portfolio-info">
-                        <div>
-                            <h4>Urban Brew Lounge</h4>
-                            <p>Reservation Logic Portal</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="portfolio-card reveal-scale">
-                    <div class="portfolio-image-wrapper">
-                        <span class="portfolio-tag">Enterprise Grid</span>
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Apex Corporate Estate">
-                    </div>
-                    <div class="portfolio-info">
-                        <div>
-                            <h4>Apex Corporate Estate</h4>
-                            <p>Advanced Allocation Matrix</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. BY THE NUMBERS -->
-    <section class="section-padding stats-section">
-        <div class="grid-overlay"></div>
-        <div class="container">
-            <div class="reveal-up text-center">
-                <span class="stat-label" style="letter-spacing: 2px; color: var(--primary);">By The Numbers</span>
-                <h2 class="section-title" style="margin-top: 10px;">Results That <span class="gradient-accent-1">Speak</span></h2>
-            </div>
-
-            <div class="stats-grid">
-                <!-- 28+ Projects -->
-                <div class="stat-card cyan reveal-scale">
-                    <div class="stat-number" data-target="28">0+</div>
-                    <div class="stat-line"></div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-
-                <!-- 18+ Clients -->
-                <div class="stat-card purple reveal-scale">
-                    <div class="stat-number" data-target="18">0+</div>
-                    <div class="stat-line"></div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-
-                <!-- 12+ Techs -->
-                <div class="stat-card pink glow-active reveal-scale">
-                    <div class="stat-number" data-target="12">0+</div>
-                    <div class="stat-line"></div>
-                    <div class="stat-label">Technologies Used</div>
-                </div>
-
-                <!-- 9+ Apps -->
-                <div class="stat-card teal reveal-scale">
-                    <div class="stat-number" data-target="9">0+</div>
-                    <div class="stat-line"></div>
-                    <div class="stat-label">Apps Built</div>
-                </div>
-
-                <!-- 5+ AI Integrations -->
-                <div class="stat-card amber reveal-scale">
-                    <div class="stat-number" data-target="5">0+</div>
-                    <div class="stat-line"></div>
-                    <div class="stat-label">AI Integrations</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. REVIEWS -->
-    <section id="reviews" class="section-padding reviews-section">
-        <div class="grid-overlay"></div>
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title">Client <span class="gradient-accent-1">Testimonials</span></h2>
-                <p class="editorial-text">Systematic reviews from brand partners operating on the Tattva Grid framework.</p>
-            </div>
-        </div>
-
-        <div class="reviews-wrapper">
-            <!-- Row 1 -->
-            <div class="reviews-track" id="track1">
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge blue">AS</div>
-                            <div class="profile-meta">
-                                <h4>Arjun Sharma</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"Tattva Grid built our entire arena automation engine from scratch in 3 weeks. The operational flow is absolutely seamless and the UI logic is clean. Highly recommended for elite venues!"</p>
-                    <div class="review-footer">Startup Founder, TechVenture India</div>
-                </div>
-
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge purple">PM</div>
-                            <div class="profile-meta">
-                                <h4>Priya Mehta</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"Our booking environment went from basic to absolute premium overnight. Customers constantly compliment how effortless and fast it is to secure reservation slots now."</p>
-                    <div class="review-footer">Restaurant Owner, Kayla De Barbeque</div>
-                </div>
-
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge teal">RK</div>
-                            <div class="profile-meta">
-                                <h4>Rajesh Kumar</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"The real-time admin portal solved complex operational loops we didn't even realize were leaking revenue. Truly solid data infrastructure for scaling businesses."</p>
-                    <div class="review-footer">Director, Metro Sports Ground</div>
-                </div>
-
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge emerald">NG</div>
-                            <div class="profile-meta">
-                                <h4>Neha Gupta</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"We completely overhauled our brand presence and reservation logic. Our conversion rates rose significantly in the first week. Extremely precise execution."</p>
-                    <div class="review-footer">E-Commerce Specialist, StyleGrid</div>
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="reviews-track" id="track2" style="margin-left: -150px;">
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge rose">RD</div>
-                            <div class="profile-meta">
-                                <h4>Rahul Desai</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"As a product designer, I am incredibly demanding when it comes to pixel precision. Tattva Grid integrated our brand layout with buttery smooth performance."</p>
-                    <div class="review-footer">UI/UX Lead, DesignCo Agency</div>
-                </div>
-
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge amber">AC</div>
-                            <div class="profile-meta">
-                                <h4>Amanda Chen</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"Delivered our advanced custom allocation ecosystem weeks ahead of schedule. The code structuring, clarity, and handling of custom parameters is clean."</p>
-                    <div class="review-footer">Product Lead, TechBase Global</div>
-                </div>
-
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge blue">VS</div>
-                            <div class="profile-meta">
-                                <h4>Vikram Singh</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"Systematic automation at its finest. Double bookings are gone, customer satisfaction is way up, and staff manual overhead is literally down to zero."</p>
-                    <div class="review-footer">Operations Chief, Apex Enterprise</div>
-                </div>
-
-                <div class="glass-review-card">
-                    <div class="card-spotlight"></div>
-                    <div class="review-header">
-                        <div class="review-profile">
-                            <div class="profile-badge purple">KK</div>
-                            <div class="profile-meta">
-                                <h4>Karan Kapoor</h4>
-                                <div class="stars-container">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="review-body">"Every phase of our custom integration was mapped, tested, and systematically deployed. They solved data fragmentation bottlenecks we struggled with for months."</p>
-                    <div class="review-footer">Managing Partner, Nexus Logistics</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 10. PRICING -->
-    <section id="pricing" class="section-padding">
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title"><span class="gradient-accent-2">Deployment</span> Packages</h2>
-                <p class="editorial-text">Select the precise architectural foundation required for your current business scale.</p>
-            </div>
-
-            <div class="pricing-tabs reveal-up">
-                <button class="tab-btn active" onclick="switchPricing('turf')">Turf & Automation</button>
-                <button class="tab-btn" onclick="switchPricing('standard')">Web & Corporate</button>
-                <button class="tab-btn" onclick="switchPricing('photo')">Cinematic Content</button>
-            </div>
-
-            <!-- Turf Pricing -->
-            <div id="price-turf" class="pricing-content active">
-                <div class="grid-carousel col-2-center price-grid">
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <h3>Standard Framework</h3>
-                        <p class="desc">The essential functional corporate base for turf and arena operations.</p>
-                        <div class="price">₹1,999<span> / one-time</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> Premium Website Architecture</li>
-                            <li><i class="fa-solid fa-check"></i> Full Booking Automation Engine</li>
-                            <li><i class="fa-solid fa-check"></i> Corporate Theme Customization</li>
-                            <li><i class="fa-solid fa-check"></i> Secure Admin Dashboard Access</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top: auto;">Select Standard</a>
-                    </div>
-
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <div class="tag-badge">Ultimate Capability</div>
-                        <h3>Custom Ecosystem</h3>
-                        <p class="desc">Complete architectural freedom to customize every operational aspect.</p>
-                        <div class="price">₹2,599<span> / one-time</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> 100% Customization Freedom</li>
-                            <li><i class="fa-solid fa-check"></i> Bespoke Styling & UI Logic</li>
-                            <li><i class="fa-solid fa-check"></i> Advanced Booking Customizations</li>
-                            <li><i class="fa-solid fa-check"></i> Premium Corporate Dashboard</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top: auto;">Select Custom</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Standard Web Pricing -->
-            <div id="price-standard" class="pricing-content">
-                <div class="grid-carousel col-3 price-grid">
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <h3>Starter Presence</h3>
-                        <p class="desc">Engineered for emerging businesses initiating online operations.</p>
-                        <div class="price">₹4,999<span> / one-time</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> 1 Page Corporate Site</li>
-                            <li><i class="fa-solid fa-check"></i> Responsive Mobile Layout</li>
-                            <li><i class="fa-solid fa-check"></i> Deployment in 7–10 Days</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top:auto;">Select Starter</a>
-                    </div>
-
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <div class="tag-badge">Most Popular</div>
-                        <h3>Enterprise Growth</h3>
-                        <p class="desc">Systematically designed for growing businesses needing a dominant presence.</p>
-                        <div class="price">₹10,999<span> / one-time</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> Up to 5 Pages Architecture</li>
-                            <li><i class="fa-solid fa-check"></i> Premium Corporate UI/UX</li>
-                            <li><i class="fa-solid fa-check"></i> WhatsApp & Lead Integrations</li>
-                            <li><i class="fa-solid fa-check"></i> Deployment in 5–7 Days</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top:auto;">Select Growth</a>
-                    </div>
-
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <h3>Advanced Matrix</h3>
-                        <p class="desc">Strictly suited for custom multi-level integrations and deep automation.</p>
-                        <div class="price">₹15,999<span> / one-time</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> Bespoke Web Solutions</li>
-                            <li><i class="fa-solid fa-check"></i> Multi-Tier Access Dashboard</li>
-                            <li><i class="fa-solid fa-check"></i> Payment Gateway Routing</li>
-                            <li><i class="fa-solid fa-check"></i> Priority Executive Support</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top:auto;">Select Advanced</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Photography Pricing -->
-            <div id="price-photo" class="pricing-content">
-                <div class="grid-carousel col-2-center price-grid">
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <h3>Foundation Shoot</h3>
-                        <p class="desc">The essential visual baseline necessary to establish brand identity.</p>
-                        <div class="price">₹1,500<span> / shoot</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> 5–10 Retouched Photos</li>
-                            <li><i class="fa-solid fa-check"></i> 1 Minute Highlight Video</li>
-                            <li><i class="fa-solid fa-check"></i> Social Media Formatted</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top:auto;">Book Foundation</a>
-                    </div>
-
-                    <div class="price-card premium-panel reveal-scale">
-                        <div class="card-spotlight"></div>
-                        <div class="tag-badge">Brand Dominance</div>
-                        <h3>Cinematic Boost</h3>
-                        <p class="desc">High-engagement visual volume to systematically dominate algorithms.</p>
-                        <div class="price">₹3,500<span> / onwards</span></div>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> 15–20 Editorial Photos</li>
-                            <li><i class="fa-solid fa-check"></i> 3–5 Minute Corporate Videos</li>
-                            <li><i class="fa-solid fa-check"></i> Premium Colour Grading</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top:auto;">Book Cinematic</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 11. GENESIS STORY -->
-    <section id="genesis" class="section-padding">
-        <div class="grid-overlay"></div>
-        <div class="container reveal-up">
-            <h2 class="section-title">Our <span class="gradient-accent-1">Genesis</span></h2>
-            <p class="editorial-text">The strict architectural philosophy behind the inception of Tattva Grid.</p>
-            
-            <div class="genesis-wrapper premium-panel reveal-scale">
-                <div class="card-spotlight" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 65%);"></div>
-                <p>Tattva Grid was originally conceptualized and architected independently by Neel Athane. Operating as the sole technical architect, Neel independently built the initial software foundations, landing systems, and backend logic.</p>
-                <p>Recognizing that scaling a world-class enterprise requires multidimensional execution, Neel strategically connected with and onboarded elite specialized minds to finish the ecosystem. He brought on Rohit Badgujar to pilot strategic business development and institutional growth as CEO, and Aaryesh Honrao to spearhead high-end brand assets and client relations as CMO & COO.</p>
-                
-                <div style="margin-top: 35px; text-align: center;">
-                    <a href="genesis-detail.html" class="story-continue">Read the full Genesis Equation <i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 12. FOUNDERS -->
-    <section id="founders" class="section-padding">
-        <div class="container">
-            <div class="reveal-up">
-                <h2 class="section-title">The Executive <span class="gradient-accent-2">Board</span></h2>
-                <p class="editorial-text">The strategic minds engineering the Tattva Grid framework.</p>
-            </div>
-            
-            <div class="grid-carousel col-3 team-grid">
-                <div class="team-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" alt="Neel Athane">
-                    <h3>Neel Athane</h3>
-                    <span>Founder / CTO & CFO</span>
-                    <p>Original Visionary and Lead System Architect. Engineered the core automated software frameworks and financial logistics.</p>
-                </div>
-                
-                <div class="team-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop" alt="Rohit Badgujar">
-                    <h3>Rohit Badgujar</h3>
-                    <span>Founder / CEO</span>
-                    <p>Directs overall corporate expansion parameters, pilots strategic business development, and commands executive operations.</p>
-                </div>
-                
-                <div class="team-card premium-panel reveal-scale">
-                    <div class="card-spotlight"></div>
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop" alt="Aaryesh Honrao">
-                    <h3>Aaryesh Honrao</h3>
-                    <span>Founder / CMO & COO</span>
-                    <p>Pioneers premium cinematic pipelines, marketing execution logistics, and orchestrates sophisticated client communications.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 13. INQUIRY / CONTACT -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <h2 class="section-title reveal-up">Deploy Grid <span class="gradient-accent-1">Control</span></h2>
-            <p class="editorial-text reveal-up">Inquire below to seamlessly integrate automated system architecture into your operations.</p>
-            
-            <div class="contact-layout premium-panel reveal-scale" style="margin-top: 40px;">
-                <div class="card-spotlight" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 65%);"></div>
-                <div class="contact-info-block">
-                    <h3>Architecture.</h3>
-                    <p>Contact our engineering team to systematically discuss operational parameters, exact pricing structures, or to schedule an executive consultation.</p>
-                    
-                    <ul class="contact-list">
-                        <li><i class="fa-solid fa-location-dot"></i> Tattva Grid HQ, Pune, Maharashtra</li>
-                        <li><i class="fa-solid fa-phone"></i> +91 9175023438 (Ops/Media)</li>
-                        <li><i class="fa-solid fa-phone"></i> +91 9422231321 (Tech/Finance)</li>
-                        <li><i class="fa-solid fa-envelope"></i> tattvagrids@gmail.com</li>
-                    </ul>
-                </div>
-                
-                <div class="inquiry-form-wrapper">
-                    <form id="tattvaMailEngine">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="entryName">Executive Name</label>
-                                <input type="text" id="entryName" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="entryPhone">Direct Phone Line</label>
-                                <input type="tel" id="entryPhone" placeholder="+91..." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="entryEmail">Corporate Email Address</label>
-                                <input type="email" id="entryEmail" placeholder="name@company.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="entryLocation">Deployment Location</label>
-                                <input type="text" id="entryLocation" placeholder="Location Name" required>
-                            </div>
-                            <div class="form-group form-group-full">
-                                <label for="entryReq">Select Infrastructure Requirement</label>
-                                <select id="entryReq" required>
-                                    <option value="" disabled selected>Choose your configuration</option>
-                                    <option value="Turf Framework">Turf Framework (₹1999)</option>
-                                    <option value="Custom Turf Ecosystem">Custom Turf Ecosystem (₹2599)</option>
-                                    <option value="Web: Starter Package">Web: Starter Presence (₹4999)</option>
-                                    <option value="Web: Business Growth">Web: Enterprise Growth (₹10999)</option>
-                                    <option value="Web: Advanced Package">Web: Advanced Matrix (₹15999)</option>
-                                    <option value="Photo: Foundation Shoot">Photo: Foundation Shoot (₹1500)</option>
-                                    <option value="Photo: Cinematic Boost">Photo: Cinematic Boost (₹3500+)</option>
-                                </select>
-                            </div>
-                            <div class="form-group form-group-full">
-                                <label for="entryDoubts">Custom Architectural Requirements</label>
-                                <textarea id="entryDoubts" placeholder="Detail your specific operational bottlenecks, workflow friction, or custom requests..."></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 0.95rem; padding: 20px;">
-                            Transmit Details <i class="fa-solid fa-arrow-right-long" style="margin-left: 8px;"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 14. FOOTER -->
-    <footer>
-        <div class="container footer-grid reveal-up">
-            <div class="footer-brand">
-                <div class="logo-text">TATTVA GRID</div>
-                <p>Engineering premium enterprise architecture and luxury digital environments for scaling operations and corporate dominance.</p>
-            </div>
-            
-            <div class="footer-links">
-                <h4>Architecture</h4>
-                <ul>
-                    <li><a href="#genesis">Genesis Story</a></li>
-                    <li><a href="#comparison">Problem Matrix</a></li>
-                    <li><a href="#portfolio">Deployed Portals</a></li>
-                    <li><a href="#pricing">Deployment Plans</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h4>Legal Directives</h4>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Protocol</a></li>
-                    <li><a href="#">Refund Policy</a></li>
-                    <li><a href="#">Cancellation Matrix</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h4>Global Network</h4>
-                <div style="display: flex; gap: 18px; font-size: 1.3rem; margin-top: 15px;">
-                    <a href="https://instagram.com/tattva.grids" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://wa.me/919175023438" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+    <main id="showcase-view">
         
-        <div class="container footer-bottom reveal-up">
-            <div>&copy; 2026 Tattva Grid. Exacting Digital Ecosystems. All Rights Reserved.</div>
+        <!-- SECTION 2: SIZZLE ZONE (Concept Grid) -->
+        <section class="section-padding reveal-up" id="sizzle">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">The Architecture Framework</h2>
+                    <p class="editorial-text">Direct answers behind our infrastructure design methodology.</p>
+                </div>
+
+                <div class="sizzle-grid">
+                    <!-- Card 1 -->
+                    <div class="premium-panel sizzle-card">
+                        <div class="card-spotlight"></div>
+                        <span class="index-no">01 / Identity</span>
+                        <h3>What is Tattva Grid?</h3>
+                        <p>
+                            A specialized systems studio that builds custom database systems, lightweight web designs, and background automations from scratch.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="premium-panel sizzle-card">
+                        <div class="card-spotlight"></div>
+                        <span class="index-no">02 / Purpose</span>
+                        <h3>Why Tattva Grid?</h3>
+                        <p>
+                            We replace heavy commercial templates and fragile integrations with clean, independent code that ensures continuous uptime and safety.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="premium-panel sizzle-card">
+                        <div class="card-spotlight"></div>
+                        <span class="index-no">03 / Operation</span>
+                        <h3>How does it help?</h3>
+                        <p>
+                            By translating repetitive administrative tasks into automated workflows, we eliminate operational delays and improve execution speeds.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-action-wrapper">
+                    <a href="main.html" class="btn-dive-deeper">
+                        Dive Deeper into Core Frameworks <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SERVICES ZONE (Ecosystem Capabilities) -->
+        <section class="section-padding reveal-up" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Ecosystem Capabilities</h2>
+                    <p class="editorial-text">Native services engineered to optimize your operational yield.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="premium-panel service-card">
+                        <div class="service-header-wrap">
+                            <div class="service-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                            <div class="service-glow-dot"></div>
+                        </div>
+                        <h3>Web Solutions</h3>
+                        <p class="service-desc">Fast frontends designed with clean code for rapid loading speeds.</p>
+                        <ul class="service-list">
+                            <li>Semantic Modern HTML5</li>
+                            <li>Calibrated Layout Systems</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="premium-panel service-card">
+                        <div class="service-header-wrap">
+                            <div class="service-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="service-glow-dot"></div>
+                        </div>
+                        <h3>Academic ERP</h3>
+                        <p class="service-desc">Integrating schedules, database registries, and tracking panels.</p>
+                        <ul class="service-list">
+                            <li>Central Database Registries</li>
+                            <li>Interactive Admin Logs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="premium-panel service-card">
+                        <div class="service-header-wrap">
+                            <div class="service-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="service-glow-dot"></div>
+                        </div>
+                        <h3>Enterprise ERP</h3>
+                        <p class="service-desc">Bespoke dashboards tracking resource assets and client operations.</p>
+                        <ul class="service-list">
+                            <li>Active Resource Tracking</li>
+                            <li>Dynamic Auditing Pipelines</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="premium-panel service-card">
+                        <div class="service-header-wrap">
+                            <div class="service-icon-box"><i class="fa-solid fa-gears"></i></div>
+                            <div class="service-glow-dot"></div>
+                        </div>
+                        <h3>Automations</h3>
+                        <p class="service-desc">Continuous background synchronization without manual oversight.</p>
+                        <ul class="service-list">
+                            <li>Clean RESTful APIs</li>
+                            <li>Low-latency Job Cron</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-action-wrapper">
+                    <a href="main.html" class="btn-dive-deeper">
+                        Dive Deeper into Systems Architecture <i class="fa-solid fa-diagram-project"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PORTFOLIO ZONE -->
+        <section class="section-padding reveal-up" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Our Executed Deployments</h2>
+                    <p class="editorial-text">A selection of custom systems engineered for direct business application.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Project 1: AKS Turf -->
+                    <div class="premium-panel portfolio-card">
+                        <div class="portfolio-image-wrapper">
+                            <span class="portfolio-tag">Scheduler Engine</span>
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=700" alt="AKS Turf NIBM Outdoor Football Complex" title="AKS Turf NIBM Visual Showcase">
+                        </div>
+                        <div class="portfolio-info">
+                            <div>
+                                <h3>AKS Turf, NIBM</h3>
+                                <div class="portfolio-meta-item">
+                                    <strong>Delivered Infrastructure</strong>
+                                    Real-time dynamic slot booking scheduler engine coupled with an integrated daily operation ledger database.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Saraswati Academy -->
+                    <div class="premium-panel portfolio-card">
+                        <div class="portfolio-image-wrapper">
+                            <span class="portfolio-tag">Academic ERP</span>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=700" alt="Saraswati Academy Structured Lecture Hall Database" title="Saraswati Academy ERP Portal Visual">
+                        </div>
+                        <div class="portfolio-info">
+                            <div>
+                                <h3>Saraswati Academy</h3>
+                                <div class="portfolio-meta-item">
+                                    <strong>Delivered Infrastructure</strong>
+                                    Unified central academic management ERP incorporating interactive student roster trackers and administrative logs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: LedgerFlow -->
+                    <div class="premium-panel portfolio-card">
+                        <div class="portfolio-image-wrapper">
+                            <span class="portfolio-tag">Finance Portal</span>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=700" alt="Secure Enterprise Financial Dashboard Ledger" title="LedgerFlow Dashboard Display">
+                        </div>
+                        <div class="portfolio-info">
+                            <div>
+                                <h3>LedgerFlow Dashboard</h3>
+                                <div class="portfolio-meta-item">
+                                    <strong>Delivered Infrastructure</strong>
+                                    Custom bookkeeping and real-time transaction pipelines designed for complex corporate balance auditing.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: AeroCart Storefront -->
+                    <div class="premium-panel portfolio-card">
+                        <div class="portfolio-image-wrapper">
+                            <span class="portfolio-tag">E-Commerce</span>
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=700" alt="High-Performance E-Commerce Checkout Interface" title="AeroCart E-Commerce Interface Showcase">
+                        </div>
+                        <div class="portfolio-info">
+                            <div>
+                                <h3>AeroCart Storefront</h3>
+                                <div class="portfolio-meta-item">
+                                    <strong>Delivered Infrastructure</strong>
+                                    Lightweight mobile-first storefront equipped with ultra-low latency checkout routing and inventory alerts.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-more">
+                    <button onclick="openPortfolioModal();" class="btn btn-outline">Explore Extended Repository</button>
+                    <a href="main.html" class="btn-dive-deeper">
+                        Dive Deeper into Code Repositories <i class="fa-solid fa-network-wired"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WHO ARE WE SECTION -->
+        <section class="section-padding reveal-up" id="who-are-we">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Who Are We</h2>
+                    <p class="editorial-text">The vision and the engineering team behind the Tattva Grid architecture.</p>
+                </div>
+
+                <div class="premium-panel genesis-wrapper">
+                    <div class="card-spotlight"></div>
+                    <p>
+                        Tattva Grid was founded in a college library by Rohit, Neel, and Aaryesh with a shared goal of building clean, resilient software systems. We believe digital operations should be built on independent logic rather than fragile, pre-made templates.
+                    </p>
+                    <div class="story-extended" id="storyExtended">
+                        <p>
+                            Today, our frameworks serve as the foundation for modern scheduling platforms, ERP portals, and automated database sync services, allowing teams to scale their operations securely.
+                        </p>
+                    </div>
+                    <button class="story-trigger" id="storyTriggerBtn" onclick="toggleStoryExpansion();">Read Detailed History <i class="fa-solid fa-angle-down"></i></button>
+                </div>
+
+                <div class="founders-grid">
+                    <!-- Founder 1 -->
+                    <div class="premium-panel team-card">
+                        <div class="card-spotlight"></div>
+                        <img src="Founder.jpg" alt="Neel Athane, Chief Technology &amp; Finance Officer" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'">
+                        <h3>Neel Athane</h3>
+                        <span>CTO &amp; CFO</span>
+                        <p>Directs technical infrastructure design, database logic pipelines, and system financial setups.</p>
+                    </div>
+
+                    <!-- Founder 2 -->
+                    <div class="premium-panel team-card">
+                        <div class="card-spotlight"></div>
+                        <img src="Co-Founder 1.jpg" alt="Rohit Badgujar, Chief Executive Officer" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'">
+                        <h3>Rohit Badgujar</h3>
+                        <span>CEO</span>
+                        <p>Directs corporate expansion parameters, partner alignment, and core ecosystem strategy.</p>
+                    </div>
+
+                    <!-- Founder 3 -->
+                    <div class="premium-panel team-card">
+                        <div class="card-spotlight"></div>
+                        <img src="Co-Founder 2.jpg" alt="Aaryesh Honrao, Chief Marketing &amp; Operating Officer" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'">
+                        <h3>Aaryesh Honrao</h3>
+                        <span>CMO &amp; COO</span>
+                        <p>Directs marketing campaigns, client relationship workflows, and product launch lifecycles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CONNECT ZONE -->
+        <section class="section-padding reveal-up" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Initiate Integration</h2>
+                    <p class="editorial-text">Connect directly with our engineering team to draft system requirements.</p>
+                </div>
+
+                <div class="premium-panel contact-layout">
+                    <div class="card-spotlight"></div>
+                    <div class="contact-info-block">
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fa-solid fa-coins"></i>
+                                <div class="contact-list-details">
+                                    <h4>Technical Operations Desk</h4>
+                                    <p>+91 94222 31321</p>
+                                    <span>Infrastructure Line — Neel Athane</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <div class="contact-list-details">
+                                    <h4>Operations Desk</h4>
+                                    <p>+91 91750 23438</p>
+                                    <span>Marketing Line — Aaryesh Honrao</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                <div class="contact-list-details">
+                                    <h4>Direct Email Address</h4>
+                                    <p>tattvagrids@gmail.com</p>
+                                    <span>Global Inquiry Inbox</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="inquiry-form-wrapper">
+                        <form id="tattvaMailEngine" onsubmit="generatePrefilledEmail(event);">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="entryName">Name / Organization</label>
+                                    <input type="text" id="entryName" required placeholder="Enter details">
+                                </div>
+                                <div class="form-group">
+                                    <label for="entryEmail">Email Address</label>
+                                    <input type="email" id="entryEmail" required placeholder="name@domain.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="entryPhone">Callback Number</label>
+                                    <input type="text" id="entryPhone" required placeholder="Phone connection">
+                                </div>
+                                <div class="form-group">
+                                    <label for="entryReq">Required Deployment Pipeline</label>
+                                    <select id="entryReq" required>
+                                        <option value="" disabled selected>Choose pipeline category...</option>
+                                        <option value="Advanced Web Solutions">Advanced Web Solutions</option>
+                                        <option value="Educational ERP Systems">Educational ERP Systems</option>
+                                        <option value="Custom Database & Ledger ERP">Custom Database &amp; Ledger ERP</option>
+                                        <option value="Automated Synchronization Engines">Automated Synchronization Engines</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+                                <input type="text" id="entryLocation" value="Global">
+                                <input type="text" id="entryDoubts" value="Intro Portal Core Connection Sequence">
+                            </div>
+                            <div class="form-group-full">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                    Draft Project Blueprint <i class="fa-solid fa-envelope" style="margin-left: 8px;"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TATTVA GRID</h3>
+                    <p>Custom digital systems engineered for reliable performance. Built on independent logic stacks that eliminate overhead drag.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/tattva.grid" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-instagram"></i> tattva.grid
+                        </a>
+                        <a href="https://www.instagram.com/tattva.founders" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-instagram"></i> tattva.founders
+                        </a>
+                        <a href="https://www.linkedin.com/company/tattvagrids" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/tattvagrids" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Ecosystem Services</h4>
+                    <ul>
+                        <li><a href="#services" onclick="navigateToSection('services')">Custom Portals</a></li>
+                        <li><a href="#services" onclick="navigateToSection('services')">Sports Booking Automations</a></li>
+                        <li><a href="#services" onclick="navigateToSection('services')">Academic Registries</a></li>
+                        <li><a href="#services" onclick="navigateToSection('services')">Task Schedulers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>About Tattva</h4>
+                    <ul>
+                        <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Framework Identity</a></li>
+                        <li><a href="main.html">Architectural Systems Docs</a></li>
+                        <li><a href="#who-are-we" onclick="navigateToSection('who-are-we')">Founders Stack</a></li>
+                        <li><a href="#contact" onclick="navigateToSection('contact')">Integrate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="mailto:tattvagrids@gmail.com"><i class="fa-regular fa-envelope"></i> tattvagrids@gmail.com</a></li>
+                        <li><a href="#contact" onclick="navigateToSection('contact')"><i class="fa-solid fa-headset"></i> Support Portal</a></li>
+                        <li><a href="#contact" onclick="navigateToSection('contact')"><i class="fa-solid fa-phone"></i> Technical Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Tattva Grid. Developed by Neel Athane. All rights reserved.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Security Charter</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/919175023438" target="_blank" class="floating-wa" aria-label="Chat with us on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- INTERACTIVE PORTFOLIO MODAL (Explore Extended Repository) -->
+    <div class="modal-overlay" id="portfolioModal" onclick="closePortfolioModalOnOutsideClick(event);">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Additional Engineering Blueprints</h3>
+                <button class="modal-close" onclick="closePortfolioModal();" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-project-list">
+                    <!-- Modal Project Item 1 -->
+                    <div class="modal-project-item">
+                        <div class="modal-project-img">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=150" alt="Automated Data Synchronization Engine Interface">
+                        </div>
+                        <div class="modal-project-desc">
+                            <h4>LedgerCore API</h4>
+                            <p>Automated database connection layer processing thousands of ledger updates per minute securely.</p>
+                        </div>
+                    </div>
+                    <!-- Modal Project Item 2 -->
+                    <div class="modal-project-item">
+                        <div class="modal-project-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=150" alt="Secure Gateway Firewall Metrics Visual">
+                        </div>
+                        <div class="modal-project-desc">
+                            <h4>AuthGrid Gateway</h4>
+                            <p>Custom security authentication proxy designed to handle client access protocols with zero external libraries.</p>
+                        </div>
+                    </div>
+                    <!-- Modal Project Item 3 -->
+                    <div class="modal-project-item">
+                        <div class="modal-project-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=150" alt="Workflow Tool Automation Scheduling Display">
+                        </div>
+                        <div class="modal-project-desc">
+                            <h4>TaskFlow Cron</h4>
+                            <p>Background process management utility scheduling administrative tasks with automated failure notifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Link to external script -->
-    <script src="script.js"></script>
+    <!-- MAIN SYSTEM SCRIPTS -->
+    <script>
+        // Toggle mobile menu alignment state
+        function toggleMobileMenu() {
+            const menuContainer = document.getElementById('mobileMenuContainer');
+            const menuIcon = document.querySelector('#mobileMenuBtn i');
+            if (menuContainer.classList.contains('open')) {
+                menuContainer.classList.remove('open');
+                menuIcon.className = 'fa-solid fa-bars';
+            } else {
+                menuContainer.classList.add('open');
+                menuIcon.className = 'fa-solid fa-xmark';
+            }
+        }
+
+        // Smooth scroll transition handler between main views
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const targetY = element.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: targetY - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Expanded About Story expansion handler
+        function toggleStoryExpansion() {
+            const extendedText = document.getElementById('storyExtended');
+            const triggerBtn = document.getElementById('storyTriggerBtn');
+
+            if (extendedText.style.display === 'block') {
+                extendedText.style.display = 'none';
+                triggerBtn.innerHTML = 'Read Detailed History <i class="fa-solid fa-angle-down"></i>';
+            } else {
+                extendedText.style.display = 'block';
+                triggerBtn.innerHTML = 'Collapse Story Module <i class="fa-solid fa-angle-up"></i>';
+            }
+        }
+
+        // Portfolio Extended Repository Modal Logic
+        function openPortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closePortfolioModalOnOutsideClick(event) {
+            const modal = document.getElementById('portfolioModal');
+            if (event.target === modal) {
+                closePortfolioModal();
+            }
+        }
+
+        // Security Form Pre-filled Email Generation Engine
+        function generatePrefilledEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('entryName').value;
+            const email = document.getElementById('entryEmail').value;
+            const phone = document.getElementById('entryPhone').value;
+            const scope = document.getElementById('entryReq').value;
+            const location = document.getElementById('entryLocation').value || "Global";
+            const doubts = document.getElementById('entryDoubts').value || "Intro Portal Core Connection Sequence";
+
+            const baseRecipient = "tattvagrids@gmail.com";
+            const emailSubject = encodeURIComponent(`Tattva Grid Ecosystem Request - ${scope}`);
+            const emailBody = encodeURIComponent(
+                `====== TATTVA GRID DEPLOYMENT MANIFEST ======\n\n` +
+                `Executive Name: ${name}\n` +
+                `Secure Route: ${email}\n` +
+                `Contact Node: ${phone}\n` +
+                `Deployment Location: ${location}\n` +
+                `Selected Infrastructure: ${scope}\n\n` +
+                `Operational Details / Custom Requirements:\n${doubts}\n\n` +
+                `=============================================`
+            );
+
+            window.location.href = `mailto:${baseRecipient}?subject=${emailSubject}&body=${emailBody}`;
+        }
+
+        // Dark/Light Theme Switching Mechanics
+        const htmlElement = document.documentElement;
+        const themeToggleBtn = document.getElementById('themeSwitch');
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    htmlElement.setAttribute('data-theme', 'light');
+                } else {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                }
+            });
+        }
+
+        // Scroll reveal implementation
+        const revealElements = document.querySelectorAll('.reveal-up');
+
+        const scrollRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1
+        });
+
+        revealElements.forEach(element => {
+            scrollRevealObserver.observe(element);
+        });
+
+        // Sticky floating header highlighting based on active section view
+        const sections = document.querySelectorAll('section[id]');
+        const sectionHeaderObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    const navButtons = document.querySelectorAll('.nav-links button.nav-link');
+                    
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    const targetBtn = document.getElementById(`nav-btn-${sectionId}`);
+                    if (targetBtn) {
+                        targetBtn.classList.add('active');
+                    }
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.3
+        });
+
+        sections.forEach(sec => sectionHeaderObserver.observe(sec));
+    </script>
 </body>
 </html>
