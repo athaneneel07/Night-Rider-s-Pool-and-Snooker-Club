@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattva Grid — Premium Enterprise Infrastructure</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tattva Grid",
+      "url": "https://www.tattvagrid.com",
+      "description": "Premium Digital Infrastructure and Automated Business Ecosystems.",
+      "founder": [
+        { "@type": "Person", "name": "Neel Athane", "jobTitle": "Founder / CTO & CFO" },
+        { "@type": "Person", "name": "Rohit Badgujar", "jobTitle": "Founder / CEO" },
+        { "@type": "Person", "name": "Aaryesh Honrao", "jobTitle": "Founder / CMO & COO" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9175023438",
+        "contactType": "Customer Service",
+        "email": "tattvagrids@gmail.com"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER (Floating Navigation Glass-Pill Element) -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo-wrap">
+                <img src="logo.jpeg" alt="Tattva Grid Logo" class="logo-img">
+                <span class="logo-text">TATTVA GRID</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#genesis">Genesis</a>
+                <a href="#founders">Founders</a>
+                <a href="#contact">Contact</a>
+                
+                <!-- Pill Toggle Switch -->
+                <div class="theme-switch-wrapper">
+                    <div class="theme-switch" id="themeSwitch" title="Switch Theme Mode">
+                        <span class="switch-pill"></span>
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. PREMIUM HERO SECTION -->
+    <section class="hero">
+        <!-- 4-leaf Clover/Propeller Wireframe Grid (Left) -->
+        <svg class="hero-wireframe-sphere sphere-left" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="85" stroke="var(--primary)" stroke-width="0.75" stroke-dasharray="3 4" opacity="0.4"/>
+            <path d="M100,100 C60,40 20,80 100,100 C140,40 180,80 100,100 C140,160 180,120 100,100 C60,160 20,120 100,100 Z" stroke="var(--primary)" stroke-width="1.2" opacity="0.75"/>
+            <circle cx="100" cy="100" r="3" fill="var(--primary)"/>
+        </svg>
+
+        <!-- Concentric Circular Grid Segments (Right) -->
+        <svg class="hero-wireframe-sphere sphere-right" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="85" stroke="var(--primary)" stroke-width="0.75" opacity="0.25"/>
+            <circle cx="100" cy="100" r="60" stroke="var(--primary)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.2"/>
+            <line x1="15" y1="100" x2="185" y2="100" stroke="var(--primary)" stroke-width="0.75" opacity="0.3"/>
+            <line x1="100" y1="15" x2="100" y2="185" stroke="var(--primary)" stroke-width="0.75" opacity="0.3"/>
+            <line x1="40" y1="40" x2="160" y2="160" stroke="var(--primary)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
+            <line x1="40" y1="160" x2="160" y2="40" stroke="var(--primary)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
+            <path d="M100,15 A85,85 0 0,1 185,100" stroke="var(--primary)" stroke-width="1" opacity="0.4"/>
+            <path d="M100,15 A85,85 0 0,0 15,100" stroke="var(--primary)" stroke-width="1" opacity="0.4"/>
+        </svg>
+
+        <div class="grid-overlay"></div>
+        <div class="ambient-glow glow-top-right"></div>
+        
+        <div class="container reveal-scale">
+            <!-- Deployment Badge -->
+            <div class="hero-status-pill">
+                <span class="status-dot"></span>
+                Available for Deployment
+            </div>
+
+            <!-- Role Tags -->
+            <div class="hero-roles">
+                Infrastructure Architects <span>•</span> Automation Engineers <span>•</span> System Creators
+            </div>
+
+            <!-- Main Heading with reference gradients -->
+            <h1>
+                Automate <span class="gradient-accent-1">Chaos.</span><br>
+                Engineer <span class="gradient-accent-2">Growth.</span>
+            </h1>
+
+            <p>We build absolute reality for modern businesses. Stop managing the manual mess, and start scaling a highly efficient, automated corporate digital ecosystem.</p>
+            
+            <div class="hero-btns">
+                <a href="#pricing" class="btn btn-primary">Deployment Plans</a>
+                <a href="#contact" class="btn btn-outline">Consult Engineers</a>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-explore">
+            Scroll to Explore
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- 3. ABOUT US -->
+    <section id="about" class="section-padding">
+        <div class="grid-overlay"></div>
+        <div class="container">
+            <h2 class="section-title reveal-up">Architecting <span class="gradient-accent-1">Digital</span> Dominance</h2>
+            <p class="editorial-text reveal-up">We engineer comprehensive digital infrastructures tailored strictly for operational efficiency.</p>
+            
+            <div class="about-grid" style="margin-top: 50px;">
+                <div class="about-content reveal-up text-left">
+                    <p>We do not construct basic templates; we develop automated ecosystems systematically designed to eliminate human error and manual friction.</p>
+                    <p>From complex custom booking architectures for premium turf arenas to sophisticated cinematic landing pages for corporate entities, we handle the entire technological stack. We map the exact digital cure and deploy the bespoke solution.</p>
+                    
+                    <div style="margin-top: 35px;">
+                        <a href="about-detail.html" class="story-continue">Read the architecture story <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <div class="about-img reveal-scale premium-panel">
+                    <div class="card-spotlight"></div>
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop" alt="Premium Corporate Development">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION (RESTRUCTURED FOR FUTURISTIC SOLUTIONS) -->
+    <section id="services" class="section-padding">
+        <div class="grid-overlay"></div>
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title">Futuristic <span class="gradient-accent-1">Solutions</span></h2>
+                <p class="editorial-text">Premium high-performance software systems and custom enterprise architectures built for immediate operational control.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Advanced Web Solutions -->
+                <div class="service-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="service-header-wrap">
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="service-glow-dot"></div>
+                    </div>
+                    <h3>Advanced Web Solutions</h3>
+                    <p class="service-desc">Ultra-premium, fast corporate frontends and secure web portals. Developed using scalable frameworks like React and Next.js, combined with performance-tuned layouts and fluid visual motion.</p>
+                    <ul class="service-list">
+                        <li>React / Next.js Frameworks</li>
+                        <li>High-End Fluid Animations</li>
+                        <li>Standardised Technical SEO</li>
+                        <li>Blazing Fast Performance</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: ERP for Educational Institutes -->
+                <div class="service-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="service-header-wrap">
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="service-glow-dot"></div>
+                    </div>
+                    <h3>ERP for Educational Institutes</h3>
+                    <p class="service-desc">Engineered resource planning modules designed specifically for colleges, universities, and coaching networks. Streamlines admissions, fee collection grids, database control, and schedules.</p>
+                    <ul class="service-list">
+                        <li>Student Lifecycle Matrix</li>
+                        <li>Automated Fee Reconciliation</li>
+                        <li>Multi-Role Access Levels</li>
+                        <li>Unified Database Structuring</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Enterprise ERP Solutions -->
+                <div class="service-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="service-header-wrap">
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <div class="service-glow-dot"></div>
+                    </div>
+                    <h3>Enterprise ERP Solutions</h3>
+                    <p class="service-desc">Tailored operational engines designed to centralize critical pipelines. Perfect for tracking inventory metrics, human capital deployment, logistics networks, and real-time ledger accounting.</p>
+                    <ul class="service-list">
+                        <li>Operational Inventory Auditing</li>
+                        <li>Real-Time Ledger Pipelines</li>
+                        <li>Custom ERP Dashboard Sync</li>
+                        <li>Automated Transaction Controls</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Website & Workflow Automation -->
+                <div class="service-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="service-header-wrap">
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <div class="service-glow-dot"></div>
+                    </div>
+                    <h3>Website & Workflow Automation</h3>
+                    <p class="service-desc">Eliminate manual tasks with modern background triggers. Connect your system cleanly to payment gateways, lead dispatchers, instant messaging alerts, and scheduled server jobs.</p>
+                    <ul class="service-list">
+                        <li>Webhooks & Script Integrations</li>
+                        <li>Automatic Booking Schedulers</li>
+                        <li>WhatsApp Lead Dispatches</li>
+                        <li>Zero Manual Management Needs</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: AI Integration & Systems -->
+                <div class="service-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="service-header-wrap">
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="service-glow-dot"></div>
+                    </div>
+                    <h3>AI Integration & Systems</h3>
+                    <p class="service-desc">Embed artificial intelligence capabilities into your business platform. Deploy secure LLM API connections, contextual logic bots, and autonomous data processing algorithms.</p>
+                    <ul class="service-list">
+                        <li>Custom LLM API Routing</li>
+                        <li>Semantic Contextual Assistants</li>
+                        <li>Smart Conversion Funnels</li>
+                        <li>Real-time Vector Search</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: Android App Development -->
+                <div class="service-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="service-header-wrap">
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <div class="service-glow-dot"></div>
+                    </div>
+                    <h3>Android App Development</h3>
+                    <p class="service-desc">Native Android software designed with Kotlin and modern Jetpack Compose. Configured with modular, clean architectures, fluid motion parameters, and offline-first cache structures.</p>
+                    <ul class="service-list">
+                        <li>Kotlin + Jetpack Compose</li>
+                        <li>Clean UI Architecture</li>
+                        <li>Real-Time Sync Modules</li>
+                        <li>Standardized Play Store Release</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. COMPARISON MATRIX -->
+    <section id="comparison" class="section-padding">
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title">The Reality <span class="gradient-accent-2">Matrix</span></h2>
+                <p class="editorial-text">Traditional operational inefficiencies compared against our premium architectural solutions.</p>
+            </div>
+
+            <div class="comparison-wrapper reveal-scale">
+                <div class="compare-row premium-panel">
+                    <div class="card-spotlight"></div>
+                    <div class="compare-side compare-problem">
+                        <i class="fa-solid fa-xmark compare-icon"></i>
+                        <h4>Manual Fragmented Communications</h4>
+                        <p>Losing track of critical reservations and customer communications due to scattered manual sheets and logs.</p>
+                    </div>
+                    <div class="compare-side compare-solution">
+                        <i class="fa-solid fa-check-double compare-icon"></i>
+                        <h4>Unified Automated Scheduler</h4>
+                        <p>Fully automated booking platform managing reservation streams and transactional records 24/7 without friction.</p>
+                    </div>
+                </div>
+
+                <div class="compare-row premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <div class="compare-side compare-problem">
+                        <i class="fa-solid fa-xmark compare-icon"></i>
+                        <h4>Financial Ledger Leakages</h4>
+                        <p>Unrecorded expenses and data mismatches caused by manual record tracking and offline spreadsheets.</p>
+                    </div>
+                    <div class="compare-side compare-solution">
+                        <i class="fa-solid fa-check-double compare-icon"></i>
+                        <h4>Real-Time Business Command</h4>
+                        <p>Interactive dashboard providing live transactional transparency, net tracking, and operational oversight.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. DIRECT REVENUE IMPACT -->
+    <section class="section-padding bg-accent-section">
+        <div class="grid-overlay"></div>
+        <div class="ambient-glow glow-bottom-left"></div>
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title">Direct <span class="gradient-accent-1">Revenue</span> Impact</h2>
+                <p class="editorial-text">Understanding exactly how our digital infrastructure translates directly into corporate profit and sustainable scalability.</p>
+            </div>
+            
+            <div class="qa-container">
+                <div class="qa-box premium-panel reveal-up">
+                    <div class="card-spotlight"></div>
+                    <div class="qa-question">
+                        <i class="fa-solid fa-arrow-trend-up qa-icon"></i>
+                        <h4>How does systemic automation increase my revenue?</h4>
+                    </div>
+                    <div class="qa-answer">
+                        By completely eliminating manual friction, you capture late-night and impulse reservations automatically. The system eliminates double-booking conflicts, ensuring consistent customer retention.
+                    </div>
+                </div>
+
+                <div class="qa-box premium-panel reveal-up">
+                    <div class="card-spotlight"></div>
+                    <div class="qa-question">
+                        <i class="fa-solid fa-wallet qa-icon"></i>
+                        <h4>How does the Command Dashboard protect capital?</h4>
+                    </div>
+                    <div class="qa-answer">
+                        Manual logs lead to leaks through unrecorded hours. Our dashboard provides real-time transaction reconciliation, ensuring complete oversight without requiring manual check-ins.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PORTFOLIO -->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title">Deployed <span class="gradient-accent-2">Architectures</span></h2>
+                <p class="editorial-text">Premium digital systems systematically engineered for high-volume operational spaces.</p>
+            </div>
+            
+            <div class="grid-carousel col-3 portfolio-grid">
+                <!-- Card 1 -->
+                <div class="portfolio-card reveal-scale">
+                    <div class="portfolio-image-wrapper">
+                        <span class="portfolio-tag">Active Ecosystem</span>
+                        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=800&auto=format&fit=crop" alt="Metro Sports Arena">
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <h4>Metro Sports Arena</h4>
+                            <p>Automated Turf Ecosystem</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="portfolio-card reveal-scale">
+                    <div class="portfolio-image-wrapper">
+                        <span class="portfolio-tag">Custom Engine</span>
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="Urban Brew Lounge">
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <h4>Urban Brew Lounge</h4>
+                            <p>Reservation Logic Portal</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="portfolio-card reveal-scale">
+                    <div class="portfolio-image-wrapper">
+                        <span class="portfolio-tag">Enterprise Grid</span>
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Apex Corporate Estate">
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <h4>Apex Corporate Estate</h4>
+                            <p>Advanced Allocation Matrix</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. BY THE NUMBERS -->
+    <section class="section-padding stats-section">
+        <div class="grid-overlay"></div>
+        <div class="container">
+            <div class="reveal-up text-center">
+                <span class="stat-label" style="letter-spacing: 2px; color: var(--primary);">By The Numbers</span>
+                <h2 class="section-title" style="margin-top: 10px;">Results That <span class="gradient-accent-1">Speak</span></h2>
+            </div>
+
+            <div class="stats-grid">
+                <!-- 28+ Projects -->
+                <div class="stat-card cyan reveal-scale">
+                    <div class="stat-number" data-target="28">0+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+
+                <!-- 18+ Clients -->
+                <div class="stat-card purple reveal-scale">
+                    <div class="stat-number" data-target="18">0+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+
+                <!-- 12+ Techs -->
+                <div class="stat-card pink glow-active reveal-scale">
+                    <div class="stat-number" data-target="12">0+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">Technologies Used</div>
+                </div>
+
+                <!-- 9+ Apps -->
+                <div class="stat-card teal reveal-scale">
+                    <div class="stat-number" data-target="9">0+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">Apps Built</div>
+                </div>
+
+                <!-- 5+ AI Integrations -->
+                <div class="stat-card amber reveal-scale">
+                    <div class="stat-number" data-target="5">0+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">AI Integrations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. REVIEWS -->
+    <section id="reviews" class="section-padding reviews-section">
+        <div class="grid-overlay"></div>
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title">Client <span class="gradient-accent-1">Testimonials</span></h2>
+                <p class="editorial-text">Systematic reviews from brand partners operating on the Tattva Grid framework.</p>
+            </div>
+        </div>
+
+        <div class="reviews-wrapper">
+            <!-- Row 1 -->
+            <div class="reviews-track" id="track1">
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge blue">AS</div>
+                            <div class="profile-meta">
+                                <h4>Arjun Sharma</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"Tattva Grid built our entire arena automation engine from scratch in 3 weeks. The operational flow is absolutely seamless and the UI logic is clean. Highly recommended for elite venues!"</p>
+                    <div class="review-footer">Startup Founder, TechVenture India</div>
+                </div>
+
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge purple">PM</div>
+                            <div class="profile-meta">
+                                <h4>Priya Mehta</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"Our booking environment went from basic to absolute premium overnight. Customers constantly compliment how effortless and fast it is to secure reservation slots now."</p>
+                    <div class="review-footer">Restaurant Owner, Kayla De Barbeque</div>
+                </div>
+
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge teal">RK</div>
+                            <div class="profile-meta">
+                                <h4>Rajesh Kumar</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"The real-time admin portal solved complex operational loops we didn't even realize were leaking revenue. Truly solid data infrastructure for scaling businesses."</p>
+                    <div class="review-footer">Director, Metro Sports Ground</div>
+                </div>
+
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge emerald">NG</div>
+                            <div class="profile-meta">
+                                <h4>Neha Gupta</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"We completely overhauled our brand presence and reservation logic. Our conversion rates rose significantly in the first week. Extremely precise execution."</p>
+                    <div class="review-footer">E-Commerce Specialist, StyleGrid</div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="reviews-track" id="track2" style="margin-left: -150px;">
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge rose">RD</div>
+                            <div class="profile-meta">
+                                <h4>Rahul Desai</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"As a product designer, I am incredibly demanding when it comes to pixel precision. Tattva Grid integrated our brand layout with buttery smooth performance."</p>
+                    <div class="review-footer">UI/UX Lead, DesignCo Agency</div>
+                </div>
+
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge amber">AC</div>
+                            <div class="profile-meta">
+                                <h4>Amanda Chen</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"Delivered our advanced custom allocation ecosystem weeks ahead of schedule. The code structuring, clarity, and handling of custom parameters is clean."</p>
+                    <div class="review-footer">Product Lead, TechBase Global</div>
+                </div>
+
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge blue">VS</div>
+                            <div class="profile-meta">
+                                <h4>Vikram Singh</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"Systematic automation at its finest. Double bookings are gone, customer satisfaction is way up, and staff manual overhead is literally down to zero."</p>
+                    <div class="review-footer">Operations Chief, Apex Enterprise</div>
+                </div>
+
+                <div class="glass-review-card">
+                    <div class="card-spotlight"></div>
+                    <div class="review-header">
+                        <div class="review-profile">
+                            <div class="profile-badge purple">KK</div>
+                            <div class="profile-meta">
+                                <h4>Karan Kapoor</h4>
+                                <div class="stars-container">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-body">"Every phase of our custom integration was mapped, tested, and systematically deployed. They solved data fragmentation bottlenecks we struggled with for months."</p>
+                    <div class="review-footer">Managing Partner, Nexus Logistics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. PRICING -->
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title"><span class="gradient-accent-2">Deployment</span> Packages</h2>
+                <p class="editorial-text">Select the precise architectural foundation required for your current business scale.</p>
+            </div>
+
+            <div class="pricing-tabs reveal-up">
+                <button class="tab-btn active" onclick="switchPricing('turf')">Turf & Automation</button>
+                <button class="tab-btn" onclick="switchPricing('standard')">Web & Corporate</button>
+                <button class="tab-btn" onclick="switchPricing('photo')">Cinematic Content</button>
+            </div>
+
+            <!-- Turf Pricing -->
+            <div id="price-turf" class="pricing-content active">
+                <div class="grid-carousel col-2-center price-grid">
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <h3>Standard Framework</h3>
+                        <p class="desc">The essential functional corporate base for turf and arena operations.</p>
+                        <div class="price">₹1,999<span> / one-time</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Premium Website Architecture</li>
+                            <li><i class="fa-solid fa-check"></i> Full Booking Automation Engine</li>
+                            <li><i class="fa-solid fa-check"></i> Corporate Theme Customization</li>
+                            <li><i class="fa-solid fa-check"></i> Secure Admin Dashboard Access</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top: auto;">Select Standard</a>
+                    </div>
+
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <div class="tag-badge">Ultimate Capability</div>
+                        <h3>Custom Ecosystem</h3>
+                        <p class="desc">Complete architectural freedom to customize every operational aspect.</p>
+                        <div class="price">₹2,599<span> / one-time</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> 100% Customization Freedom</li>
+                            <li><i class="fa-solid fa-check"></i> Bespoke Styling & UI Logic</li>
+                            <li><i class="fa-solid fa-check"></i> Advanced Booking Customizations</li>
+                            <li><i class="fa-solid fa-check"></i> Premium Corporate Dashboard</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top: auto;">Select Custom</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Web Pricing -->
+            <div id="price-standard" class="pricing-content">
+                <div class="grid-carousel col-3 price-grid">
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <h3>Starter Presence</h3>
+                        <p class="desc">Engineered for emerging businesses initiating online operations.</p>
+                        <div class="price">₹4,999<span> / one-time</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> 1 Page Corporate Site</li>
+                            <li><i class="fa-solid fa-check"></i> Responsive Mobile Layout</li>
+                            <li><i class="fa-solid fa-check"></i> Deployment in 7–10 Days</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top:auto;">Select Starter</a>
+                    </div>
+
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <div class="tag-badge">Most Popular</div>
+                        <h3>Enterprise Growth</h3>
+                        <p class="desc">Systematically designed for growing businesses needing a dominant presence.</p>
+                        <div class="price">₹10,999<span> / one-time</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Up to 5 Pages Architecture</li>
+                            <li><i class="fa-solid fa-check"></i> Premium Corporate UI/UX</li>
+                            <li><i class="fa-solid fa-check"></i> WhatsApp & Lead Integrations</li>
+                            <li><i class="fa-solid fa-check"></i> Deployment in 5–7 Days</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top:auto;">Select Growth</a>
+                    </div>
+
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <h3>Advanced Matrix</h3>
+                        <p class="desc">Strictly suited for custom multi-level integrations and deep automation.</p>
+                        <div class="price">₹15,999<span> / one-time</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Bespoke Web Solutions</li>
+                            <li><i class="fa-solid fa-check"></i> Multi-Tier Access Dashboard</li>
+                            <li><i class="fa-solid fa-check"></i> Payment Gateway Routing</li>
+                            <li><i class="fa-solid fa-check"></i> Priority Executive Support</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top:auto;">Select Advanced</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography Pricing -->
+            <div id="price-photo" class="pricing-content">
+                <div class="grid-carousel col-2-center price-grid">
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <h3>Foundation Shoot</h3>
+                        <p class="desc">The essential visual baseline necessary to establish brand identity.</p>
+                        <div class="price">₹1,500<span> / shoot</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> 5–10 Retouched Photos</li>
+                            <li><i class="fa-solid fa-check"></i> 1 Minute Highlight Video</li>
+                            <li><i class="fa-solid fa-check"></i> Social Media Formatted</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" style="width:100%; margin-top:auto;">Book Foundation</a>
+                    </div>
+
+                    <div class="price-card premium-panel reveal-scale">
+                        <div class="card-spotlight"></div>
+                        <div class="tag-badge">Brand Dominance</div>
+                        <h3>Cinematic Boost</h3>
+                        <p class="desc">High-engagement visual volume to systematically dominate algorithms.</p>
+                        <div class="price">₹3,500<span> / onwards</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> 15–20 Editorial Photos</li>
+                            <li><i class="fa-solid fa-check"></i> 3–5 Minute Corporate Videos</li>
+                            <li><i class="fa-solid fa-check"></i> Premium Colour Grading</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top:auto;">Book Cinematic</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. GENESIS STORY -->
+    <section id="genesis" class="section-padding">
+        <div class="grid-overlay"></div>
+        <div class="container reveal-up">
+            <h2 class="section-title">Our <span class="gradient-accent-1">Genesis</span></h2>
+            <p class="editorial-text">The strict architectural philosophy behind the inception of Tattva Grid.</p>
+            
+            <div class="genesis-wrapper premium-panel reveal-scale">
+                <div class="card-spotlight" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 65%);"></div>
+                <p>Tattva Grid was originally conceptualized and architected independently by Neel Athane. Operating as the sole technical architect, Neel independently built the initial software foundations, landing systems, and backend logic.</p>
+                <p>Recognizing that scaling a world-class enterprise requires multidimensional execution, Neel strategically connected with and onboarded elite specialized minds to finish the ecosystem. He brought on Rohit Badgujar to pilot strategic business development and institutional growth as CEO, and Aaryesh Honrao to spearhead high-end brand assets and client relations as CMO & COO.</p>
+                
+                <div style="margin-top: 35px; text-align: center;">
+                    <a href="genesis-detail.html" class="story-continue">Read the full Genesis Equation <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FOUNDERS -->
+    <section id="founders" class="section-padding">
+        <div class="container">
+            <div class="reveal-up">
+                <h2 class="section-title">The Executive <span class="gradient-accent-2">Board</span></h2>
+                <p class="editorial-text">The strategic minds engineering the Tattva Grid framework.</p>
+            </div>
+            
+            <div class="grid-carousel col-3 team-grid">
+                <div class="team-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" alt="Neel Athane">
+                    <h3>Neel Athane</h3>
+                    <span>Founder / CTO & CFO</span>
+                    <p>Original Visionary and Lead System Architect. Engineered the core automated software frameworks and financial logistics.</p>
+                </div>
+                
+                <div class="team-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop" alt="Rohit Badgujar">
+                    <h3>Rohit Badgujar</h3>
+                    <span>Founder / CEO</span>
+                    <p>Directs overall corporate expansion parameters, pilots strategic business development, and commands executive operations.</p>
+                </div>
+                
+                <div class="team-card premium-panel reveal-scale">
+                    <div class="card-spotlight"></div>
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop" alt="Aaryesh Honrao">
+                    <h3>Aaryesh Honrao</h3>
+                    <span>Founder / CMO & COO</span>
+                    <p>Pioneers premium cinematic pipelines, marketing execution logistics, and orchestrates sophisticated client communications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. INQUIRY / CONTACT -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title reveal-up">Deploy Grid <span class="gradient-accent-1">Control</span></h2>
+            <p class="editorial-text reveal-up">Inquire below to seamlessly integrate automated system architecture into your operations.</p>
+            
+            <div class="contact-layout premium-panel reveal-scale" style="margin-top: 40px;">
+                <div class="card-spotlight" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 65%);"></div>
+                <div class="contact-info-block">
+                    <h3>Architecture.</h3>
+                    <p>Contact our engineering team to systematically discuss operational parameters, exact pricing structures, or to schedule an executive consultation.</p>
+                    
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> Tattva Grid HQ, Pune, Maharashtra</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 9175023438 (Ops/Media)</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 9422231321 (Tech/Finance)</li>
+                        <li><i class="fa-solid fa-envelope"></i> tattvagrids@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="inquiry-form-wrapper">
+                    <form id="tattvaMailEngine">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="entryName">Executive Name</label>
+                                <input type="text" id="entryName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="entryPhone">Direct Phone Line</label>
+                                <input type="tel" id="entryPhone" placeholder="+91..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="entryEmail">Corporate Email Address</label>
+                                <input type="email" id="entryEmail" placeholder="name@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="entryLocation">Deployment Location</label>
+                                <input type="text" id="entryLocation" placeholder="Location Name" required>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="entryReq">Select Infrastructure Requirement</label>
+                                <select id="entryReq" required>
+                                    <option value="" disabled selected>Choose your configuration</option>
+                                    <option value="Turf Framework">Turf Framework (₹1999)</option>
+                                    <option value="Custom Turf Ecosystem">Custom Turf Ecosystem (₹2599)</option>
+                                    <option value="Web: Starter Package">Web: Starter Presence (₹4999)</option>
+                                    <option value="Web: Business Growth">Web: Enterprise Growth (₹10999)</option>
+                                    <option value="Web: Advanced Package">Web: Advanced Matrix (₹15999)</option>
+                                    <option value="Photo: Foundation Shoot">Photo: Foundation Shoot (₹1500)</option>
+                                    <option value="Photo: Cinematic Boost">Photo: Cinematic Boost (₹3500+)</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="entryDoubts">Custom Architectural Requirements</label>
+                                <textarea id="entryDoubts" placeholder="Detail your specific operational bottlenecks, workflow friction, or custom requests..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 0.95rem; padding: 20px;">
+                            Transmit Details <i class="fa-solid fa-arrow-right-long" style="margin-left: 8px;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. FOOTER -->
+    <footer>
+        <div class="container footer-grid reveal-up">
+            <div class="footer-brand">
+                <div class="logo-text">TATTVA GRID</div>
+                <p>Engineering premium enterprise architecture and luxury digital environments for scaling operations and corporate dominance.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Architecture</h4>
+                <ul>
+                    <li><a href="#genesis">Genesis Story</a></li>
+                    <li><a href="#comparison">Problem Matrix</a></li>
+                    <li><a href="#portfolio">Deployed Portals</a></li>
+                    <li><a href="#pricing">Deployment Plans</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal Directives</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Protocol</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Cancellation Matrix</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Global Network</h4>
+                <div style="display: flex; gap: 18px; font-size: 1.3rem; margin-top: 15px;">
+                    <a href="https://instagram.com/tattva.grids" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/919175023438" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom reveal-up">
+            <div>&copy; 2026 Tattva Grid. Exacting Digital Ecosystems. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919175023438" target="_blank" class="floating-wa" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Link to external script -->
+    <script src="script.js"></script>
+</body>
+</html>
