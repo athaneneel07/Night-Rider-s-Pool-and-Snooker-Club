@@ -43,7 +43,7 @@
           { 
             "@type": "Person", 
             "name": "Neel Athane", 
-            "jobTitle": "Founder, CTO & CFO" 
+            "jobTitle": "Founder, CTO & CFO",
             "sameAs": [
               "https://www.linkedin.com/in/neel-athane-tattvagrid",
               "https://www.instagram.com/athaneneel",
@@ -75,7 +75,7 @@
         "url": "https://www.tattvagrid.com",
         "creator": {
           "@type": "Person",
-          "name": "Neel Athane"
+          "name": "Neel Athane",
           "sameAs": [
               "https://www.linkedin.com/in/neel-athane-tattvagrid",
               "https://www.instagram.com/athaneneel",
@@ -118,10 +118,7 @@
             --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
             --shadow-hover: 0 20px 40px -10px rgba(0, 181, 214, 0.18);
             --glow: rgba(0, 181, 214, 0.3);
-            
-            /* High visibility, luminous cyan and blue abstract network background image */
             --hero-bg-img: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1600');
-            /* Lighter, high-transparency overlay to keep the abstract network art completely visible */
             --hero-overlay: linear-gradient(180deg, rgba(5, 8, 17, 0.25) 0%, rgba(5, 8, 17, 0.7) 100%);
         }
 
@@ -137,8 +134,6 @@
             --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
             --shadow-hover: 0 20px 40px -10px rgba(4, 37, 84, 0.12);
             --glow: rgba(4, 37, 84, 0.15);
-            
-            /* Changed light theme background to a modern architecture/structural layout with an increased contrast overlay */
             --hero-bg-img: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600');
             --hero-overlay: linear-gradient(180deg, rgba(236, 240, 246, 0.88) 0%, rgba(236, 240, 246, 0.95) 100%);
         }
@@ -167,7 +162,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem; /* Compact horizontal padding for mobile viewports */
         }
 
         /* --- SCROLL-TRIGGERED ANIMS --- */
@@ -437,8 +432,8 @@
 
         /* --- HERO SECTION --- */
         .hero-section {
-            padding-top: 160px;
-            padding-bottom: 80px;
+            padding-top: 140px;
+            padding-bottom: 60px;
             min-height: 85vh;
             display: flex;
             align-items: center;
@@ -476,12 +471,12 @@
         }
 
         .hero-inner h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-size: clamp(1.8rem, 5vw, 3.8rem);
             font-weight: 850;
             line-height: 1.15;
             letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
-            text-shadow: 0 2px 14px rgba(5, 8, 17, 0.75); /* Soft drop shadow for legibility over active graphics */
+            text-shadow: 0 2px 14px rgba(5, 8, 17, 0.75);
         }
 
         html[data-theme="light"] .hero-inner h1 {
@@ -495,7 +490,7 @@
         }
 
         .hero-inner p {
-            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
             color: var(--text-muted);
             margin-bottom: 2.25rem;
             line-height: 1.6;
@@ -524,20 +519,20 @@
 
         /* --- SIZZLE SECTION --- */
         .sizzle-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border-color);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .section-header h2 {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-size: clamp(1.6rem, 3.5vw, 2.5rem);
             font-weight: 850;
             letter-spacing: -0.02em;
             margin-bottom: 0.75rem;
@@ -545,22 +540,22 @@
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1.5;
         }
 
         .sizzle-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 3.5rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .sizzle-card {
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 2.5rem;
+            padding: 1.5rem;
             box-shadow: var(--shadow-soft);
             transition: var(--transition-smooth);
             position: relative;
@@ -585,58 +580,52 @@
         }
 
         .sizzle-card .index-no {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
             color: var(--brand-cyan);
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             display: block;
         }
 
         .sizzle-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.75rem;
         }
 
         .sizzle-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            line-height: 1.55;
+            line-height: 1.5;
         }
 
-        .section-action-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 2.5rem;
-        }
-
-        /* --- SERVICES SECTION --- */
+        /* --- SERVICES SECTION (Mobile Side-by-Side) --- */
         .services-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border-color);
             background: rgba(0, 181, 214, 0.01);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* Enforces 2-column side-by-side alignment on mobile */
             gap: 0.75rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2rem;
         }
 
         .service-card {
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 1.25rem 1rem;
+            padding: 1rem 0.75rem; /* Tight padding to protect mobile viewport limits */
             box-shadow: var(--shadow-soft);
             transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
             text-align: left;
             height: 100%;
             text-decoration: none;
@@ -651,33 +640,33 @@
         }
 
         .service-icon {
-            width: 38px;
-            height: 38px;
+            width: 32px;
+            height: 32px;
             background: rgba(0, 181, 214, 0.08);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--brand-cyan);
-            font-size: 1.15rem;
+            font-size: 1rem;
         }
 
         .service-card h3 {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 800;
             color: var(--text-dark);
             line-height: 1.2;
         }
 
         .service-card p {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             line-height: 1.4;
         }
 
         /* --- PORTFOLIO (OUR WORK) SECTION --- */
         .portfolio-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border-color);
         }
 
@@ -685,7 +674,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .portfolio-card {
@@ -711,7 +700,7 @@
 
         .portfolio-media {
             width: 100%;
-            height: 200px;
+            height: 180px;
             background: var(--surface-contrast);
             position: relative;
             overflow: hidden;
@@ -735,34 +724,34 @@
 
         .portfolio-tag {
             position: absolute;
-            top: 14px;
-            left: 14px;
+            top: 12px;
+            left: 12px;
             background: rgba(5, 8, 17, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--brand-cyan);
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             font-weight: 800;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         .portfolio-info {
-            padding: 1.5rem;
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .portfolio-info h3 {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--text-dark);
         }
 
         .portfolio-meta-item {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             line-height: 1.45;
             color: var(--text-muted);
         }
@@ -773,20 +762,20 @@
             display: block;
             margin-bottom: 0.25rem;
             text-transform: uppercase;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             letter-spacing: 0.05em;
         }
 
         .portfolio-more {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
         /* --- WHO ARE WE SECTION --- */
         .who-are-we-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border-color);
             background: rgba(0, 181, 214, 0.01);
         }
@@ -795,22 +784,22 @@
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 2.25rem;
+            padding: 1.5rem;
             box-shadow: var(--shadow-soft);
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
             text-align: left;
         }
 
         .story-preview {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
-            line-height: 1.65;
+            line-height: 1.6;
         }
 
         .story-extended {
             display: none;
-            margin-top: 1.25rem;
-            padding-top: 1.25rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--border-color);
         }
 
@@ -818,10 +807,10 @@
             background: none;
             border: none;
             color: var(--brand-cyan);
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 800;
             cursor: pointer;
-            margin-top: 1.25rem;
+            margin-top: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -837,14 +826,14 @@
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: var(--shadow-soft);
             transition: var(--transition-smooth);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .founder-card:hover {
@@ -854,8 +843,8 @@
         }
 
         .founder-avatar {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid var(--brand-cyan);
@@ -869,31 +858,31 @@
         }
 
         .founder-meta h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--text-dark);
             margin-bottom: 0.25rem;
         }
 
         .founder-meta .role {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 800;
             color: var(--brand-cyan);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             display: block;
         }
 
         .founder-meta p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
         /* --- CONTACT & INQUIRY SECTION --- */
         .contact-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border-color);
         }
 
@@ -906,7 +895,7 @@
         .contact-info-block {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1rem;
             text-align: left;
         }
 
@@ -914,27 +903,27 @@
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 1.5rem;
+            padding: 1.25rem;
             display: flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .contact-pill-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             background: rgba(0, 181, 214, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--brand-cyan);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             flex-shrink: 0;
         }
 
         .contact-pill-details h4 {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
             color: var(--text-muted);
             text-transform: uppercase;
@@ -943,34 +932,34 @@
         }
 
         .contact-pill-details p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--text-dark);
         }
 
         .contact-pill-details span {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
             display: block;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .inquiry-form-card {
             background: var(--surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: var(--shadow-soft);
             text-align: left;
         }
 
         .form-row {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .form-row label {
             display: block;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 800;
             color: var(--text-dark);
             text-transform: uppercase;
@@ -980,12 +969,12 @@
 
         .form-row input, .form-row select {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: var(--bg-color);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-sm);
             color: var(--text-dark);
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             outline: none;
             transition: var(--transition-smooth);
         }
@@ -1000,15 +989,15 @@
             background: #04070e;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             color: #94a3b8;
-            padding: 5rem 0 2.5rem 0;
+            padding: 4rem 0 2rem 0;
             text-align: left;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
-            margin-bottom: 4rem;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .footer-brand .logo-block {
@@ -1017,9 +1006,9 @@
         }
 
         .footer-brand h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #f1f5f9;
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.75rem;
             letter-spacing: 0.05em;
         }
 
@@ -1028,29 +1017,29 @@
         }
 
         .footer-brand p {
-            font-size: 0.85rem;
-            line-height: 1.6;
+            font-size: 0.8rem;
+            line-height: 1.5;
             margin-bottom: 1.5rem;
         }
 
         .footer-socials {
             display: flex;
-            gap: 0.85rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
         }
 
         .footer-socials a {
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 30px;
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.06);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: #94a3b8;
             text-decoration: none;
             transition: var(--transition-smooth);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
@@ -1066,7 +1055,7 @@
             color: #f1f5f9;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links ul {
@@ -1074,11 +1063,11 @@
         }
 
         .footer-links ul li {
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.5rem;
         }
 
         .footer-links ul a {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: #94a3b8;
             text-decoration: none;
             transition: var(--transition-smooth);
@@ -1091,12 +1080,12 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 1.75rem;
+            padding-top: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 1rem;
             text-align: center;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
         }
 
         .footer-bottom-links {
@@ -1128,7 +1117,7 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.4s ease;
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .modal-overlay.active {
@@ -1142,7 +1131,7 @@
             border-radius: var(--radius-md);
             width: 100%;
             max-width: 600px;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
             box-shadow: var(--shadow-hover);
             transform: scale(0.96);
@@ -1155,7 +1144,7 @@
         }
 
         .modal-header {
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -1163,7 +1152,7 @@
         }
 
         .modal-header h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 850;
         }
 
@@ -1171,7 +1160,7 @@
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             cursor: pointer;
             transition: var(--transition-smooth);
         }
@@ -1181,27 +1170,27 @@
         }
 
         .modal-body {
-            padding: 1.5rem;
+            padding: 1.25rem;
         }
 
         .modal-project-list {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .modal-project-item {
             display: flex;
-            gap: 1.25rem;
+            gap: 1rem;
             background: var(--surface-contrast);
-            padding: 1rem;
+            padding: 0.85rem;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border-color);
         }
 
         .modal-project-img {
-            width: 70px;
-            height: 70px;
+            width: 64px;
+            height: 64px;
             border-radius: var(--radius-sm);
             overflow: hidden;
             background: var(--bg-color);
@@ -1215,20 +1204,24 @@
         }
 
         .modal-project-desc h4 {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 800;
             color: var(--text-dark);
             margin-bottom: 0.25rem;
         }
 
         .modal-project-desc p {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            line-height: 1.45;
+            line-height: 1.4;
         }
 
-        /* --- RESPONSIVE ADJUSTMENTS --- */
+        /* --- RESPONSIVE TABLET & DESKTOP RESET RULES --- */
         @media (min-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
             .desktop-nav {
                 display: flex;
             }
@@ -1237,14 +1230,42 @@
                 display: none;
             }
 
-            .sizzle-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .sizzle-section {
+                padding: 6rem 0;
             }
 
-            /* Responsive desktop view resets from mobile's 2x2 grid to a 4-column layout */
+            .sizzle-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 3.5rem;
+            }
+
+            .sizzle-card {
+                padding: 2.5rem;
+            }
+
+            .sizzle-card .index-no {
+                font-size: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .sizzle-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.85rem;
+            }
+
+            .sizzle-card p {
+                font-size: 0.9rem;
+            }
+
+            .services-section {
+                padding: 6rem 0;
+            }
+
             .services-grid {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 1.5rem;
+                margin-bottom: 3.5rem;
             }
 
             .service-card {
@@ -1266,9 +1287,66 @@
                 font-size: 0.82rem;
             }
 
+            .portfolio-section {
+                padding: 6rem 0;
+            }
+
             .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr); /* Clean 3-column layouts since we track 3 live deployments */
                 gap: 1.75rem;
+                margin-bottom: 3rem;
+            }
+
+            .portfolio-media {
+                height: 200px;
+            }
+
+            .portfolio-tag {
+                top: 14px;
+                left: 14px;
+                font-size: 0.68rem;
+                padding: 4px 12px;
+            }
+
+            .portfolio-info {
+                padding: 1.5rem;
+                gap: 0.75rem;
+            }
+
+            .portfolio-info h3 {
+                font-size: 1.15rem;
+            }
+
+            .portfolio-meta-item {
+                font-size: 0.8rem;
+            }
+
+            .portfolio-meta-item strong {
+                font-size: 0.72rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .who-are-we-section {
+                padding: 6rem 0;
+            }
+
+            .story-container {
+                padding: 2.25rem;
+                margin-bottom: 4rem;
+            }
+
+            .story-preview {
+                font-size: 0.95rem;
+            }
+
+            .story-extended {
+                margin-top: 1.25rem;
+                padding-top: 1.25rem;
+            }
+
+            .story-trigger {
+                font-size: 0.82rem;
+                margin-top: 1.25rem;
             }
 
             .founders-grid {
@@ -1276,25 +1354,186 @@
                 gap: 1.75rem;
             }
 
+            .founder-card {
+                padding: 2rem;
+                gap: 1.25rem;
+            }
+
+            .founder-avatar {
+                width: 110px;
+                height: 110px;
+            }
+
+            .founder-meta h3 {
+                font-size: 1.15rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .founder-meta .role {
+                font-size: 0.72rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .founder-meta p {
+                font-size: 0.8rem;
+            }
+
+            .contact-section {
+                padding: 6rem 0;
+            }
+
             .contact-layout {
                 grid-template-columns: 1fr 1.1fr;
                 gap: 4rem;
             }
 
+            .contact-info-block {
+                gap: 1.25rem;
+            }
+
+            .contact-pill {
+                padding: 1.5rem;
+                gap: 1.25rem;
+            }
+
+            .contact-pill-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.2rem;
+            }
+
+            .contact-pill-details h4 {
+                font-size: 0.75rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .contact-pill-details p {
+                font-size: 1rem;
+            }
+
+            .contact-pill-details span {
+                font-size: 0.75rem;
+                margin-top: 3px;
+            }
+
+            .inquiry-form-card {
+                padding: 2rem;
+            }
+
+            .form-row {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-row label {
+                font-size: 0.72rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .form-row input, .form-row select {
+                padding: 14px;
+                font-size: 0.88rem;
+            }
+
+            footer {
+                padding: 5rem 0 2.5rem 0;
+            }
+
             .footer-grid {
                 grid-template-columns: 2fr repeat(3, 1fr);
+                gap: 2.5rem;
+                margin-bottom: 4rem;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.15rem;
+                margin-bottom: 0.85rem;
+            }
+
+            .footer-brand p {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-socials {
+                gap: 0.85rem;
+            }
+
+            .footer-socials a {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .footer-links h4 {
+                font-size: 0.75rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .footer-links ul li {
+                margin-bottom: 0.65rem;
+            }
+
+            .footer-links ul a {
+                font-size: 0.82rem;
             }
 
             .footer-bottom {
+                padding-top: 1.75rem;
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
+                font-size: 0.78rem;
+                gap: 1rem;
             }
-        }
 
-        @media (min-width: 1024px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .footer-bottom-links {
+                gap: 1.5rem;
+            }
+
+            .modal-overlay {
+                padding: 1.5rem;
+            }
+
+            .modal-card {
+                max-height: 80vh;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .modal-close {
+                font-size: 1.3rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .modal-project-list {
+                gap: 1.25rem;
+            }
+
+            .modal-project-item {
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            .modal-project-img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .modal-project-desc h4 {
+                font-size: 0.9rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .modal-project-desc p {
+                font-size: 0.78rem;
             }
         }
     </style>
@@ -1488,52 +1727,37 @@
                             <h3>AKS Turf, NIBM</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Real-time dynamic slot booking scheduler engine coupled with an integrated daily operation ledger database. Click for detailed analysis.
+                                Real-time slot booking scheduler engine coupled with an integrated daily operation ledger database. Click for detailed analysis.
                             </div>
                         </div>
                     </a>
 
-                    <!-- Project 2: Saraswati Academy -->
-                    <a href="work-details.html#saraswati-academy" class="portfolio-card" title="View Saraswati Academy ERP Details">
+                    <!-- Project 2: Rama Sports Pune -->
+                    <a href="work-details.html#rama-sports" class="portfolio-card" title="View Rama Sports Deployment Details">
                         <div class="portfolio-media">
-                            <span class="portfolio-tag">Academic ERP</span>
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=700" alt="Saraswati Academy Structured Lecture Hall Database" title="Saraswati Academy ERP Portal Visual">
+                            <span class="portfolio-tag">Arena Core</span>
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=700" alt="Rama Sports Arena Facility" title="Rama Sports Arena Visual Showcase">
                         </div>
                         <div class="portfolio-info">
-                            <h3>Saraswati Academy</h3>
+                            <h3>Rama Sports Pune, Kothrud</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Unified central academic management ERP incorporating interactive student roster trackers and administrative logs. Click for detailed analysis.
+                                Dynamic multi-court allocation grid, interactive scheduling panels, and structured localized data analytics. Click for detailed analysis.
                             </div>
                         </div>
                     </a>
 
-                    <!-- Project 3: LedgerFlow -->
-                    <a href="work-details.html#ledgerflow" class="portfolio-card" title="View LedgerFlow Dashboard Details">
+                    <!-- Project 3: Galaxy Arena -->
+                    <a href="work-details.html#galaxy-arena" class="portfolio-card" title="View Galaxy Arena Details">
                         <div class="portfolio-media">
-                            <span class="portfolio-tag">Finance Portal</span>
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=700" alt="Secure Enterprise Financial Dashboard Ledger" title="LedgerFlow Dashboard Display">
+                            <span class="portfolio-tag">Database System</span>
+                            <img src="https://images.unsplash.com/photo-1540747737956-37872404f802?auto=format&fit=crop&q=80&w=700" alt="Galaxy Arena Wakad Stadium" title="Galaxy Arena Visual Showcase">
                         </div>
                         <div class="portfolio-info">
-                            <h3>LedgerFlow Dashboard</h3>
+                            <h3>Galaxy Arena, Wakad</h3>
                             <div class="portfolio-meta-item">
                                 <strong>Delivered Infrastructure</strong>
-                                Custom bookkeeping and real-time transaction pipelines designed for complex corporate balance auditing. Click for detailed analysis.
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Project 4: AeroCart Storefront -->
-                    <a href="work-details.html#aerocart" class="portfolio-card" title="View AeroCart Storefront Details">
-                        <div class="portfolio-media">
-                            <span class="portfolio-tag">E-Commerce</span>
-                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=700" alt="High-Performance E-Commerce Checkout Interface" title="AeroCart E-Commerce Interface Showcase">
-                        </div>
-                        <div class="portfolio-info">
-                            <h3>AeroCart Storefront</h3>
-                            <div class="portfolio-meta-item">
-                                <strong>Delivered Infrastructure</strong>
-                                Lightweight mobile-first storefront equipped with ultra-low latency checkout routing and inventory alerts. Click for detailed analysis.
+                                Unified administrative ledger dashboard, secure access routing, and instant WhatsApp notification triggers. Click for detailed analysis.
                             </div>
                         </div>
                     </a>
