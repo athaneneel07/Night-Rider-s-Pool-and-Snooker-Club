@@ -1,18 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Executed Deployments — Tattva Grid Case Studies</title>
     
     <!-- SEO Optimization -->
-    <meta name="description" content="Technical blueprints and dynamic case studies for Tattva Grid systems: AKS Turf, Saraswati Academy, LedgerFlow, and AeroCart.">
+    <meta name="description" content="Technical blueprints and dynamic case studies for Tattva Grid systems: AKS Turf, Rama Sports Pune, Galaxy Arena, and Dwarkai Turf. Created by Neel Athane.">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="Neel Athane, Tattva Grid">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tattva Grid",
+        "url": "https://www.tattvagrid.com",
+        "logo": "logo.jpeg",
+        "founder": [
+          { 
+            "@type": "Person", 
+            "name": "Neel Athane", 
+            "jobTitle": "Founder, CTO & CFO",
+            "sameAs": [
+              "https://www.linkedin.com/in/neel-athane-tattvagrid",
+              "https://www.instagram.com/athaneneel",
+              "https://x.com/neel_tattvagrid",
+              "https://github.com/neel-athane-tattvagrid",
+              "https://topmate.io/neel_tattvagrid",
+              "https://www.producthunt.com/@neel_tattvagrid",
+              "https://bsky.app/profile/athaneneel.bsky.social",
+              "https://www.reddit.com/u/neel_tattvagrid",
+              "https://substack.com/@athaneneel"
+            ]
+          },
+          { 
+            "@type": "Person", 
+            "name": "Rohit Badgujar", 
+            "jobTitle": "Co-Founder & CEO" 
+          },
+          { 
+            "@type": "Person", 
+            "name": "Aaryesh Honrao", 
+            "jobTitle": "Co-Founder, CMO & COO" 
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Tattva Grid",
+        "url": "https://www.tattvagrid.com",
+        "creator": {
+          "@type": "Person",
+          "name": "Neel Athane",
+          "jobTitle": "Founder, CTO & CFO",
+          "sameAs": [
+            "https://www.linkedin.com/in/neel-athane-tattvagrid",
+            "https://www.instagram.com/athaneneel",
+            "https://x.com/neel_tattvagrid",
+            "https://github.com/neel-athane-tattvagrid",
+            "https://topmate.io/neel_tattvagrid",
+            "https://www.producthunt.com/@neel_tattvagrid",
+            "https://bsky.app/profile/athaneneel.bsky.social",
+            "https://www.reddit.com/u/neel_tattvagrid",
+            "https://substack.com/@athaneneel"
+          ]
+        }
+      }
+    ]
+    </script>
 
     <style>
         /* --- BRAND DESIGN VARIABLES --- */
@@ -230,7 +294,7 @@
 
         .toggle-icons {
             display: flex;
-            justify-between;
+            justify-content: space-between;
             align-items: center;
             width: 100%;
             padding: 0 4px;
@@ -462,6 +526,36 @@
             font-size: 0.82rem;
             text-align: center;
         }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer-socials a {
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .footer-socials a:hover {
+            background: var(--brand-cyan);
+            color: #050811;
+            transform: translateY(-2px);
+            border-color: var(--brand-cyan);
+        }
     </style>
 </head>
 <body>
@@ -507,8 +601,8 @@
 
     <main class="container details-wrapper">
         <div class="intro-block">
-            <h1>Deployment blue-prints</h1>
-            <p>A closer look at production systems created by Tattva Grid for continuous client operations.</p>
+            <h1>Deployment Blueprints</h1>
+            <p>A closer look at production systems created by Tattva Grid for continuous operational environments.</p>
         </div>
 
         <!-- 1. AKS Turf -->
@@ -556,12 +650,12 @@
             </div>
         </section>
 
-        <!-- 2. Saraswati Academy -->
-        <section class="project-detail-section" id="saraswati-academy">
+        <!-- 2. Rama Sports Pune -->
+        <section class="project-detail-section" id="rama-sports">
             <div class="project-title-bar">
-                <h2>Saraswati Academy</h2>
+                <h2>Rama Sports Pune, Kothrud</h2>
                 <div class="infrastructure-provided">
-                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Academic Management ERP &amp; Registries
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Multi-court allocation grid, interactive scheduling panels
                 </div>
             </div>
 
@@ -570,22 +664,22 @@
                     <div class="info-section">
                         <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
                         <p>
-                            Administrative personnel used complex spreadsheet chains to balance dynamic schedules across classrooms, matching student rosters and class schedules manually. This distributed data caused resource collision alerts and slow administration responses.
+                            Coordinating tournament blocks alongside standard public court reservations manually led to resource scheduling conflicts across multiple active play fields, lowering overall court utilization rates.
                         </p>
                     </div>
 
                     <div class="info-section">
                         <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
                         <p>
-                            We built an academic administration ERP system with automated coordinate checking. This tool validates room capacity, confirms coordinator availability, and updates student indexes across rosters simultaneously, keeping educational records safe and central.
+                            We built a parallel court allocation board supporting tier-based schedule configurations. The system maps distinct courts, accepts immediate slot overrides, and processes reservation details to optimize field assignment logic during high-demand hours.
                         </p>
                     </div>
 
                     <div class="client-review-card">
                         <p>
-                            "Managing complex timetables is now seamless. The classroom scheduler handles class changes efficiently and securely."
+                            "Timetabling tournaments and public hours is straightforward now. The multi-court grid resolves reservation conflicts systematically."
                         </p>
-                        <div class="client-reviewer">Academic Registrar — Saraswati Academy</div>
+                        <div class="client-reviewer">Facility Registrar — Rama Sports Pune, Kothrud</div>
                     </div>
                 </div>
 
@@ -593,7 +687,7 @@
                     <div class="gallery-header">System Interface Visuals</div>
                     <div class="gallery-grid">
                         <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600" alt="ERP Student Database Panel Screenshot">
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=600" alt="ERP Student Database Panel Screenshot">
                             <div class="gallery-caption">Roster Management and Scheduling Console</div>
                         </div>
                     </div>
@@ -601,12 +695,12 @@
             </div>
         </section>
 
-        <!-- 3. LedgerFlow -->
-        <section class="project-detail-section" id="ledgerflow">
+        <!-- 3. Galaxy Arena -->
+        <section class="project-detail-section" id="galaxy-arena">
             <div class="project-title-bar">
-                <h2>LedgerFlow Dashboard</h2>
+                <h2>Galaxy Arena, Wakad</h2>
                 <div class="infrastructure-provided">
-                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Bookkeeping Engine &amp; Transaction Pipelines
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Unified administrative ledger, secure access routing, WhatsApp notification triggers
                 </div>
             </div>
 
@@ -615,22 +709,22 @@
                     <div class="info-section">
                         <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
                         <p>
-                            Corporate audit preparation required auditing multiple business ledger sources manually. This complicated financial processes, leading to reporting bottlenecks and data integrity validation challenges.
+                            Manually reconciling cash and online transactions alongside manual delivery of booking verification messages led to administrative backlogs, record errors, and slow check-in queues.
                         </p>
                     </div>
 
                     <div class="info-section">
                         <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
                         <p>
-                            We created an enterprise-level financial audit terminal. This dashboard uses cryptographically signed audit logs to maintain transaction history integrity. Built-in query filters generate precise cash flow reports, reducing auditing times considerably.
+                            Our team engineered a secure, cloud-hosted administrative dashboard that combines transaction logs and features instant WhatsApp confirmation triggers. The webhook engine updates slot states automatically as payments verify.
                         </p>
                     </div>
 
                     <div class="client-review-card">
                         <p>
-                            "LedgerFlow reduced audit compilation times from weeks to hours. Verifying historical transactions is now straightforward and highly secure."
+                            "Transaction tracking and notifications are completely automated. The central panel provides a reliable, secure ledger of overall daily transactions."
                         </p>
-                        <div class="client-reviewer">Chief Compliance Officer — Financial Operations</div>
+                        <div class="client-reviewer">Finance Administrator — Galaxy Arena, Wakad</div>
                     </div>
                 </div>
 
@@ -638,20 +732,20 @@
                     <div class="gallery-header">System Interface Visuals</div>
                     <div class="gallery-grid">
                         <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="LedgerFlow Dashboard screen UI mockup">
-                            <div class="gallery-caption">Immutable Transaction Logs Console UI</div>
+                            <img src="https://images.unsplash.com/photo-1540747737956-37872404f802?auto=format&fit=crop&q=80&w=600" alt="LedgerFlow Dashboard screen UI mockup">
+                            <div class="gallery-caption">Central Booking and Ledger Management Hub</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. AeroCart -->
-        <section class="project-detail-section" id="aerocart">
+        <!-- 4. Dwarkai Turf -->
+        <section class="project-detail-section" id="dwarkai-turf">
             <div class="project-title-bar">
-                <h2>AeroCart Storefront</h2>
+                <h2>Dwarkai Turf, Jalgaon</h2>
                 <div class="infrastructure-provided">
-                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Lightweight Storefront &amp; Inventory Alerts
+                    <i class="fa-solid fa-gear"></i> Delivered Infrastructure: Automated reservation board, dynamic pricing metrics
                 </div>
             </div>
 
@@ -660,22 +754,22 @@
                     <div class="info-section">
                         <h3><i class="fa-solid fa-triangle-exclamation"></i> The Need</h3>
                         <p>
-                            Standard mobile e-commerce templates caused page lag during high-traffic flash sales, leading to user drops at checkout. Live stock levels lagged behind real-time orders, creating backorder conflicts.
+                            Adjusting pricing parameters across shifting peak and off-peak reservation windows manually created transaction discrepancies, reporting delays, and lost booking opportunities.
                         </p>
                     </div>
 
                     <div class="info-section">
                         <h3><i class="fa-solid fa-screwdriver-wrench"></i> Our Solution</h3>
                         <p>
-                            We developed a streamlined, static-rendered checkout application running on cached system layers. AeroCart checks stock levels in real-time, sending automatic alerts to the inventory team to maintain correct supply lists across checkout paths.
+                            We built a static-rendered checkout system utilizing a clean-logic rate matrix that applies distinct slot pricing automatically. The dynamic board monitors incoming orders instantly, providing administrative clarity.
                         </p>
                     </div>
 
                     <div class="client-review-card">
                         <p>
-                            "Transaction speeds improved immediately. Customers checked out easily, and real-time inventory alerts stopped supply issues completely."
+                            "The dynamic pricing matrix simplified our operational billing. Reservation flow is smooth, and automated pricing updates save manual management hours daily."
                         </p>
-                        <div class="client-reviewer">Director of Logistics — AeroCart Brand Store</div>
+                        <div class="client-reviewer">General Manager — Dwarkai Turf, Jalgaon</div>
                     </div>
                 </div>
 
@@ -683,8 +777,8 @@
                     <div class="gallery-header">System Interface Visuals</div>
                     <div class="gallery-grid">
                         <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="E-Commerce checkout flow UI screenshot">
-                            <div class="gallery-caption">Mobile checkout flow metric visualization</div>
+                            <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&q=80&w=600" alt="E-Commerce checkout flow UI screenshot">
+                            <div class="gallery-caption">Automated Check-Out Matrix Console</div>
                         </div>
                     </div>
                 </div>
@@ -698,6 +792,14 @@
 
     <footer>
         <p>&copy; 2026 Tattva Grid. Developed by Neel Athane. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/tattva.grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i> tattva.grid
+            </a>
+            <a href="https://www.instagram.com/tattva.founders" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i> tattva.founders
+            </a>
+        </div>
     </footer>
 
     <script>
